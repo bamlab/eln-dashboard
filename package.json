@@ -5,9 +5,11 @@
   "homepage": "https://bamlab.github.io/eln-dashboard/",
   "dependencies": {
     "@types/highcharts": "^5.0.33",
+    "@types/luxon": "^1.4.1",
     "gh-pages": "^2.0.1",
     "highcharts": "^6.2.0",
     "highcharts-react-official": "^2.0.0",
+    "luxon": "^1.7.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts-ts": "3.1.0"

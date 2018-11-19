@@ -15,8 +15,6 @@ const csv = `Date,IF_CL_EC_KA,IF_IL_EC_KA,FO_CL_EC_KA,FO_IL_EC_KA,GU_CL_EC_KA,GU
 8/1/2018,5553.574386,1058.995105,6738.662737,1652.152608,17514.10015,4981.122731,5553.574386,1058.995105,6738.662737,1652.152608,17514.10015,4981.122731,
 `;
 
-// tslint:disable-next-line
-console.log(csv);
 const options = {
   title: {
     text: "Historical Demand E-Commerce"

@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./App.css";
+import { ColumnChart } from "./charts/ColumnChart";
 import { VerySimpleChart } from "./charts/VerySimpleChart";
 
 class App extends React.Component {
@@ -7,6 +8,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <VerySimpleChart />
+        <ColumnChart />
       </div>
     );
   }
