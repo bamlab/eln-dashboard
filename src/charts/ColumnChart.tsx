@@ -12,16 +12,26 @@ const serieWithTimestamp = json.map(serie => {
   return [luxonDate.toMillis(), serie.FO_CL_EC_BD] as [number, number];
 });
 
-const options: Highcharts.Options = {
+const options: any = {
   title: {
-    text: "Historical Demand E-Commerce"
+    text: "Historical Demand E-Commerce",
+    align: "left"
   },
   chart: {
-    type: "column"
+    type: "column",
+    scrollablePlotArea: {
+      minWidth: 700,
+      scrollPositionX: 1
+    }
   },
   xAxis: {
-    title: undefined,
-    type: "datetime"
+    type: "datetime",
+    lineWidth: 0,
+    tickWidth: 0
+  },
+  yAxis: {
+    gridLineWidth: 0,
+    title: null
   },
   plotOptions: {
     column: {
