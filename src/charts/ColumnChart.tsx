@@ -12,6 +12,11 @@ const serieWithTimestamp = json.map(serie => {
   return [luxonDate.toMillis(), serie.FO_CL_EC_BD] as [number, number];
 });
 
+const serie2WithTimestamp = json.map(serie => {
+  const luxonDate = Luxon.DateTime.fromFormat(serie.Date, "M/d/yyyy");
+  return [luxonDate.toMillis(), serie.FO_CL_EC_KA] as [number, number];
+});
+
 const options: any = {
   title: {
     text: "Historical Demand E-Commerce",
@@ -35,6 +40,7 @@ const options: any = {
   },
   plotOptions: {
     column: {
+      stacking: "normal",
       color: "#026AB5",
       borderRadius: 3,
       states: {
@@ -44,8 +50,14 @@ const options: any = {
   },
   series: [
     {
+      data: serie2WithTimestamp,
+      type: "column",
+      color: "#A1DAF7"
+    },
+    {
       data: serieWithTimestamp,
-      type: "column"
+      type: "column",
+      color: "#026AB5"
     }
   ]
 };
