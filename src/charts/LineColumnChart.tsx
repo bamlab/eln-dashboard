@@ -14,12 +14,24 @@ const serieWithTimestamp = json.map(serie => {
 
 const serie2WithTimestamp = json.map(serie => {
   const luxonDate = Luxon.DateTime.fromFormat(serie.Date, "M/d/yyyy");
-  return [luxonDate.toMillis(), serie.GU_IL_EC_KA / 80] as [number, number];
+  const isNegative: number = Math.random() >= 0.5 ? 1 : -1;
+  return [luxonDate.toMillis(), (isNegative * serie.GU_IL_EC_KA) / 80] as [
+    number,
+    number
+  ];
+});
+const serie3WithTimestamp = json.map(serie => {
+  const luxonDate = Luxon.DateTime.fromFormat(serie.Date, "M/d/yyyy");
+  const isNegative: number = Math.random() >= 0.5 ? 1 : -1;
+  return [luxonDate.toMillis(), (isNegative * serie.IF_IL_EC_BD) / 80] as [
+    number,
+    number
+  ];
 });
 
 const options: any = {
   title: {
-    text: "Total DC Off-Take Forecast Accuracy",
+    text: "Total DC Take-Off Bias",
     align: "left"
   },
   chart: {
@@ -35,6 +47,14 @@ const options: any = {
   },
   yAxis: {
     gridLineWidth: 0,
+    plotLines: [
+      {
+        width: 1,
+        color: "olive",
+        value: 0,
+        zIndex: 10
+      }
+    ],
     title: null,
     labels: {
       format: "{value}%"
@@ -49,8 +69,13 @@ const options: any = {
   series: [
     {
       data: serie2WithTimestamp,
-      type: "line",
+      type: "column",
       color: "#A1DAF7"
+    },
+    {
+      data: serie3WithTimestamp,
+      type: "column",
+      color: "#026AB5"
     },
     {
       data: serieWithTimestamp,
@@ -60,7 +85,7 @@ const options: any = {
   ]
 };
 
-export const LineChart = () => (
+export const LineColumnChart = () => (
   <div>
     <HighchartsReact highcharts={Highcharts} options={options} />
   </div>
