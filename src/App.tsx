@@ -1,3 +1,4 @@
+import { Card } from "@material-ui/core";
 import * as React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { DashboardTabBar } from "./components";
