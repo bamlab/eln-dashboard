@@ -1,32 +1,16 @@
 import * as React from "react";
-import { ColumnChart } from "./charts/ColumnChart";
-import { LineChart } from "./charts/LineChart";
-import { LineColumnChart } from "./charts/LineColumnChart";
+import { Route, Switch } from "react-router-dom";
+import { Header } from "./components/Header.component";
+import "./index.css";
+import { ChinaDC, ChinaDI } from "./pages";
 
-const theme = {
-  spacing: { unit: 50 }
-};
-
-const styles = {
-  layout: {
-    width: "auto",
-    marginLeft: theme.spacing.unit * 3,
-    marginRight: theme.spacing.unit * 3
-  }
-};
-
-class App extends React.Component {
-  public render() {
-    return (
-      <React.Fragment>
-        <div style={styles.layout}>
-          <ColumnChart />
-          <LineChart />
-          <LineColumnChart />
-        </div>
-      </React.Fragment>
-    );
-  }
-}
-
-export default App;
+export default () => (
+  <main>
+    <Header />
+    <Switch>
+      <Route exact={true} path="/" component={ChinaDI} />
+      <Route path="/china/di" component={ChinaDI} />
+      <Route path="/china/dc" component={ChinaDC} />
+    </Switch>
+  </main>
+);
