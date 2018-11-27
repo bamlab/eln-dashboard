@@ -3,6 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import * as React from "react";
 import { withRouter } from "react-router-dom";
+import { colors } from "../theme";
 import { Selector } from "./Selector.component";
 
 const styles = {
@@ -29,7 +30,7 @@ const HeaderBar = withRouter((props: any) => {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ backgroundColor: colors.mainColor }}>
         <Toolbar>
           <Selector
             onChange={selectChinaPage}

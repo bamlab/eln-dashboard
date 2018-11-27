@@ -7,7 +7,8 @@ const styles = {
   root: {
     color: "white",
     marginLeft: 16,
-    marginRight: 16
+    marginRight: 16,
+    fontWeight: 700
   },
   selectMenu: { color: "blue" },
   select: { color: "blue" }
