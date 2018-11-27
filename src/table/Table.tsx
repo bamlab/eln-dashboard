@@ -9,31 +9,33 @@ import {
 import * as React from "react";
 import { TableBlueSubHeader } from "./TableBlueSubHeader";
 import { TableHeaderCell } from "./TableHeaderCell";
-// import { TableSubHeaderCell } from "./TableSubHeaderCell";
+import { TableSubHeaderCell } from "./TableSubHeaderCell";
 
 export class CustomTable extends React.PureComponent<{}, {}> {
   public render() {
     return (
       <Card style={{ margin: 25 }}>
         <h3 style={{ marginLeft: 25 }}>Current Cycle DC</h3>
-        <Table>
+        <Table padding={"dense"}>
           <TableHead>
             <TableHeaderCell />
-            <TableHeaderCell>2017 FY (ACT)</TableHeaderCell>
-            <TableHeaderCell />
-            <TableHeaderCell>2018 FY (OCT VERSION)</TableHeaderCell>
-            <TableHeaderCell />
-            <TableHeaderCell>2019 FY (OCT VERSION)</TableHeaderCell>
+            <TableHeaderCell colSpan={2}>2017 FY (ACT)</TableHeaderCell>
+            <TableHeaderCell colSpan={4}>2018 FY (OCT VERSION)</TableHeaderCell>
+            <TableHeaderCell colSpan={4}>2019 FY (OCT VERSION)</TableHeaderCell>
           </TableHead>
           <TableBlueSubHeader>
             <TableRow>
-              {/* <TableSubHeaderCell />
-              <TableSubHeaderCell>Sell-in (ACT)</TableSubHeaderCell> */}
-              {/* <TableSubHeaderCell>Offtake (ACT)</TableSubHeaderCell>
+              <TableSubHeaderCell />
+              <TableSubHeaderCell>Sell-in (ACT)</TableSubHeaderCell>
+              <TableSubHeaderCell>Offtake (ACT)</TableSubHeaderCell>
               <TableSubHeaderCell>Sell-in (WO return)</TableSubHeaderCell>
               <TableSubHeaderCell>Sell-in vs LV</TableSubHeaderCell>
               <TableSubHeaderCell>Offtake</TableSubHeaderCell>
-              <TableSubHeaderCell>Offtake vs LV</TableSubHeaderCell> */}
+              <TableSubHeaderCell>Offtake vs LV</TableSubHeaderCell>
+              <TableSubHeaderCell>Sell-in (WO return)</TableSubHeaderCell>
+              <TableSubHeaderCell>Sell-in vs LV</TableSubHeaderCell>
+              <TableSubHeaderCell>Offtake</TableSubHeaderCell>
+              <TableSubHeaderCell>Offtake vs LV</TableSubHeaderCell>
             </TableRow>
           </TableBlueSubHeader>
           <TableBody>
