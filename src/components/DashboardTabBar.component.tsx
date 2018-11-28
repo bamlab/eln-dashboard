@@ -17,7 +17,7 @@ const DashboardTabBarComponent = withRouter((props: any) => {
     props.history.push(`${props.prefixPath}/previous_forecasts`);
   const renderKPIS = () => <KPIS />;
   const renderPreviousForecasts = () => <PreviousForecasts />;
-  const renderDefault = () => <Redirect to="/china/dc/kpis" />;
+  const renderDefault = () => <Redirect to={`${props.prefixPath}/kpis`} />;
 
   return (
     <div>

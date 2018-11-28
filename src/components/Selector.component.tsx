@@ -27,8 +27,7 @@ interface IPropsType {
 
 class SelectMenu extends React.Component<IPropsType> {
   public static defaultProps = {
-    defaultDisplayedValue: "",
-    color: "white"
+    defaultDisplayedValue: ""
   };
   public state = {
     displayedValue: this.props.defaultDisplayedValue
