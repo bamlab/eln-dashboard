@@ -1,3 +1,5 @@
+import { createMuiTheme } from "@material-ui/core/styles";
+
 export const colors = {
   mainColor: "#026AB5",
   accentColor: "#029FE3",
@@ -9,3 +11,11 @@ export const colors = {
   secondaryFontColor: "#AAACAE",
   tertiaryFontColor: "#99C3E1"
 };
+
+export const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: colors.mainColor
+    }
+  }
+});
