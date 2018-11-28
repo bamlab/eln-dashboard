@@ -1,24 +1,12 @@
-import {
-  Card,
-  Table,
-  TableBody,
-  TableCell as NativeTableCell,
-  TableHead,
-  TableRow
-} from "@material-ui/core";
-import { StyleRules, withStyles } from "@material-ui/core/styles";
+import { Card, Table, TableBody, TableHead } from "@material-ui/core";
 import * as React from "react";
 import { TableBlueSubHeader } from "./TableBlueSubHeader";
+import { TableCell } from "./TableCell";
 import { TableHeaderCell } from "./TableHeaderCell";
+import { TableRow } from "./TableRow/TableRow";
+import { TableSubTotalRow } from "./TableRow/TableSubTotalRow";
+import { TableTotalRow } from "./TableRow/TableTotalRow";
 import { TableSubHeaderCell } from "./TableSubHeaderCell";
-import { TableSubTotalRow } from "./TableSubTotalRow";
-import { TableTotalRow } from "./TableTotalRow";
-
-const style: StyleRules = {
-  paddingDense: { padding: "5px" }
-};
-
-const TableCell = withStyles(style)(NativeTableCell);
 
 const RowsData = () => {
   return (
@@ -50,7 +38,7 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <TableHeaderCell colSpan={4}>2019 FY (OCT VERSION)</TableHeaderCell>
           </TableHead>
           <TableBlueSubHeader>
-            <TableRow>
+            <TableRow style={{ height: 40 }}>
               <TableSubHeaderCell />
               <TableSubHeaderCell>Sell-in (ACT)</TableSubHeaderCell>
               <TableSubHeaderCell>Offtake (ACT)</TableSubHeaderCell>
@@ -177,5 +165,3 @@ export class CustomTable extends React.PureComponent<{}, {}> {
     );
   }
 }
-
-export const tableWithStyle = withStyles(style)(CustomTable);
