@@ -2,7 +2,7 @@ import {
   Card,
   Table,
   TableBody,
-  TableCell,
+  TableCell as NativeTableCell,
   TableHead,
   TableRow
 } from "@material-ui/core";
@@ -15,8 +15,10 @@ import { TableSubTotalRow } from "./TableSubTotalRow";
 import { TableTotalRow } from "./TableTotalRow";
 
 const style: StyleRules = {
-  table: { paddingDense: { padding: 0 } }
+  paddingDense: { padding: "5px" }
 };
+
+const TableCell = withStyles(style)(NativeTableCell);
 
 const RowsData = () => {
   return (
