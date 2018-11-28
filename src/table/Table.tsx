@@ -6,11 +6,15 @@ import {
   TableHead,
   TableRow
 } from "@material-ui/core";
+import { StyleRules, withStyles } from "@material-ui/core/styles";
 import * as React from "react";
 import { TableBlueSubHeader } from "./TableBlueSubHeader";
 import { TableHeaderCell } from "./TableHeaderCell";
 import { TableSubHeaderCell } from "./TableSubHeaderCell";
 
+const style: StyleRules = {
+  table: { paddingDense: { padding: 0 } }
+};
 
 const RowsData = () => {
   return (
@@ -113,3 +117,5 @@ export class CustomTable extends React.PureComponent<{}, {}> {
     );
   }
 }
+
+export const tableWithStyle = withStyles(style)(CustomTable);
