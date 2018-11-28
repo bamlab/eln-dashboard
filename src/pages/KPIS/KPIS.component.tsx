@@ -12,23 +12,30 @@ const styles = {
     padding: 24
   }
 };
-const ChinaDIPage = (props: any) => {
+const KPISComponent = (props: any) => {
   const { classes } = props;
 
   return (
     <div className={classes.root}>
       <Grid container={true} spacing={24}>
-        <Grid item={true} xs={12}>
+        <Grid item={true} xs={4}>
           <Card>
             <CardContent>
               <ColumnChart />
             </CardContent>
           </Card>
         </Grid>
-        <Grid item={true} xs={12}>
+        <Grid item={true} xs={4}>
           <Card>
             <CardContent>
               <LineChart />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={4}>
+          <Card>
+            <CardContent>
+              <LineColumnChart />{" "}
             </CardContent>
           </Card>
         </Grid>
@@ -44,4 +51,4 @@ const ChinaDIPage = (props: any) => {
   );
 };
 
-export const ChinaDI = withStyles(styles)(ChinaDIPage);
+export const KPIS = withStyles(styles)(KPISComponent);
