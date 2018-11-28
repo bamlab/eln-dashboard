@@ -3,7 +3,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import * as React from "react";
 import { withRouter } from "react-router-dom";
-import { colors } from "../theme";
 import { Selector } from "./Selector.component";
 
 const styles = {
@@ -13,34 +12,51 @@ const styles = {
 };
 
 const HeaderBar = withRouter((props: any) => {
-  const selectChinaPage = (value: string) => {
-    if (value === "China DC") {
-      props.history.push("/china/dc");
-    } else {
-      props.history.push("/china/di");
+  const routes = [
+    { name: "China DC", path: "/china/dc", parent: "China" },
+    { name: "China DI", path: "/china/di", parent: "China" },
+    {
+      name: "International Label - DI",
+      path: "/china/di",
+      parent: "International"
+    },
+    {
+      name: "International Label - EIB",
+      path: "/china/di",
+      parent: "International"
+    },
+    {
+      name: "International Label - IL",
+      path: "/china/di",
+      parent: "International"
     }
-  };
-  const selectInternationalPage = (value: string) => {
-    if (value === "International Label DC") {
-      props.history.push("/china/dc");
-    } else {
-      props.history.push("/china/di");
-    }
+  ];
+  const goToPage = (selected: string) => {
+    const routeSelected = routes.filter(route => route.name === selected)[0];
+    props.history.push(routeSelected.path);
   };
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: colors.mainColor }}>
+      <AppBar position="static">
         <Toolbar>
           <Selector
-            onChange={selectChinaPage}
-            valueList={["China DC", "China DI"]}
-            defaultDisplayedValue="China DC"
+            onChange={goToPage}
+            valueList={routes
+              .filter(route => route.parent === "China")
+              .map(route => route.name)}
+            defaultDisplayedValue={
+              routes.filter(route => route.parent === "China")[0].name
+            }
           />
           <Selector
-            onChange={selectInternationalPage}
-            valueList={["International Label DI", "International Label DC"]}
-            defaultDisplayedValue="International Label DI"
+            onChange={goToPage}
+            valueList={routes
+              .filter(route => route.parent === "International")
+              .map(route => route.name)}
+            defaultDisplayedValue={
+              routes.filter(route => route.parent === "International")[0].name
+            }
           />
         </Toolbar>
       </AppBar>
@@ -48,4 +64,4 @@ const HeaderBar = withRouter((props: any) => {
   );
 });
 
-export const Header = withStyles(styles)(HeaderBar);
+export const TabBar1 = withStyles(styles)(HeaderBar);

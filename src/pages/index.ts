@@ -1,2 +1,4 @@
-export { ChinaDI } from "./ChinaDI/ChinaDI.component";
-export { ChinaDC } from "./ChinaDC/ChinaDC.component";
+export { KPIS } from "./KPIS/KPIS.component";
+export {
+  PreviousForecasts
+} from "./PreviousForecasts/PreviousForecasts.component";

@@ -10,20 +10,25 @@ const styles = {
     marginRight: 16,
     fontWeight: 700
   },
-  selectMenu: { color: "blue" },
-  select: { color: "blue" }
+  icon: {
+    fill: "white"
+  },
+  outlined: {
+    backgroundColor: "white"
+  }
 };
 
 interface IPropsType {
   onChange: (value: string) => void;
   defaultDisplayedValue: string;
   valueList: string[];
-  classes?: any;
+  classes: { [key: string]: string };
 }
 
 class SelectMenu extends React.Component<IPropsType> {
   public static defaultProps = {
-    defaultDisplayedValue: ""
+    defaultDisplayedValue: "",
+    color: "white"
   };
   public state = {
     displayedValue: this.props.defaultDisplayedValue
@@ -40,11 +45,14 @@ class SelectMenu extends React.Component<IPropsType> {
       <Select
         value={this.state.displayedValue}
         onChange={this.handleChange}
-        inputProps={{
-          name: "displayedValue",
-          id: "tab-simple"
+        classes={{
+          icon: classes.icon,
+          root: classes.root
         }}
-        className={classes.root}
+        inputProps={{
+          name: "displayedValue"
+        }}
+        disableUnderline={true}
       >
         {this.props.valueList.map(value => (
           <MenuItem value={value}>{value}</MenuItem>
