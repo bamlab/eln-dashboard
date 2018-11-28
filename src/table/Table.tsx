@@ -11,6 +11,24 @@ import { TableBlueSubHeader } from "./TableBlueSubHeader";
 import { TableHeaderCell } from "./TableHeaderCell";
 import { TableSubHeaderCell } from "./TableSubHeaderCell";
 
+
+const RowsData = () => {
+  return (
+    <React.Fragment>
+      <TableCell>Data</TableCell>
+      <TableCell>Data</TableCell>
+      <TableCell>Data</TableCell>
+      <TableCell>Data</TableCell>
+      <TableCell>Data</TableCell>
+      <TableCell>Data</TableCell>
+      <TableCell>Data</TableCell>
+      <TableCell>Data</TableCell>
+      <TableCell>Data</TableCell>
+      <TableCell>Data</TableCell>
+    </React.Fragment>
+  );
+};
+
 export class CustomTable extends React.PureComponent<{}, {}> {
   public render() {
     return (
@@ -41,161 +59,53 @@ export class CustomTable extends React.PureComponent<{}, {}> {
           <TableBody style={{ backgroundColor: "#EDF9FE" }}>
             <TableRow>
               <TableCell>NC1</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
             <TableRow>
               <TableCell>NC2</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
             <TableRow>
               <TableCell>NC3</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
             <TableRow>
               <TableCell>NC4</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
             <TableRow>
               <TableCell>Total NC</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
             <TableRow>
               <TableCell>Growth vs LI</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
           </TableBody>
           <TableBody>
             <TableRow>
               <TableCell>AC1</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
             <TableRow>
               <TableCell>AC2</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
             <TableRow>
               <TableCell>AC3</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
             <TableRow>
               <TableCell>AC4</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
             <TableRow>
               <TableCell>Total AC</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
             <TableRow>
               <TableCell>Growth vs LI</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
-              <TableCell>Data</TableCell>
+              <RowsData />
             </TableRow>
           </TableBody>
         </Table>
