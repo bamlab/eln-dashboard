@@ -11,6 +11,8 @@ import * as React from "react";
 import { TableBlueSubHeader } from "./TableBlueSubHeader";
 import { TableHeaderCell } from "./TableHeaderCell";
 import { TableSubHeaderCell } from "./TableSubHeaderCell";
+import { TableSubTotalRow } from "./TableSubTotalRow";
+import { TableTotalRow } from "./TableTotalRow";
 
 const style: StyleRules = {
   table: { paddingDense: { padding: 0 } }
@@ -19,16 +21,16 @@ const style: StyleRules = {
 const RowsData = () => {
   return (
     <React.Fragment>
-      <TableCell>Data</TableCell>
-      <TableCell>Data</TableCell>
-      <TableCell>Data</TableCell>
-      <TableCell>Data</TableCell>
-      <TableCell>Data</TableCell>
-      <TableCell>Data</TableCell>
-      <TableCell>Data</TableCell>
-      <TableCell>Data</TableCell>
-      <TableCell>Data</TableCell>
-      <TableCell>Data</TableCell>
+      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
     </React.Fragment>
   );
 };
@@ -111,6 +113,62 @@ export class CustomTable extends React.PureComponent<{}, {}> {
               <TableCell>Growth vs LI</TableCell>
               <RowsData />
             </TableRow>
+            <TableSubTotalRow>
+              <TableCell>Total NP</TableCell>
+              <RowsData />
+            </TableSubTotalRow>
+            <TableTotalRow>
+              <TableCell>Total AP 1.0</TableCell>
+              <RowsData />
+            </TableTotalRow>
+            <TableSubTotalRow>
+              <TableCell>Total AP Tornado</TableCell>
+              <RowsData />
+            </TableSubTotalRow>
+            <TableTotalRow>
+              <TableCell>Total AP 2.0</TableCell>
+              <RowsData />
+            </TableTotalRow>
+          </TableBody>
+          <TableBody style={{ backgroundColor: "#EDF9FE" }}>
+            <TableRow>
+              <TableCell>NC1</TableCell>
+              <RowsData />
+            </TableRow>
+            <TableRow>
+              <TableCell>NC2</TableCell>
+              <RowsData />
+            </TableRow>
+            <TableRow>
+              <TableCell>NC3</TableCell>
+              <RowsData />
+            </TableRow>
+            <TableRow>
+              <TableCell>NC4</TableCell>
+              <RowsData />
+            </TableRow>
+            <TableRow>
+              <TableCell>Total NC</TableCell>
+              <RowsData />
+            </TableRow>
+            <TableRow>
+              <TableCell>Growth vs LI</TableCell>
+              <RowsData />
+            </TableRow>
+          </TableBody>
+          <TableBody>
+            <TableRow>
+              <TableCell>Total vs LI</TableCell>
+              <RowsData />
+            </TableRow>
+            <TableSubTotalRow>
+              <TableCell>Total</TableCell>
+              <RowsData />
+            </TableSubTotalRow>
+            <TableTotalRow>
+              <TableCell>Growth vs LI</TableCell>
+              <RowsData />
+            </TableTotalRow>
           </TableBody>
         </Table>
       </Card>
