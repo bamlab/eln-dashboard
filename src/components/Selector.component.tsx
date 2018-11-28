@@ -4,10 +4,17 @@ import { withStyles } from "@material-ui/core/styles";
 import * as React from "react";
 
 const styles = {
-  root: {
+  focused: {
     color: "white",
     marginLeft: 16,
     marginRight: 16,
+    fontWeight: 700
+  },
+  notFocused: {
+    color: "white",
+    marginLeft: 16,
+    marginRight: 16,
+    opacity: 0.6,
     fontWeight: 700
   },
   icon: {
@@ -23,11 +30,13 @@ interface IPropsType {
   defaultDisplayedValue: string;
   valueList: string[];
   classes: { [key: string]: string };
+  focus?: boolean;
 }
 
 class SelectMenu extends React.Component<IPropsType> {
   public static defaultProps = {
-    defaultDisplayedValue: ""
+    defaultDisplayedValue: "",
+    focus: true
   };
   public state = {
     displayedValue: this.props.defaultDisplayedValue
@@ -46,7 +55,7 @@ class SelectMenu extends React.Component<IPropsType> {
         onChange={this.handleChange}
         classes={{
           icon: classes.icon,
-          root: classes.root
+          root: this.props.focus ? classes.focused : classes.notFocused
         }}
         inputProps={{
           name: "displayedValue"
