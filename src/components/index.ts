@@ -1,1 +1,1 @@
-export { TabBar2 } from "./TabBar2.component";
+export { DashboardTabBar } from "./DashboardTabBar.component";

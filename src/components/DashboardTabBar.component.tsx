@@ -10,7 +10,7 @@ import { Selector } from "./Selector.component";
 
 const styles = {};
 
-const TabBar2Component = withRouter((props: any) => {
+const DashboardTabBarComponent = withRouter((props: any) => {
   const onChange = () => null;
   const goToKPIS = () => props.history.push(`${props.prefixPath}/kpis`);
   const goToPreviousForecasts = () =>
@@ -53,4 +53,4 @@ const TabBar2Component = withRouter((props: any) => {
   );
 });
 
-export const TabBar2 = withStyles(styles)(TabBar2Component);
+export const DashboardTabBar = withStyles(styles)(DashboardTabBarComponent);

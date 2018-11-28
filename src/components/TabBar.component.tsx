@@ -11,7 +11,7 @@ const styles = {
   }
 };
 
-const HeaderBar = withRouter((props: any) => {
+const TabBarComponent = withRouter((props: any) => {
   const routes = [
     { name: "China DC", path: "/china/dc", parent: "China" },
     { name: "China DI", path: "/china/di", parent: "China" },
@@ -64,4 +64,4 @@ const HeaderBar = withRouter((props: any) => {
   );
 });
 
-export const TabBar1 = withStyles(styles)(HeaderBar);
+export const TabBar = withStyles(styles)(TabBarComponent);
