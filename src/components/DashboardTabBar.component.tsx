@@ -6,7 +6,29 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import { KPIS, PreviousForecasts } from "../pages";
+import { SummaryDefinition, SummaryKeyAssumption } from "../pages";
+import {
+  KPISChinaDC,
+  KPISChinaDI,
+  KPISInternationalDI,
+  KPISInternationalEIB,
+  KPISInternationalIL
+} from "../pages/KPIS/";
+import {
+  PreviousForecastsChinaDC,
+  PreviousForecastsChinaDI,
+  PreviousForecastsInternationalDI,
+  PreviousForecastsInternationalEIB,
+  PreviousForecastsInternationalIL
+} from "../pages/PreviousForecasts/";
+import {
+  SummaryCurrentForecastChinaDC,
+  SummaryCurrentForecastChinaDI,
+  SummaryCurrentForecastInternationalDI,
+  SummaryCurrentForecastInternationalEIB,
+  SummaryCurrentForecastInternationalIL
+} from "../pages/SummaryCurrentForecast";
+
 import { colors } from "../theme";
 import { Selector } from "./Selector.component";
 
@@ -31,7 +53,15 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
   public state = {
     currentFocusedTab: "KPIS"
   };
-  public onSelectChange = () => this.setState({ currentFocusedTab: "Summary" });
+  public onSelectChange = (value: string) => {
+    this.setState({ currentFocusedTab: "Summary" });
+    const hashRoute = {
+      "SUMMARY - CURRENT FORECAST": "summary_current_forecast",
+      "SUMMARY - DEFINITION": "summary_definition",
+      "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
+    };
+    this.props.history.push(`${this.props.prefixPath}/${hashRoute[value]}`);
+  };
   public goToKPIS = () => {
     this.setState({ currentFocusedTab: "KPIS" });
     this.props.history.push(`${this.props.prefixPath}/kpis`);
@@ -40,8 +70,62 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
     this.setState({ currentFocusedTab: "Previous Forecasts" });
     this.props.history.push(`${this.props.prefixPath}/previous_forecasts`);
   };
-  public renderKPIS = () => <KPIS />;
-  public renderPreviousForecasts = () => <PreviousForecasts />;
+  public renderKPIS = () => {
+    if (this.props.prefixPath === "/china/dc") {
+      return <KPISChinaDC />;
+    }
+    if (this.props.prefixPath === "/china/di") {
+      return <KPISChinaDI />;
+    }
+    if (this.props.prefixPath === "/international/eib") {
+      return <KPISInternationalEIB />;
+    }
+    if (this.props.prefixPath === "/international/di") {
+      return <KPISInternationalDI />;
+    }
+    if (this.props.prefixPath === "/international/il") {
+      return <KPISInternationalIL />;
+    }
+    return <KPISChinaDI />;
+  };
+  public renderPreviousForecasts = () => {
+    if (this.props.prefixPath === "/china/dc") {
+      return <PreviousForecastsChinaDC />;
+    }
+    if (this.props.prefixPath === "/china/di") {
+      return <PreviousForecastsChinaDI />;
+    }
+    if (this.props.prefixPath === "/international/eib") {
+      return <PreviousForecastsInternationalEIB />;
+    }
+    if (this.props.prefixPath === "/international/di") {
+      return <PreviousForecastsInternationalDI />;
+    }
+    if (this.props.prefixPath === "/international/il") {
+      return <PreviousForecastsInternationalIL />;
+    }
+    return <PreviousForecastsInternationalIL />;
+  };
+  public renderSummaryCurrentForecast = () => {
+    if (this.props.prefixPath === "/china/dc") {
+      return <SummaryCurrentForecastChinaDC />;
+    }
+    if (this.props.prefixPath === "/china/di") {
+      return <SummaryCurrentForecastChinaDI />;
+    }
+    if (this.props.prefixPath === "/international/eib") {
+      return <SummaryCurrentForecastInternationalEIB />;
+    }
+    if (this.props.prefixPath === "/international/di") {
+      return <SummaryCurrentForecastInternationalDI />;
+    }
+    if (this.props.prefixPath === "/international/il") {
+      return <SummaryCurrentForecastInternationalIL />;
+    }
+    return <SummaryCurrentForecastInternationalIL />;
+  };
+  public renderSummaryDefinition = () => <SummaryDefinition />;
+  public renderSummaryKeyAssumptions = () => <SummaryKeyAssumption />;
   public renderDefault = () => (
     <Redirect to={`${this.props.prefixPath}/kpis`} />
   );
@@ -103,6 +187,18 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
           <Route
             path={`${this.props.prefixPath}/previous_forecasts`}
             render={this.renderPreviousForecasts}
+          />
+          <Route
+            path={`${this.props.prefixPath}/summary_current_forecast`}
+            render={this.renderSummaryCurrentForecast}
+          />
+          <Route
+            path={`${this.props.prefixPath}/summary_definition`}
+            render={this.renderSummaryDefinition}
+          />
+          <Route
+            path={`${this.props.prefixPath}/summary_key_assumptions`}
+            render={this.renderSummaryKeyAssumptions}
           />
         </Switch>
       </div>

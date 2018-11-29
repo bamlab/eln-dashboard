@@ -21,6 +21,18 @@ export default () => {
         <Route exact={true} path="/" render={renderTabBar("/china/dc")} />
         <Route path="/china/di" render={renderTabBar("/china/di")} />
         <Route path="/china/dc" render={renderTabBar("/china/dc")} />
+        <Route
+          path="/international/eib"
+          render={renderTabBar("/international/eib")}
+        />
+        <Route
+          path="/international/di"
+          render={renderTabBar("/international/di")}
+        />
+        <Route
+          path="/international/il"
+          render={renderTabBar("/international/il")}
+        />
       </Switch>
     </main>
   );

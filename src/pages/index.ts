@@ -1,4 +1,6 @@
-export { KPIS } from "./KPIS/KPIS.component";
 export {
-  PreviousForecasts
-} from "./PreviousForecasts/PreviousForecasts.component";
+  SummaryDefinition
+} from "./SummaryDefinition/SummaryDefinition.component";
+export {
+  SummaryKeyAssumption
+} from "./SummaryKeyAssumption/SummaryKeyAssumption.component";
