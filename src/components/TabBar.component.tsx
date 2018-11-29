@@ -55,9 +55,16 @@ class TabBarComponent extends React.Component<IPropsType> {
       }
     ];
     const goToPage = (selected: string) => {
+      // find in wich page we currently are in order to redirect to this page.
+      const pathArray = this.props.location.pathname.split("/");
+      pathArray.splice(0, 3); // remove '/', 'china || international' and 'dc || di || eib || il'
+      const myCurrentSubPath = pathArray.join("/");
+
       const routeSelected = routes.filter(route => route.name === selected)[0];
-      this.props.history.push(routeSelected.path);
-      this.setState({ currentFocusedTab: routeSelected.parent });
+      this.props.history.push(routeSelected.path + "/" + myCurrentSubPath);
+      this.setState({
+        currentFocusedTab: routeSelected.parent
+      });
     };
     const { classes } = this.props;
     return (
