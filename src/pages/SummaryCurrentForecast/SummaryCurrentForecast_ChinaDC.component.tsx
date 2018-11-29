@@ -4,6 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { LineColumnChart } from "src/charts/LineColumnChart";
+import { WaterfallChart } from "src/charts/WaterfallChart";
 import { CustomTable } from "src/table/Table";
 
 const styles = {
@@ -56,6 +58,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Risks & opportunities
               </Typography>
             </CardContent>
+            <WaterfallChart />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -65,6 +68,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade flow DC
               </Typography>
             </CardContent>
+            <LineColumnChart />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
