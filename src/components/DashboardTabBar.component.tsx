@@ -13,14 +13,12 @@ import { Selector } from "./Selector.component";
 const styles = {
   focused: {
     fontWeight: 700,
-    color: colors.mainColor,
-    fill: colors.mainFontColor
+    color: colors.mainColor
   },
   notFocused: {
     color: colors.mainFontColor,
     opacity: 0.6,
-    fontWeight: 700,
-    fill: colors.mainFontColor
+    fontWeight: 700
   }
 };
 

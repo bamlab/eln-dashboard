@@ -17,14 +17,12 @@ const styles = {
   },
   focused: {
     fontWeight: 700,
-    color: "white",
-    fill: "white"
+    color: "white"
   },
   notFocused: {
     color: "white",
     opacity: 0.6,
-    fontWeight: 700,
-    fill: "white"
+    fontWeight: 700
   }
 };
 
