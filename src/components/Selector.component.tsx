@@ -2,26 +2,21 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import { withStyles } from "@material-ui/core/styles";
 import * as React from "react";
+import { colors } from "../theme";
 
 const styles = {
-  focused: {
-    color: "white",
+  root: {
     marginLeft: 16,
     marginRight: 16,
-    fontWeight: 700
+    fontWeight: 700,
+    fontSize: "0.875rem",
+    paddingTop: 2
   },
-  notFocused: {
-    color: "white",
-    marginLeft: 16,
-    marginRight: 16,
-    opacity: 0.6,
-    fontWeight: 700
-  },
-  icon: {
+  iconWhite: {
     fill: "white"
   },
-  outlined: {
-    backgroundColor: "white"
+  iconBlue: {
+    fill: colors.mainColor
   }
 };
 
@@ -30,13 +25,15 @@ interface IPropsType {
   defaultDisplayedValue: string;
   valueList: string[];
   classes: { [key: string]: string };
-  focus?: boolean;
+  style?: any;
+  iconColor?: string;
 }
 
 class SelectMenu extends React.Component<IPropsType> {
   public static defaultProps = {
     defaultDisplayedValue: "",
-    focus: true
+    style: {},
+    iconColor: "white"
   };
   public state = {
     displayedValue: this.props.defaultDisplayedValue
@@ -53,10 +50,14 @@ class SelectMenu extends React.Component<IPropsType> {
       <Select
         value={this.state.displayedValue}
         onChange={this.handleChange}
+        className={classes.root}
         classes={{
-          icon: classes.icon,
-          root: this.props.focus ? classes.focused : classes.notFocused
+          icon:
+            this.props.iconColor === "blue"
+              ? classes.iconBlue
+              : classes.iconWhite
         }}
+        style={this.props.style}
         inputProps={{
           name: "displayedValue"
         }}

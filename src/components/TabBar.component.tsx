@@ -14,6 +14,17 @@ const styles = {
     width: 40,
     height: 40,
     marginRight: 40
+  },
+  focused: {
+    fontWeight: 700,
+    color: "white",
+    fill: "white"
+  },
+  notFocused: {
+    color: "white",
+    opacity: 0.6,
+    fontWeight: 700,
+    fill: "white"
   }
 };
 
@@ -69,7 +80,11 @@ class TabBarComponent extends React.Component<IPropsType> {
               defaultDisplayedValue={
                 routes.filter(route => route.parent === "China")[0].name
               }
-              focus={this.state.currentFocusedTab === "China"}
+              style={
+                this.state.currentFocusedTab === "China"
+                  ? styles.focused
+                  : styles.notFocused
+              }
             />
             <Selector
               onChange={goToPage}
@@ -79,7 +94,11 @@ class TabBarComponent extends React.Component<IPropsType> {
               defaultDisplayedValue={
                 routes.filter(route => route.parent === "International")[0].name
               }
-              focus={this.state.currentFocusedTab === "International"}
+              style={
+                this.state.currentFocusedTab === "International"
+                  ? styles.focused
+                  : styles.notFocused
+              }
             />
           </Toolbar>
         </AppBar>
