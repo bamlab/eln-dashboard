@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { CustomTable } from "src/table/Table";
+import { CustomTable as TableNut } from "src/table2/Table";
 
 const styles = {
   root: {
@@ -74,6 +75,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade Flow DC by brand - NC
               </Typography>
             </CardContent>
+            <TableNut />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -83,6 +85,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade Flow DC by brand - AP
               </Typography>
             </CardContent>
+            <TableNut />
           </Card>
         </Grid>
       </Grid>
