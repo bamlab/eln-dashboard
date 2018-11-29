@@ -6,7 +6,13 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import { KPIS, PreviousForecasts } from "../pages";
+import {
+  KPIS,
+  PreviousForecasts,
+  SummaryCurrentForecast,
+  SummaryDefinition,
+  SummaryKeyAssumption
+} from "../pages";
 import { colors } from "../theme";
 import { Selector } from "./Selector.component";
 
@@ -31,7 +37,15 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
   public state = {
     currentFocusedTab: "KPIS"
   };
-  public onSelectChange = () => this.setState({ currentFocusedTab: "Summary" });
+  public onSelectChange = (value: string) => {
+    this.setState({ currentFocusedTab: "Summary" });
+    const hashRoute = {
+      "SUMMARY - CURRENT FORECAST": "summary_current_forecast",
+      "SUMMARY - DEFINITION": "summary_definition",
+      "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
+    };
+    this.props.history.push(`${this.props.prefixPath}/${hashRoute[value]}`);
+  };
   public goToKPIS = () => {
     this.setState({ currentFocusedTab: "KPIS" });
     this.props.history.push(`${this.props.prefixPath}/kpis`);
@@ -42,6 +56,9 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
   };
   public renderKPIS = () => <KPIS />;
   public renderPreviousForecasts = () => <PreviousForecasts />;
+  public renderSummaryCurrentForecast = () => <SummaryCurrentForecast />;
+  public renderSummaryDefinition = () => <SummaryDefinition />;
+  public renderSummaryKeyAssumptions = () => <SummaryKeyAssumption />;
   public renderDefault = () => (
     <Redirect to={`${this.props.prefixPath}/kpis`} />
   );
@@ -103,6 +120,18 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
           <Route
             path={`${this.props.prefixPath}/previous_forecasts`}
             render={this.renderPreviousForecasts}
+          />
+          <Route
+            path={`${this.props.prefixPath}/summary_current_forecast`}
+            render={this.renderSummaryCurrentForecast}
+          />
+          <Route
+            path={`${this.props.prefixPath}/summary_definition`}
+            render={this.renderSummaryDefinition}
+          />
+          <Route
+            path={`${this.props.prefixPath}/summary_key_assumptions`}
+            render={this.renderSummaryKeyAssumptions}
           />
         </Switch>
       </div>
