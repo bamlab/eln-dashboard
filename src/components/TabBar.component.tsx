@@ -40,17 +40,17 @@ class TabBarComponent extends React.Component<IPropsType> {
       { name: "China DI", path: "/china/di", parent: "China" },
       {
         name: "International Label - DI",
-        path: "/china/di",
+        path: "/international/di",
         parent: "International"
       },
       {
         name: "International Label - EIB",
-        path: "/china/di",
+        path: "/international/eib",
         parent: "International"
       },
       {
         name: "International Label - IL",
-        path: "/china/di",
+        path: "/international/il",
         parent: "International"
       }
     ];

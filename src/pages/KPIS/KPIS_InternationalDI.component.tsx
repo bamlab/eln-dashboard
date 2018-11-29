@@ -14,7 +14,7 @@ const styles = {
     fontSize: 16
   }
 };
-const PreviousForeCastsComponent = (props: any) => {
+const KPISComponent = (props: any) => {
   const { classes } = props;
 
   return (
@@ -24,7 +24,7 @@ const PreviousForeCastsComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
+                DI Offtake Forecast & Bias by brands
               </Typography>
             </CardContent>
           </Card>
@@ -33,7 +33,7 @@ const PreviousForeCastsComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
+                DI Sell-out Forecast & Bias by brands
               </Typography>
             </CardContent>
           </Card>
@@ -43,4 +43,4 @@ const PreviousForeCastsComponent = (props: any) => {
   );
 };
 
-export const PreviousForecasts = withStyles(styles)(PreviousForeCastsComponent);
+export const KPISInternationalDI = withStyles(styles)(KPISComponent);

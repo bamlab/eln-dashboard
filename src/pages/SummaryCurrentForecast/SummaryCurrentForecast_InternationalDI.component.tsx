@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { CustomTable } from "src/table/Table";
 
 const styles = {
   root: {
@@ -24,7 +25,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Current Cycle Phasing - DC offtake Quarterly Phasing
+                Current Cycle Phasing - DI offtake Quarterly Phasing
               </Typography>
             </CardContent>
           </Card>
@@ -33,7 +34,17 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Current cycle DC
+                Current cycle DI
+              </Typography>
+            </CardContent>
+            <CustomTable />
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                DI Offtake from channel perspective
               </Typography>
             </CardContent>
           </Card>
@@ -42,7 +53,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Cycle evolution - DC total offtake bridge by brand (2018,2019)
+                Cycle evolution - DI total offtake bridge by brand (2018,2019)
               </Typography>
             </CardContent>
           </Card>
@@ -51,7 +62,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Risk & opportunities
+                Risks & opportunities
               </Typography>
             </CardContent>
           </Card>
@@ -60,7 +71,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Trade flow DC by Brand - NC
+                Trade flow DI
               </Typography>
             </CardContent>
           </Card>
@@ -69,7 +80,16 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Trade Flow DC by brand - AP
+                Trade flow DI
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Trade flow DI
               </Typography>
             </CardContent>
           </Card>
@@ -79,6 +99,6 @@ const SummaryCurrentForecastComponent = (props: any) => {
   );
 };
 
-export const SummaryCurrentForecast = withStyles(styles)(
+export const SummaryCurrentForecastInternationalDI = withStyles(styles)(
   SummaryCurrentForecastComponent
 );

@@ -6,13 +6,29 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+import { SummaryDefinition, SummaryKeyAssumption } from "../pages";
 import {
-  KPIS,
-  PreviousForecasts,
-  SummaryCurrentForecast,
-  SummaryDefinition,
-  SummaryKeyAssumption
-} from "../pages";
+  KPISChinaDC,
+  KPISChinaDI,
+  KPISInternationalDI,
+  KPISInternationalEIB,
+  KPISInternationalIL
+} from "../pages/KPIS/";
+import {
+  PreviousForecastsChinaDC,
+  PreviousForecastsChinaDI,
+  PreviousForecastsInternationalDI,
+  PreviousForecastsInternationalEIB,
+  PreviousForecastsInternationalIL
+} from "../pages/PreviousForecasts/";
+import {
+  SummaryCurrentForecastChinaDC,
+  SummaryCurrentForecastChinaDI,
+  SummaryCurrentForecastInternationalDI,
+  SummaryCurrentForecastInternationalEIB,
+  SummaryCurrentForecastInternationalIL
+} from "../pages/SummaryCurrentForecast";
+
 import { colors } from "../theme";
 import { Selector } from "./Selector.component";
 
@@ -54,9 +70,60 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
     this.setState({ currentFocusedTab: "Previous Forecasts" });
     this.props.history.push(`${this.props.prefixPath}/previous_forecasts`);
   };
-  public renderKPIS = () => <KPIS />;
-  public renderPreviousForecasts = () => <PreviousForecasts />;
-  public renderSummaryCurrentForecast = () => <SummaryCurrentForecast />;
+  public renderKPIS = () => {
+    if (this.props.prefixPath === "/china/dc") {
+      return <KPISChinaDC />;
+    }
+    if (this.props.prefixPath === "/china/di") {
+      return <KPISChinaDI />;
+    }
+    if (this.props.prefixPath === "/international/eib") {
+      return <KPISInternationalEIB />;
+    }
+    if (this.props.prefixPath === "/international/di") {
+      return <KPISInternationalDI />;
+    }
+    if (this.props.prefixPath === "/international/il") {
+      return <KPISInternationalIL />;
+    }
+    return <KPISChinaDI />;
+  };
+  public renderPreviousForecasts = () => {
+    if (this.props.prefixPath === "/china/dc") {
+      return <PreviousForecastsChinaDC />;
+    }
+    if (this.props.prefixPath === "/china/di") {
+      return <PreviousForecastsChinaDI />;
+    }
+    if (this.props.prefixPath === "/international/eib") {
+      return <PreviousForecastsInternationalEIB />;
+    }
+    if (this.props.prefixPath === "/international/di") {
+      return <PreviousForecastsInternationalDI />;
+    }
+    if (this.props.prefixPath === "/international/il") {
+      return <PreviousForecastsInternationalIL />;
+    }
+    return <PreviousForecastsInternationalIL />;
+  };
+  public renderSummaryCurrentForecast = () => {
+    if (this.props.prefixPath === "/china/dc") {
+      return <SummaryCurrentForecastChinaDC />;
+    }
+    if (this.props.prefixPath === "/china/di") {
+      return <SummaryCurrentForecastChinaDI />;
+    }
+    if (this.props.prefixPath === "/international/eib") {
+      return <SummaryCurrentForecastInternationalEIB />;
+    }
+    if (this.props.prefixPath === "/international/di") {
+      return <SummaryCurrentForecastInternationalDI />;
+    }
+    if (this.props.prefixPath === "/international/il") {
+      return <SummaryCurrentForecastInternationalIL />;
+    }
+    return <SummaryCurrentForecastInternationalIL />;
+  };
   public renderSummaryDefinition = () => <SummaryDefinition />;
   public renderSummaryKeyAssumptions = () => <SummaryKeyAssumption />;
   public renderDefault = () => (
