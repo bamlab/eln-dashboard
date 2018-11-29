@@ -9,7 +9,7 @@ export default () => {
     return (
       <React.Fragment>
         <DashboardTabBar prefixPath={prefixPath} />
-        <Redirect to="/china/dc/kpis" />
+        <Redirect to="/china/dc/summary_current_forecast" />
       </React.Fragment>
     );
   };

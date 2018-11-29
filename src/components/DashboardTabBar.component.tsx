@@ -51,7 +51,7 @@ type IPropsType = RouteComponentProps<any> & {
 
 class DashboardTabBarComponent extends React.Component<IPropsType> {
   public state = {
-    currentFocusedTab: "KPIS"
+    currentFocusedTab: "Summary"
   };
   public onSelectChange = (value: string) => {
     this.setState({ currentFocusedTab: "Summary" });
@@ -127,7 +127,7 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
   public renderSummaryDefinition = () => <SummaryDefinition />;
   public renderSummaryKeyAssumptions = () => <SummaryKeyAssumption />;
   public renderDefault = () => (
-    <Redirect to={`${this.props.prefixPath}/kpis`} />
+    <Redirect to={`${this.props.prefixPath}/summary_current_forecast`} />
   );
   public render() {
     const { classes } = this.props;
