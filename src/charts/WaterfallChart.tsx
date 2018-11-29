@@ -56,7 +56,8 @@ const chartOptions = {
         },
         style: {
           fontWeight: "bold",
-          color: "white"
+          color: "white",
+          fontSize: 16
         }
       }
     }

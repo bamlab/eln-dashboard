@@ -22,10 +22,7 @@ const totalSGOPSellin = json.map(serie => {
 });
 
 const options: any = {
-  title: {
-    text: "Total DC Take-Off Bias",
-    align: "left"
-  },
+  title: null,
   chart: {
     type: "lines",
     scrollablePlotArea: {
