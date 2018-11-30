@@ -4,6 +4,7 @@ import { TableBlueSubHeader } from "./TableBlueSubHeader";
 import { TableCell } from "./TableCell";
 import { TableFooterCell } from "./TableFooterCell";
 import { TableHeaderCell } from "./TableHeaderCell";
+import { TableNegativeCell } from "./TableNegativeCell";
 import { TableRow } from "./TableRow/TableRow";
 import { TableSubTotalRow } from "./TableRow/TableSubTotalRow";
 import { TableTotalRow } from "./TableRow/TableTotalRow";
@@ -15,13 +16,21 @@ const RowsData = () => {
       <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
       <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
       <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableNegativeCell>
+        ({Math.floor(Math.random() * 1000)})
+      </TableNegativeCell>
       <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableNegativeCell>
+        ({Math.floor(Math.random() * 1000)})
+      </TableNegativeCell>
       <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableNegativeCell>
+        ({Math.floor(Math.random() * 1000)})
+      </TableNegativeCell>
       <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
-      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
-      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
-      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
-      <TableCell>{Math.floor(Math.random() * 1000)}</TableCell>
+      <TableNegativeCell>
+        ({Math.floor(Math.random() * 1000)})
+      </TableNegativeCell>
     </React.Fragment>
   );
 };
