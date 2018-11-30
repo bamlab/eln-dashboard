@@ -69,7 +69,6 @@ class TabBarComponent extends React.Component<IPropsType> {
       });
     };
     const { classes } = this.props;
-    console.log(this.props);
     return (
       <div className={classes.root}>
         <AppBar position="static">
