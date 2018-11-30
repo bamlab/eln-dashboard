@@ -1,5 +1,6 @@
 import { Table, TableBody, TableFooter, TableHead } from "@material-ui/core";
 import * as React from "react";
+import { colors } from "./../theme";
 import { TableBlueSubHeader } from "./TableBlueSubHeader";
 import { TableCell } from "./TableCell";
 import { TableFooterCell } from "./TableFooterCell";
@@ -31,6 +32,23 @@ const RowsData = () => {
       <TableNegativeCell>
         ({Math.floor(Math.random() * 1000)})
       </TableNegativeCell>
+    </React.Fragment>
+  );
+};
+
+const RowsDataPercentage = () => {
+  return (
+    <React.Fragment>
+      <TableCell>{Math.floor(Math.random() * 10)}%</TableCell>
+      <TableCell>{Math.floor(Math.random() * 10)}%</TableCell>
+      <TableCell>{Math.floor(Math.random() * 10)}%</TableCell>
+      <TableNegativeCell>-{Math.floor(Math.random() * 10)}%</TableNegativeCell>
+      <TableCell>{Math.floor(Math.random() * 10)}%</TableCell>
+      <TableNegativeCell>-{Math.floor(Math.random() * 10)}%</TableNegativeCell>
+      <TableCell>{Math.floor(Math.random() * 10)}%</TableCell>
+      <TableNegativeCell>-{Math.floor(Math.random() * 10)}%</TableNegativeCell>
+      <TableCell>{Math.floor(Math.random() * 10)}%</TableCell>
+      <TableNegativeCell>-{Math.floor(Math.random() * 10)}%</TableNegativeCell>
     </React.Fragment>
   );
 };
@@ -78,7 +96,7 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <TableSubHeaderCell>Offtake vs LV</TableSubHeaderCell>
           </TableRow>
         </TableBlueSubHeader>
-        <TableBody style={{ backgroundColor: "#EDF9FE" }}>
+        <TableBody style={{ backgroundColor: colors.backgroundSecondaryColor }}>
           <TableRow>
             <TableCell>NC1</TableCell>
             <RowsData />
@@ -96,7 +114,9 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <RowsData />
           </TableRow>
         </TableBody>
-        <TableFooter style={{ backgroundColor: "#EDF9FE" }}>
+        <TableFooter
+          style={{ backgroundColor: colors.backgroundSecondaryColor }}
+        >
           <TableRow>
             <TableCell>Total NC</TableCell>
             <RowsData />
@@ -131,7 +151,7 @@ export class CustomTable extends React.PureComponent<{}, {}> {
           </TableRow>
           <TableRow>
             <TableCell>Growth vs LI</TableCell>
-            <RowsData />
+            <RowsDataPercentage />
           </TableRow>
           <TableSubTotalRow>
             <TableCell>Total NP</TableCell>
@@ -150,7 +170,7 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <FooterRowsData />
           </TableTotalRow>
         </TableFooter>
-        <TableBody style={{ backgroundColor: "#EDF9FE" }}>
+        <TableBody style={{ backgroundColor: colors.backgroundSecondaryColor }}>
           <TableRow>
             <TableCell>NC1</TableCell>
             <RowsData />
@@ -167,15 +187,19 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <TableCell>NC4</TableCell>
             <RowsData />
           </TableRow>
+        </TableBody>
+        <TableFooter
+          style={{ backgroundColor: colors.backgroundSecondaryColor }}
+        >
           <TableRow>
             <TableCell>Total NC</TableCell>
             <RowsData />
           </TableRow>
           <TableRow>
             <TableCell>Growth vs LI</TableCell>
-            <RowsData />
+            <RowsDataPercentage />
           </TableRow>
-        </TableBody>
+        </TableFooter>
         <TableFooter>
           <TableRow>
             <TableCell>Total vs LI</TableCell>
