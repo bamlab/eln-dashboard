@@ -6,30 +6,9 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import { SummaryDefinition, SummaryKeyAssumption } from "../pages";
-import {
-  KPISChinaDC,
-  KPISChinaDI,
-  KPISInternationalDI,
-  KPISInternationalEIB,
-  KPISInternationalIL
-} from "../pages/KPIS/";
-import {
-  PreviousForecastsChinaDC,
-  PreviousForecastsChinaDI,
-  PreviousForecastsInternationalDI,
-  PreviousForecastsInternationalEIB,
-  PreviousForecastsInternationalIL
-} from "../pages/PreviousForecasts/";
-import {
-  SummaryCurrentForecastChinaDC,
-  SummaryCurrentForecastChinaDI,
-  SummaryCurrentForecastInternationalDI,
-  SummaryCurrentForecastInternationalEIB,
-  SummaryCurrentForecastInternationalIL
-} from "../pages/SummaryCurrentForecast";
 
 import { colors } from "../theme";
+import { renderPage } from "./Routes";
 import { Selector } from "./Selector.component";
 
 const styles = {
@@ -46,100 +25,42 @@ const styles = {
 
 type IPropsType = RouteComponentProps<any> & {
   classes: { [key: string]: string };
-  prefixPath: string;
 };
 
 class DashboardTabBarComponent extends React.Component<IPropsType> {
   public state = {
-    currentFocusedTab: "Summary"
+    currentFocusedTab: this.props.location.pathname.split("/").pop()
   };
   public onSelectChange = (value: string) => {
-    this.setState({ currentFocusedTab: "Summary" });
     const hashRoute = {
       "SUMMARY - CURRENT FORECAST": "summary_current_forecast",
       "SUMMARY - DEFINITION": "summary_definition",
       "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
     };
-    this.props.history.push(`${this.props.prefixPath}/${hashRoute[value]}`);
+    this.goToTab(hashRoute[value])();
   };
-  public goToKPIS = () => {
-    this.setState({ currentFocusedTab: "KPIS" });
-    this.props.history.push(`${this.props.prefixPath}/kpis`);
+
+  public goToTab = (tab: string) => () => {
+    const { match } = this.props;
+    this.setState({ currentFocusedTab: tab });
+    this.props.history.push(`${match.url}/${tab}`);
   };
-  public goToPreviousForecasts = () => {
-    this.setState({ currentFocusedTab: "Previous Forecasts" });
-    this.props.history.push(`${this.props.prefixPath}/previous_forecasts`);
+
+  public renderDefault = () => {
+    const { match } = this.props;
+    return <Redirect to={`${match.url}/summary_current_forecast`} />;
   };
-  public renderKPIS = () => {
-    if (this.props.prefixPath === "/china/dc") {
-      return <KPISChinaDC />;
-    }
-    if (this.props.prefixPath === "/china/di") {
-      return <KPISChinaDI />;
-    }
-    if (this.props.prefixPath === "/international/eib") {
-      return <KPISInternationalEIB />;
-    }
-    if (this.props.prefixPath === "/international/di") {
-      return <KPISInternationalDI />;
-    }
-    if (this.props.prefixPath === "/international/il") {
-      return <KPISInternationalIL />;
-    }
-    return <KPISChinaDI />;
-  };
-  public renderPreviousForecasts = () => {
-    if (this.props.prefixPath === "/china/dc") {
-      return <PreviousForecastsChinaDC />;
-    }
-    if (this.props.prefixPath === "/china/di") {
-      return <PreviousForecastsChinaDI />;
-    }
-    if (this.props.prefixPath === "/international/eib") {
-      return <PreviousForecastsInternationalEIB />;
-    }
-    if (this.props.prefixPath === "/international/di") {
-      return <PreviousForecastsInternationalDI />;
-    }
-    if (this.props.prefixPath === "/international/il") {
-      return <PreviousForecastsInternationalIL />;
-    }
-    return <PreviousForecastsInternationalIL />;
-  };
-  public renderSummaryCurrentForecast = () => {
-    if (this.props.prefixPath === "/china/dc") {
-      return <SummaryCurrentForecastChinaDC />;
-    }
-    if (this.props.prefixPath === "/china/di") {
-      return <SummaryCurrentForecastChinaDI />;
-    }
-    if (this.props.prefixPath === "/international/eib") {
-      return <SummaryCurrentForecastInternationalEIB />;
-    }
-    if (this.props.prefixPath === "/international/di") {
-      return <SummaryCurrentForecastInternationalDI />;
-    }
-    if (this.props.prefixPath === "/international/il") {
-      return <SummaryCurrentForecastInternationalIL />;
-    }
-    return <SummaryCurrentForecastInternationalIL />;
-  };
-  public renderSummaryDefinition = () => <SummaryDefinition />;
-  public renderSummaryKeyAssumptions = () => <SummaryKeyAssumption />;
-  public renderDefault = () => (
-    <Redirect to={`${this.props.prefixPath}/summary_current_forecast`} />
-  );
   public render() {
-    const { classes } = this.props;
+    const { classes, match } = this.props;
     return (
       <div>
         <AppBar position="static" style={{ backgroundColor: "white" }}>
           <Toolbar>
             <Button
-              onClick={this.goToPreviousForecasts}
+              onClick={this.goToTab("previous_forecasts")}
               classes={{
                 root:
-                  this.state.currentFocusedTab === "Previous Forecasts"
+                  this.state.currentFocusedTab === "previous_forecasts"
                     ? classes.focused
                     : classes.notFocused
               }}
@@ -147,10 +68,10 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
               PREVIOUS FORECASTS
             </Button>
             <Button
-              onClick={this.goToKPIS}
+              onClick={this.goToTab("kpis")}
               classes={{
                 root:
-                  this.state.currentFocusedTab === "KPIS"
+                  this.state.currentFocusedTab === "kpis"
                     ? classes.focused
                     : classes.notFocused
               }}
@@ -166,7 +87,10 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
               ]}
               defaultDisplayedValue="SUMMARY - CURRENT FORECAST"
               style={
-                this.state.currentFocusedTab === "Summary"
+                this.state.currentFocusedTab ===
+                ("summary_current_forecast" ||
+                  "summary_definition" ||
+                  "summary_key_assumptions")
                   ? styles.focused
                   : styles.notFocused
               }
@@ -175,30 +99,11 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
           </Toolbar>
         </AppBar>
         <Switch>
+          <Route exact={true} path={`${match.url}/:tab`} render={renderPage} />
           <Route
             exact={true}
-            path={`${this.props.prefixPath}`}
+            path={`${match.url}`}
             render={this.renderDefault}
-          />
-          <Route
-            path={`${this.props.prefixPath}/kpis`}
-            render={this.renderKPIS}
-          />
-          <Route
-            path={`${this.props.prefixPath}/previous_forecasts`}
-            render={this.renderPreviousForecasts}
-          />
-          <Route
-            path={`${this.props.prefixPath}/summary_current_forecast`}
-            render={this.renderSummaryCurrentForecast}
-          />
-          <Route
-            path={`${this.props.prefixPath}/summary_definition`}
-            render={this.renderSummaryDefinition}
-          />
-          <Route
-            path={`${this.props.prefixPath}/summary_key_assumptions`}
-            render={this.renderSummaryKeyAssumptions}
           />
         </Switch>
       </div>

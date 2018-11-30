@@ -64,7 +64,9 @@ class SelectMenu extends React.Component<IPropsType> {
         disableUnderline={true}
       >
         {this.props.valueList.map(value => (
-          <MenuItem value={value}>{value}</MenuItem>
+          <MenuItem value={value} key={value}>
+            {value}
+          </MenuItem>
         ))}
       </Select>
     );
