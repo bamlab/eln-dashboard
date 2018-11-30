@@ -5,11 +5,18 @@ import { TabBar } from "./components/TabBar.component";
 import "./index.css";
 
 export default () => {
-  const renderTabBar = (prefixPath: string) => (props: any) => {
+  const renderDefault = ({ match }: { match: any }) => {
     return (
       <React.Fragment>
-        <DashboardTabBar prefixPath={prefixPath} />
-        <Redirect to="/china/dc/summary_current_forecast" />
+        <DashboardTabBar />
+        <Redirect to={"/china/dc/summary_current_forecast"} />
+      </React.Fragment>
+    );
+  };
+  const renderPage = ({ match }: { match: any }) => {
+    return (
+      <React.Fragment>
+        <DashboardTabBar />
       </React.Fragment>
     );
   };
@@ -18,21 +25,8 @@ export default () => {
     <main>
       <TabBar />
       <Switch>
-        <Route exact={true} path="/" render={renderTabBar("/china/dc")} />
-        <Route path="/china/di" render={renderTabBar("/china/di")} />
-        <Route path="/china/dc" render={renderTabBar("/china/dc")} />
-        <Route
-          path="/international/eib"
-          render={renderTabBar("/international/eib")}
-        />
-        <Route
-          path="/international/di"
-          render={renderTabBar("/international/di")}
-        />
-        <Route
-          path="/international/il"
-          render={renderTabBar("/international/il")}
-        />
+        <Route exact={true} path="/" render={renderDefault} />
+        <Route path="/:page/:category" render={renderPage} />
       </Switch>
     </main>
   );

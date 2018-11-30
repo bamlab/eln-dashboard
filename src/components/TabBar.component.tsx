@@ -32,7 +32,9 @@ type IPropsType = RouteComponentProps<any> & {
 
 class TabBarComponent extends React.Component<IPropsType> {
   public state = {
-    currentFocusedTab: "China"
+    currentFocusedTab: this.props.location.pathname.includes("/international/")
+      ? "international"
+      : "china"
   };
   public render() {
     const routes = [
@@ -86,7 +88,7 @@ class TabBarComponent extends React.Component<IPropsType> {
                 routes.filter(route => route.parent === "China")[0].name
               }
               style={
-                this.state.currentFocusedTab === "China"
+                this.state.currentFocusedTab === "china"
                   ? styles.focused
                   : styles.notFocused
               }
@@ -100,7 +102,7 @@ class TabBarComponent extends React.Component<IPropsType> {
                 routes.filter(route => route.parent === "International")[0].name
               }
               style={
-                this.state.currentFocusedTab === "International"
+                this.state.currentFocusedTab === "international"
                   ? styles.focused
                   : styles.notFocused
               }
