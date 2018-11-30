@@ -1,7 +1,8 @@
-import { Table, TableBody, TableHead } from "@material-ui/core";
+import { Table, TableBody, TableFooter, TableHead } from "@material-ui/core";
 import * as React from "react";
 import { TableBlueSubHeader } from "./TableBlueSubHeader";
 import { TableCell } from "./TableCell";
+import { TableFooterCell } from "./TableFooterCell";
 import { TableHeaderCell } from "./TableHeaderCell";
 import { TableRow } from "./TableRow/TableRow";
 import { TableSubTotalRow } from "./TableRow/TableSubTotalRow";
@@ -25,10 +26,28 @@ const RowsData = () => {
   );
 };
 
+const FooterRowsData = () => {
+  return (
+    <React.Fragment>
+      <TableFooterCell>{Math.floor(Math.random() * 1000)}</TableFooterCell>
+      <TableFooterCell>{Math.floor(Math.random() * 1000)}</TableFooterCell>
+      <TableFooterCell>{Math.floor(Math.random() * 1000)}</TableFooterCell>
+      <TableFooterCell>{Math.floor(Math.random() * 1000)}</TableFooterCell>
+      <TableFooterCell>{Math.floor(Math.random() * 1000)}</TableFooterCell>
+      <TableFooterCell>{Math.floor(Math.random() * 1000)}</TableFooterCell>
+      <TableFooterCell>{Math.floor(Math.random() * 1000)}</TableFooterCell>
+      <TableFooterCell>{Math.floor(Math.random() * 1000)}</TableFooterCell>
+      <TableFooterCell>{Math.floor(Math.random() * 1000)}</TableFooterCell>
+      <TableFooterCell>{Math.floor(Math.random() * 1000)}</TableFooterCell>
+    </React.Fragment>
+  );
+};
+
 export class CustomTable extends React.PureComponent<{}, {}> {
   public render() {
     return (
       <Table padding={"dense"}>
+        <TableFooter />
         <TableHead>
           <TableHeaderCell />
           <TableHeaderCell colSpan={2}>2017 FY (ACT)</TableHeaderCell>
@@ -67,6 +86,8 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <TableCell>NC4</TableCell>
             <RowsData />
           </TableRow>
+        </TableBody>
+        <TableFooter style={{ backgroundColor: "#EDF9FE" }}>
           <TableRow>
             <TableCell>Total NC</TableCell>
             <RowsData />
@@ -75,7 +96,7 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <TableCell>Growth vs LI</TableCell>
             <RowsData />
           </TableRow>
-        </TableBody>
+        </TableFooter>
         <TableBody>
           <TableRow>
             <TableCell>AC1</TableCell>
@@ -93,6 +114,8 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <TableCell>AC4</TableCell>
             <RowsData />
           </TableRow>
+        </TableBody>
+        <TableFooter>
           <TableRow>
             <TableCell>Total AC</TableCell>
             <RowsData />
@@ -106,18 +129,18 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <RowsData />
           </TableSubTotalRow>
           <TableTotalRow>
-            <TableCell>Total AP 1.0</TableCell>
-            <RowsData />
+            <TableFooterCell>Total AP 1.0</TableFooterCell>
+            <FooterRowsData />
           </TableTotalRow>
           <TableSubTotalRow>
             <TableCell>Total AP Tornado</TableCell>
             <RowsData />
           </TableSubTotalRow>
           <TableTotalRow>
-            <TableCell>Total AP 2.0</TableCell>
-            <RowsData />
+            <TableFooterCell>Total AP 2.0</TableFooterCell>
+            <FooterRowsData />
           </TableTotalRow>
-        </TableBody>
+        </TableFooter>
         <TableBody style={{ backgroundColor: "#EDF9FE" }}>
           <TableRow>
             <TableCell>NC1</TableCell>
@@ -144,7 +167,7 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <RowsData />
           </TableRow>
         </TableBody>
-        <TableBody>
+        <TableFooter>
           <TableRow>
             <TableCell>Total vs LI</TableCell>
             <RowsData />
@@ -154,10 +177,10 @@ export class CustomTable extends React.PureComponent<{}, {}> {
             <RowsData />
           </TableSubTotalRow>
           <TableTotalRow>
-            <TableCell>Growth vs LI</TableCell>
-            <RowsData />
+            <TableFooterCell>Growth vs LI</TableFooterCell>
+            <FooterRowsData />
           </TableTotalRow>
-        </TableBody>
+        </TableFooter>
       </Table>
     );
   }
