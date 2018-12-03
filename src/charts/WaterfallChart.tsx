@@ -3,24 +3,32 @@ import HighchartsReact from "highcharts-react-official";
 import * as React from "react";
 import { colors } from "src/theme";
 const highchartsMore = require("highcharts-more");
+import { WithGoogleClient } from "src/highOrderComponents/withGoogleClient";
 
 highchartsMore(Highcharts);
 
-const data = [
-  { name: "Sep Cycle 2108 TTL IL offtake", y: 63, color: colors.successColor },
-  { name: "ANZ IL Offtake", y: 0.8811, color: colors.secondaryColor },
-  { name: "CE IL Offtake", y: -1.2188 },
-  { name: "NL IL Offtake", y: -0.5789 },
-  { name: "UK IL Offtake", y: -1.002 },
-  {
-    name: "Sep Cycle 2109 TTL IL offtake",
-    y: 61.0814,
-    isSum: true,
-    color: colors.successColor
+const waterfallDataMapper = (serie: string[], index: number) => {
+  const value = Number(serie[1]);
+  const isSum = serie[2] === "TRUE";
+  let color = colors.mainColor;
+  if (value > 0) {
+    color = colors.secondaryColor;
   }
-];
+  if (index === 0 || isSum) {
+    color = colors.successColor;
+  }
 
-const chartOptions = {
+  return {
+    name: serie[0],
+    y: value,
+    isSum,
+    color
+  };
+};
+
+const getChartOptions = (
+  waterfallData: Array<{ name: string; y: number; color?: string }>
+) => ({
   chart: {
     type: "waterfall"
   },
@@ -46,7 +54,7 @@ const chartOptions = {
   },
   series: [
     {
-      data,
+      data: waterfallData,
       color: colors.mainColor,
       dataLabels: {
         enabled: true,
@@ -62,12 +70,29 @@ const chartOptions = {
       }
     }
   ]
-};
+});
 
-export const WaterfallChart: React.FunctionComponent = () => {
-  return (
-    <div>
-      <HighchartsReact highcharts={Highcharts} options={chartOptions} />
-    </div>
-  );
-};
+interface IProps {
+  data: any[];
+}
+
+export const WaterfallChart = WithGoogleClient(
+  class extends React.PureComponent<IProps> {
+    public state = { data: [] };
+
+    public render() {
+      if (this.props.data) {
+        const waterfallData = this.props.data.slice(1).map(waterfallDataMapper);
+        return (
+          <div>
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={getChartOptions(waterfallData)}
+            />
+          </div>
+        );
+      }
+      return null;
+    }
+  }
+);
