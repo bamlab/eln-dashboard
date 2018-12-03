@@ -3,10 +3,11 @@ import HighchartsReact from "highcharts-react-official";
 import * as React from "react";
 import { colors } from "src/theme";
 const highchartsMore = require("highcharts-more");
+import { WithGoogleClient } from "src/highOrderComponents/withGoogleClient";
 
 highchartsMore(Highcharts);
 
-const data = [
+const hardcodedData = [
   { name: "Sep Cycle 2108 TTL IL offtake", y: 63, color: colors.successColor },
   { name: "ANZ IL Offtake", y: 0.8811, color: colors.secondaryColor },
   { name: "CE IL Offtake", y: -1.2188 },
@@ -20,7 +21,9 @@ const data = [
   }
 ];
 
-const chartOptions = {
+const getChartOptions = (
+  waterfallData: Array<{ name: string; y: number; color?: string }>
+) => ({
   chart: {
     type: "waterfall"
   },
@@ -46,7 +49,7 @@ const chartOptions = {
   },
   series: [
     {
-      data,
+      data: waterfallData,
       color: colors.mainColor,
       dataLabels: {
         enabled: true,
@@ -62,12 +65,30 @@ const chartOptions = {
       }
     }
   ]
-};
+});
 
-export const WaterfallChart: React.FunctionComponent = () => {
-  return (
-    <div>
-      <HighchartsReact highcharts={Highcharts} options={chartOptions} />
-    </div>
-  );
-};
+interface IProps {
+  data: any[];
+}
+
+export const WaterfallChart = WithGoogleClient(
+  class extends React.PureComponent<IProps> {
+    public state = { data: [] };
+
+    public async componentDidMount() {
+      this.setState({ data: hardcodedData });
+    }
+
+    public render() {
+      console.log(this.props.data);
+      return (
+        <div>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={getChartOptions(this.state.data)}
+          />
+        </div>
+      );
+    }
+  }
+);

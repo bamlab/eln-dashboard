@@ -59,7 +59,9 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Risks & opportunities
               </Typography>
             </CardContent>
-            <WaterfallChart />
+            <WaterfallChart
+              range={"China DI Current Forecast Risk & ops!A:C"}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
