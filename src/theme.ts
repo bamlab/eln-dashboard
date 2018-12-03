@@ -9,7 +9,8 @@ export const colors = {
   errorColor: "#D0021B",
   mainFontColor: "#3C3C3C",
   secondaryFontColor: "#AAACAE",
-  tertiaryFontColor: "#99C3E1"
+  tertiaryFontColor: "#99C3E1",
+  backgroundSecondaryColor: "#EDF9FE"
 };
 
 export const theme = createMuiTheme({
