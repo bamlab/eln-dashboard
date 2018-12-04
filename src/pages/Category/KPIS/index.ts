@@ -1,5 +1,4 @@
-export { KPISChinaDC } from "./KPIS_ChinaDC.component";
-export { KPISChinaDI } from "./KPIS_ChinaDI.component";
-export { KPISInternationalDI } from "./KPIS_InternationalDI.component";
-export { KPISInternationalEIB } from "./KPIS_InternationalEIB.component";
-export { KPISInternationalIL } from "./KPIS_InternationalIL.component";
+export { KPISIMFTotal } from "./KPIS_IMFTotal.component";
+export { KPISIMFGoat } from "./KPIS_IMFGoat.component";
+export { KPISIMFOrganic } from "./KPIS_IMFOrganic.component";
+export { KPISTailored } from "./KPIS_Tailored.component";
