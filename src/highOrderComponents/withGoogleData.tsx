@@ -1,12 +1,12 @@
 import * as React from "react";
 import { config } from "../config";
 
-interface IProps {
+export interface IWrappedComponentProps {
   data: any[];
 }
 
 export const WithGoogleData = (
-  WrappedComponent: React.ComponentType<IProps>
+  WrappedComponent: React.ComponentType<IWrappedComponentProps>
 ) => {
   return class extends React.Component<{ range: string }> {
     public range = "";
