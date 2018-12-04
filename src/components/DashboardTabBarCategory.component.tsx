@@ -42,7 +42,7 @@ const hashRoute = {
   "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
 };
 
-const Tabs = ["Total", "ANZ", "NL", "DE", "UK"];
+const countryList = ["Total", "ANZ", "NL", "DE", "UK"];
 
 class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
   public state = {
@@ -74,7 +74,7 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
           <Toolbar>
             <SelectorOutlined
               onChange={this.onCountryChange}
-              valueList={Tabs}
+              valueList={countryList}
               defaultDisplayedValue="Total"
               iconColor="blue"
             />
