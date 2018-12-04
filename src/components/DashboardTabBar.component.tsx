@@ -7,10 +7,9 @@ import { RouteComponentProps } from "react-router";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 
-import { renderPage } from "../navigation/Navigation";
 import { colors } from "../theme";
+import { renderPage } from "./Routes";
 import { Selector } from "./Selector.component";
-import { SelectorOutlined } from "./SelectorOutlined.component";
 
 const styles = {
   focused: {
@@ -28,38 +27,23 @@ type IPropsType = RouteComponentProps<any> & {
   classes: { [key: string]: string };
 };
 
-interface IState {
-  currentFocusedTab: string;
-  country: string;
-}
-const hashRoute = {
-  "SUMMARY OVERVIEW": "summary_overview",
-  "SUMMARY ACTUAL": "summary_actual",
-  "SUMMARY FORECAST FUTURE": "summary_forecast_future",
-  "SUMMARY INPUT PAST & FUTURE": "summary_input_past_and_future",
-  "SUMMARY FORECAST PAST": "summary_forecast_past",
-  "SUMMARY DEFINITIONS": "summary_definitions",
-  "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
-};
-
-const countryList = ["Total", "ANZ", "NL", "DE", "UK"];
-
-class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
+class DashboardTabBarComponent extends React.Component<IPropsType> {
   public state = {
-    currentFocusedTab: this.props.location.pathname.split("/").pop() || "",
-    country: "Total"
+    currentFocusedTab: this.props.location.pathname.split("/").pop()
   };
   public onSelectChange = (value: string) => {
+    const hashRoute = {
+      "SUMMARY - CURRENT FORECAST": "summary_current_forecast",
+      "SUMMARY - DEFINITION": "summary_definition",
+      "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
+    };
     this.goToTab(hashRoute[value])();
-  };
-  public onCountryChange = (value: string) => {
-    this.setState({ country: value });
   };
 
   public goToTab = (tab: string) => () => {
     const { match } = this.props;
-    this.props.history.push(`${match.url}/${tab}`);
     this.setState({ currentFocusedTab: tab });
+    this.props.history.push(`${match.url}/${tab}`);
   };
 
   public renderDefault = () => {
@@ -72,12 +56,17 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
       <div>
         <AppBar position="static" style={{ backgroundColor: "white" }}>
           <Toolbar>
-            <SelectorOutlined
-              onChange={this.onCountryChange}
-              valueList={countryList}
-              defaultDisplayedValue="Total"
-              iconColor="blue"
-            />
+            <Button
+              onClick={this.goToTab("previous_forecasts")}
+              classes={{
+                root:
+                  this.state.currentFocusedTab === "previous_forecasts"
+                    ? classes.focused
+                    : classes.notFocused
+              }}
+            >
+              PREVIOUS FORECASTS
+            </Button>
             <Button
               onClick={this.goToTab("kpis")}
               classes={{
@@ -91,18 +80,17 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
             </Button>
             <Selector
               onChange={this.onSelectChange}
-              valueList={Object.keys(hashRoute)}
-              defaultDisplayedValue="SUMMARY OVERVIEW"
+              valueList={[
+                "SUMMARY - CURRENT FORECAST",
+                "SUMMARY - DEFINITION",
+                "SUMMARY - KEY ASSUMPTIONS"
+              ]}
+              defaultDisplayedValue="SUMMARY - CURRENT FORECAST"
               style={
-                [
-                  "summary_overview",
-                  "summary_actual",
-                  "summary_forecast_future",
-                  "summary_input_and_future",
-                  "summary_forecast_past",
-                  "summary_definitions",
-                  "summary_key_assumptions"
-                ].includes(this.state.currentFocusedTab)
+                this.state.currentFocusedTab ===
+                ("summary_current_forecast" ||
+                  "summary_definition" ||
+                  "summary_key_assumptions")
                   ? styles.focused
                   : styles.notFocused
               }
@@ -111,13 +99,18 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
           </Toolbar>
         </AppBar>
         <Switch>
-          <Route exact={true} path={`${match.path}/:tab`} render={renderPage} />
+          <Route exact={true} path={`${match.url}/:tab`} render={renderPage} />
+          <Route
+            exact={true}
+            path={`${match.url}`}
+            render={this.renderDefault}
+          />
         </Switch>
       </div>
     );
   }
 }
 
-export const DashboardTabBarCategory = withStyles(styles)(
+export const DashboardTabBar = withStyles(styles)(
   withRouter(DashboardTabBarComponent)
 );
