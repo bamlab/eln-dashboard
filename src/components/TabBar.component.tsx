@@ -33,8 +33,8 @@ type IPropsType = RouteComponentProps<any> & {
 class TabBarComponent extends React.Component<IPropsType> {
   public state = {
     currentFocusedTab: this.props.location.pathname.includes("/international/")
-      ? "International"
-      : "China"
+      ? "international"
+      : "china"
   };
   public render() {
     const routes = [
@@ -57,16 +57,13 @@ class TabBarComponent extends React.Component<IPropsType> {
       }
     ];
     const goToPage = (selected: string) => {
-      const { match } = this.props;
       // find in wich page we currently are in order to redirect to this page.
       const pathArray = this.props.location.pathname.split("/");
-      pathArray.splice(0, 4); // remove '/', 'china || international' and 'dc || di || eib || il'
+      pathArray.splice(0, 3); // remove '/', 'china || international' and 'dc || di || eib || il'
       const myCurrentSubPath = pathArray.join("/");
 
       const routeSelected = routes.filter(route => route.name === selected)[0];
-      this.props.history.push(
-        match.url + routeSelected.path + "/" + myCurrentSubPath
-      );
+      this.props.history.push(routeSelected.path + "/" + myCurrentSubPath);
       this.setState({
         currentFocusedTab: routeSelected.parent
       });
@@ -91,7 +88,7 @@ class TabBarComponent extends React.Component<IPropsType> {
                 routes.filter(route => route.parent === "China")[0].name
               }
               style={
-                this.state.currentFocusedTab === "China"
+                this.state.currentFocusedTab === "china"
                   ? styles.focused
                   : styles.notFocused
               }
@@ -105,7 +102,7 @@ class TabBarComponent extends React.Component<IPropsType> {
                 routes.filter(route => route.parent === "International")[0].name
               }
               style={
-                this.state.currentFocusedTab === "International"
+                this.state.currentFocusedTab === "international"
                   ? styles.focused
                   : styles.notFocused
               }
@@ -117,4 +114,4 @@ class TabBarComponent extends React.Component<IPropsType> {
   }
 }
 
-export const TabBarDemand = withStyles(styles)(withRouter(TabBarComponent));
+export const TabBar = withStyles(styles)(withRouter(TabBarComponent));

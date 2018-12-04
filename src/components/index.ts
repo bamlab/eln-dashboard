@@ -1,2 +1,1 @@
-export { DashboardTabBarDemand } from "./DashboardTabBarDemand.component";
-export { DashboardTabBarCategory } from "./DashboardTabBarCategory.component";
+export { DashboardTabBar } from "./DashboardTabBar.component";
