@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
-import { LineColumnChart } from "src/charts/LineColumnChart";
+import { CustomTable } from "src/tables/table/Table";
 
 const styles = {
   root: {
