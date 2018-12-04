@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { LineColumnChart } from "src/charts/LineColumnChart";
 
 const styles = {
   root: {
@@ -33,7 +34,44 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
+                Historical Offtake Forecast Accuracy
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical Offtake Forecast Bias
+              </Typography>
+            </CardContent>
+            <LineColumnChart range={"DI Historical forecast bias!A:C"} />
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
                 DI Sell-Out Forecast & Bias by brands
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical Sell-Out Forecast Accuracy
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical Sell-Out Forecast Bias
               </Typography>
             </CardContent>
           </Card>
