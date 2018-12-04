@@ -67,7 +67,7 @@ const KPISComponent = (props: any) => {
             </CardContent>
           </Card>
         </Grid>
-        <Grid>
+        <Grid item={true} xs={12}>
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
