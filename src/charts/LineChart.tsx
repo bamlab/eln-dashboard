@@ -1,26 +1,24 @@
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 const Data = require("highcharts/modules/data");
-import * as Luxon from "luxon";
 import * as React from "react";
-import { json } from "../data/model_prediction_template";
+import { WithGoogleData } from "src/highOrderComponents/withGoogleData";
 
 Data(Highcharts);
 
-const serieWithTimestamp = json.map(serie => {
-  const luxonDate = Luxon.DateTime.fromFormat(serie.Date, "M/d/yyyy");
-  return [luxonDate.toMillis(), serie.FO_CL_EC_BD / 80] as [number, number];
-});
+const lineChartDataMapper = (serie: string[], index: number) => {
+  const value = Number(serie[1]);
+  return {
+    month: serie[0],
+    y: value
+  };
+};
 
-const serie2WithTimestamp = json.map(serie => {
-  const luxonDate = Luxon.DateTime.fromFormat(serie.Date, "M/d/yyyy");
-  return [luxonDate.toMillis(), serie.GU_IL_EC_KA / 80] as [number, number];
-});
-
-const options: any = {
+const getChartOptions = (
+  data: Array<{ month: string; y: number; color?: string }>
+) => ({
   title: {
-    text: "Total DC Off-Take Forecast Accuracy",
-    align: "left"
+    text: null
   },
   chart: {
     type: "lines",
@@ -30,6 +28,7 @@ const options: any = {
     }
   },
   xAxis: {
+    categories: data.map(el => el.month),
     type: "datetime",
     tickWidth: 0
   },
@@ -40,6 +39,7 @@ const options: any = {
       format: "{value}%"
     }
   },
+  plotOptions: { line: { marker: { enabled: false } } },
   tooltip: {
     formatter() {
       const self: any = this as any;
@@ -48,20 +48,33 @@ const options: any = {
   },
   series: [
     {
-      data: serie2WithTimestamp,
+      data,
       type: "line",
-      color: "#A1DAF7"
-    },
-    {
-      data: serieWithTimestamp,
-      type: "line",
-      color: "#65A124"
+      color: "#026AB5",
+      showInLegend: false
     }
   ]
-};
+});
 
-export const LineChart = () => (
-  <div>
-    <HighchartsReact highcharts={Highcharts} options={options} />
-  </div>
+interface IProps {
+  data: any[];
+}
+
+export const LineChart = WithGoogleData(
+  class extends React.PureComponent<IProps> {
+    public render() {
+      if (this.props.data) {
+        const lineChartData = this.props.data.slice(1).map(lineChartDataMapper);
+        return (
+          <div>
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={getChartOptions(lineChartData)}
+            />
+          </div>
+        );
+      }
+      return null;
+    }
+  }
 );

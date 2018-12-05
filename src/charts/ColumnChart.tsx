@@ -1,26 +1,22 @@
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 const Data = require("highcharts/modules/data");
-import * as Luxon from "luxon";
 import * as React from "react";
-import { json } from "../data/model_prediction_template";
-
+import { WithGoogleData } from "src/highOrderComponents/withGoogleData";
 Data(Highcharts);
 
-const serieWithTimestamp = json.map(serie => {
-  const luxonDate = Luxon.DateTime.fromFormat(serie.Date, "M/d/yyyy");
-  return [luxonDate.toMillis(), serie.FO_CL_EC_BD] as [number, number];
-});
-
-const serie2WithTimestamp = json.map(serie => {
-  const luxonDate = Luxon.DateTime.fromFormat(serie.Date, "M/d/yyyy");
-  return [luxonDate.toMillis(), serie.FO_CL_EC_KA] as [number, number];
-});
-
-const options: any = {
+const columnChartDataMapper = (serie: string[], index: number) => {
+  const value = Number(serie[1]);
+  return {
+    month: serie[0],
+    y: value
+  };
+};
+const getChartOptions = (
+  data: Array<{ month: string; y: number; color?: string }>
+) => ({
   title: {
-    text: "Historical Demand E-Commerce",
-    align: "left"
+    text: null
   },
   chart: {
     type: "column",
@@ -30,7 +26,7 @@ const options: any = {
     }
   },
   xAxis: {
-    type: "datetime",
+    categories: data.map(el => el.month),
     lineWidth: 0,
     tickWidth: 0
   },
@@ -50,20 +46,35 @@ const options: any = {
   },
   series: [
     {
-      data: serie2WithTimestamp,
+      data,
       type: "column",
-      color: "#A1DAF7"
-    },
-    {
-      data: serieWithTimestamp,
-      type: "column",
-      color: "#026AB5"
+      color: "#026AB5",
+      showInLegend: false
     }
   ]
-};
+});
 
-export const ColumnChart = () => (
-  <div>
-    <HighchartsReact highcharts={Highcharts} options={options} />
-  </div>
+interface IProps {
+  data: any[];
+}
+
+export const ColumnChart = WithGoogleData(
+  class extends React.PureComponent<IProps> {
+    public render() {
+      if (this.props.data) {
+        const columnChartData = this.props.data
+          .slice(1)
+          .map(columnChartDataMapper);
+        return (
+          <div>
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={getChartOptions(columnChartData)}
+            />
+          </div>
+        );
+      }
+      return null;
+    }
+  }
 );
