@@ -100,6 +100,7 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
         </AppBar>
         <Switch>
           <Route exact={true} path={`${match.path}/:tab`} render={renderPage} />
+          <Route path={`${match.path}`} render={this.renderDefault} />
         </Switch>
       </div>
     );
