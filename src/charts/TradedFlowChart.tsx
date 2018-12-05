@@ -28,11 +28,20 @@ const getChartOptions = (tradedFlowSeries: ISerie[]): Highcharts.Options => ({
   chart: {
     // @ts-ignore
     scrollablePlotArea: {
-      minWidth: 1300,
+      minWidth: tradedFlowSeries[0].data.length * 40,
       scrollPositionX: 0
     }
   },
-  plotOptions: { line: { marker: { enabled: false } } },
+  plotOptions: {
+    line: { marker: { enabled: false } },
+    column: {
+      stacking: "normal",
+      borderRadius: 3,
+      states: {
+        hover: { color: "#029FE3" }
+      }
+    }
+  },
   xAxis: {
     categories: Array.from(new Set(tradedFlowSeries[0].data.map(el => el[0]))),
     tickWidth: 0
