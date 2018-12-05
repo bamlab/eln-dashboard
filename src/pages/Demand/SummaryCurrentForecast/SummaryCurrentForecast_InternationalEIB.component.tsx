@@ -107,6 +107,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 Bridge between cycles
               </Typography>
+              <WaterfallChart range="IEB Summary Total Bridge!A:C" />
             </CardContent>
           </Card>
         </Grid>

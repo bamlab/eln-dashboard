@@ -29,7 +29,7 @@ const getChartOptions = (tradedFlowSeries: ISerie[]): Highcharts.Options => ({
     // @ts-ignore
     scrollablePlotArea: {
       minWidth: 1300,
-      scrollPositionX: 1
+      scrollPositionX: 0
     }
   },
   plotOptions: { line: { marker: { enabled: false } } },

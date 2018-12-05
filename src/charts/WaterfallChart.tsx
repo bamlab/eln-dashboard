@@ -27,7 +27,12 @@ const waterfallDataMapper = (serie: string[], index: number) => {
 };
 
 const getChartOptions = (
-  waterfallData: Array<{ name: string; y: number; color?: string }>
+  waterfallData: Array<{
+    name: string;
+    y: number;
+    color?: string;
+    isSum: boolean;
+  }>
 ) => ({
   chart: {
     type: "waterfall"
@@ -49,7 +54,9 @@ const getChartOptions = (
     type: "category"
   },
   yAxis: {
-    min: 60,
+    min:
+      (waterfallData.find(el => el.isSum) || { y: 0 }).y -
+      Math.min(...waterfallData.map(el => Math.abs(el.y))),
     gridLineWidth: 0
   },
   series: [
