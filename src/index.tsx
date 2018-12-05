@@ -7,7 +7,7 @@ import registerServiceWorker from "./registerServiceWorker";
 import { theme } from "./theme";
 
 ReactDOM.render(
-  <BrowserRouter basename="/eln-dashboard/">
+  <BrowserRouter basename="/eln-dashboard/#/">
     <MuiThemeProvider theme={theme}>
       <App />
     </MuiThemeProvider>
