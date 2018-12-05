@@ -9,8 +9,10 @@ export class TabBarPage extends React.Component {
   public renderPage = (props: any) => {
     if (props.match.params.department === "demand") {
       return <DashboardTabBarDemand />;
-    } else {
+    } else if (props.match.params.department === "category") {
       return <DashboardTabBarCategory />;
+    } else {
+      return <Redirect to={"demand"} />;
     }
   };
   public renderTabBar = () => {
@@ -22,6 +24,16 @@ export class TabBarPage extends React.Component {
       return <TabBarCategory />;
     } else {
       return <Redirect to={"demand"} />;
+    }
+  };
+  public renderDefault = () => {
+    // @ts-ignore
+    const { match } = this.props;
+    if (match.params.department === "demand") {
+      return <Redirect to={`${match.url}/china/all`} />;
+      // @ts-ignore
+    } else {
+      return <Redirect to={`${match.url}/tailored_nutrition/regular`} />;
     }
   };
 
@@ -36,6 +48,7 @@ export class TabBarPage extends React.Component {
             path={`${match.path}/:zona/:category`}
             render={this.renderPage}
           />
+          <Route path={`${match.path}`} render={this.renderDefault} />
         </Switch>
       </React.Fragment>
     );

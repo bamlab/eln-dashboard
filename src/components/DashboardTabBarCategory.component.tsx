@@ -64,7 +64,7 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
 
   public renderDefault = () => {
     const { match } = this.props;
-    return <Redirect to={`${match.url}/summary_current_forecast`} />;
+    return <Redirect to={`${match.url}/kpis`} />;
   };
   public render() {
     const { classes, match } = this.props;
@@ -112,6 +112,7 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
         </AppBar>
         <Switch>
           <Route exact={true} path={`${match.path}/:tab`} render={renderPage} />
+          <Route path={`${match.path}`} render={this.renderDefault} />
         </Switch>
       </div>
     );
