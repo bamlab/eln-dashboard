@@ -1,12 +1,13 @@
 import AppBar from "@material-ui/core/AppBar";
-import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import { StyleRules, withStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { withRouter } from "react-router-dom";
 import { Selector } from "./Selector.component";
 
-const styles = {
+const styles: StyleRules = {
   root: {
     flexGrow: 1
   },
@@ -17,12 +18,14 @@ const styles = {
   },
   focused: {
     fontWeight: 700,
-    color: "white"
+    color: "white",
+    textTransform: "none"
   },
   notFocused: {
     color: "white",
     opacity: 0.6,
-    fontWeight: 700
+    fontWeight: 700,
+    textTransform: "none"
   }
 };
 
@@ -36,10 +39,21 @@ class TabBarComponent extends React.Component<IPropsType> {
       ? "International"
       : "China"
   };
+  public goToChina = () => {
+    const { match } = this.props;
+    // find in wich page we currently are in order to redirect to this page.
+    const pathArray = this.props.location.pathname.split("/");
+    pathArray.splice(0, 4); // remove '/', 'china || international' and 'dc || di || eib || il'
+    const myCurrentSubPath = pathArray.join("/");
+    this.props.history.push(match.url + "/china/all/" + myCurrentSubPath);
+    this.setState({
+      currentFocusedTab: "China"
+    });
+  };
+
   public render() {
     const routes = [
-      { name: "China DC", path: "/china/dc", parent: "China" },
-      { name: "China DI", path: "/china/di", parent: "China" },
+      { name: "China", path: "/china/all", parent: "China" },
       {
         name: "International Label - DI",
         path: "/international/di",
@@ -56,6 +70,7 @@ class TabBarComponent extends React.Component<IPropsType> {
         parent: "International"
       }
     ];
+
     const goToPage = (selected: string) => {
       const { match } = this.props;
       // find in wich page we currently are in order to redirect to this page.
@@ -82,20 +97,17 @@ class TabBarComponent extends React.Component<IPropsType> {
               width={40}
               className={classes.logo}
             />
-            <Selector
-              onChange={goToPage}
-              valueList={routes
-                .filter(route => route.parent === "China")
-                .map(route => route.name)}
-              defaultDisplayedValue={
-                routes.filter(route => route.parent === "China")[0].name
-              }
+            <Button
+              color="inherit"
+              onClick={this.goToChina}
               style={
                 this.state.currentFocusedTab === "China"
                   ? styles.focused
                   : styles.notFocused
               }
-            />
+            >
+              China
+            </Button>
             <Selector
               onChange={goToPage}
               valueList={routes

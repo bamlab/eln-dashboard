@@ -1,13 +1,13 @@
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
+import { StyleRules, withStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { withRouter } from "react-router-dom";
 import { Selector } from "./Selector.component";
 
-const styles = {
+const styles: StyleRules = {
   root: {
     flexGrow: 1
   },
@@ -18,12 +18,14 @@ const styles = {
   },
   focused: {
     fontWeight: 700,
-    color: "white"
+    color: "white",
+    textTransform: "none"
   },
   notFocused: {
     color: "white",
     opacity: 0.6,
-    fontWeight: 700
+    fontWeight: 700,
+    textTransform: "none"
   }
 };
 

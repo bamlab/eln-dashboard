@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { CustomTable } from "src/tables/table/Table";
 
 const styles = {
   root: {
@@ -14,7 +15,7 @@ const styles = {
     fontSize: 16
   }
 };
-const KPISComponent = (props: any) => {
+const SummaryCurrentForecastComponent = (props: any) => {
   const { classes } = props;
 
   return (
@@ -24,7 +25,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                DC Offtake Forecast Accuracy
+                Current Cycle Phasing - DI offtake Quarterly Phasing
               </Typography>
             </CardContent>
           </Card>
@@ -33,7 +34,17 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Offtake Forecast Accuracy
+                Current cycle DI
+              </Typography>
+            </CardContent>
+            <CustomTable />
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                DI Offtake from channel perspective
               </Typography>
             </CardContent>
           </Card>
@@ -42,7 +53,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Offtake Forecast Bias
+                Cycle evolution - DI total offtake bridge by brand (2018,2019)
               </Typography>
             </CardContent>
           </Card>
@@ -51,7 +62,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                DC Sell-in Forecast Accuracy
+                Risks & opportunities
               </Typography>
             </CardContent>
           </Card>
@@ -60,7 +71,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Sell-in Forecast Accuracy
+                Trade flow DI
               </Typography>
             </CardContent>
           </Card>
@@ -69,7 +80,16 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Sell-in Forecast Bias
+                Trade flow DI
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Trade Flow DI
               </Typography>
             </CardContent>
           </Card>
@@ -79,4 +99,6 @@ const KPISComponent = (props: any) => {
   );
 };
 
-export const KPISChinaDC = withStyles(styles)(KPISComponent);
+export const SummaryCurrentForecastChina = withStyles(styles)(
+  SummaryCurrentForecastComponent
+);

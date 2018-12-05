@@ -43,6 +43,6 @@ const PreviousForeCastsComponent = (props: any) => {
   );
 };
 
-export const PreviousForecastsChinaDI = withStyles(styles)(
+export const PreviousForecastsChina = withStyles(styles)(
   PreviousForeCastsComponent
 );

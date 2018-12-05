@@ -1,9 +1,4 @@
-export {
-  PreviousForecastsChinaDC
-} from "./PreviousForecasts_ChinaDC.component";
-export {
-  PreviousForecastsChinaDI
-} from "./PreviousForecasts_ChinaDI.component";
+export { PreviousForecastsChina } from "./PreviousForecasts_China.component";
 export {
   PreviousForecastsInternationalDI
 } from "./PreviousForecasts_InternationalDI.component";
