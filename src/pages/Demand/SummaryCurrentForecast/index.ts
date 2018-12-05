@@ -1,9 +1,6 @@
 export {
-  SummaryCurrentForecastChinaDC
-} from "./SummaryCurrentForecast_ChinaDC.component";
-export {
-  SummaryCurrentForecastChinaDI
-} from "./SummaryCurrentForecast_ChinaDI.component";
+  SummaryCurrentForecastChina
+} from "./SummaryCurrentForecast_China.component";
 export {
   SummaryCurrentForecastInternationalDI
 } from "./SummaryCurrentForecast_InternationalDI.component";
