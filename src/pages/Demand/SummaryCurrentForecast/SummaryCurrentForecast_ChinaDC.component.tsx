@@ -83,7 +83,6 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade Flow DC by brand - AP
               </Typography>
             </CardContent>
-            <TableNut />
           </Card>
         </Grid>
       </Grid>
