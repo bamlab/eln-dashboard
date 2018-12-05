@@ -7,18 +7,16 @@ import {
 import { colors } from "src/theme";
 import { TableBlueSubHeader } from "./table/TableBlueSubHeader";
 import { TableCell } from "./table/TableCell";
-import { TableFooterCell } from "./table/TableFooterCell";
+import { TableHeaderCell } from "./table/TableHeaderCell";
 import { TableNegativeCell } from "./table/TableNegativeCell";
 import { TableRow } from "./table/TableRow/TableRow";
-import { TableTotalRow } from "./table/TableRow/TableTotalRow";
 import { TableSubHeaderCell } from "./table/TableSubHeaderCell";
 
-export const OfftakeTable = WithGoogleData(
+export const EIBOfftakeForecastAccuracyBiasTable = WithGoogleData(
   class extends React.Component<IWrappedComponentProps> {
     public render() {
       if (this.props.data.length) {
-        const data = [...this.props.data];
-        data.shift();
+        const data = new Array(...this.props.data);
         const secondHeaders = data.shift();
         const secondHeadersJSX = secondHeaders
           .slice(1)
@@ -29,10 +27,16 @@ export const OfftakeTable = WithGoogleData(
               </TableSubHeaderCell>
             );
           });
-        const total = data.shift();
-        const totalJSX = total.map((value: string, index: number) => {
+        const totalM1 = data.pop();
+        const totalM1JSX = totalM1.map((value: string, index: number) => {
           return (
-            <TableFooterCell key={`total${index}`}>{value}</TableFooterCell>
+            <TableHeaderCell key={`total${index}`}>{value}</TableHeaderCell>
+          );
+        });
+        const totalM4 = data.pop();
+        const totalM4JSX = totalM4.map((value: string, index: number) => {
+          return (
+            <TableHeaderCell key={`total${index}`}>{value}</TableHeaderCell>
           );
         });
         const tableRows = data.map((serie: string[]) => {
@@ -66,8 +70,11 @@ export const OfftakeTable = WithGoogleData(
             >
               {tableRows}
             </TableBody>
-            <TableFooter>
-              <TableTotalRow>{totalJSX}</TableTotalRow>
+            <TableFooter
+              style={{ backgroundColor: colors.backgroundSecondaryColor }}
+            >
+              <TableRow>{totalM1JSX}</TableRow>
+              <TableRow>{totalM4JSX}</TableRow>
             </TableFooter>
           </Table>
         );

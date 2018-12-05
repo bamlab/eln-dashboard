@@ -4,6 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { LineColumnChart } from "src/charts/LineColumnChart";
+import { EIBOfftakeForecastAccuracyBiasTable } from "src/tables/EIBOfftakeForecastAccuracyBiasTable";
 
 const styles = {
   root: {
@@ -24,9 +26,10 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                EIB Offtake Forecast Accuracy
+                EIB Offtake Forecast Accuracy & bias
               </Typography>
             </CardContent>
+            <EIBOfftakeForecastAccuracyBiasTable range="EIB Offtake Forecast Accuracy!A:K" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -54,6 +57,7 @@ const KPISComponent = (props: any) => {
                 Historical Forecast Bias - Offtake
               </Typography>
             </CardContent>
+            <LineColumnChart range="DI Historical forecast bias!A:C" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
