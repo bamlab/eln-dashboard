@@ -4,9 +4,9 @@ import { DashboardTabBarCategory, DashboardTabBarDemand } from "./components";
 import { TabBarCategory } from "./components/TabBarCategory.component";
 import { TabBarDemand } from "./components/TabBarDemand.component";
 import "./index.css";
-import { NavigationProps } from "./typings/navigation";
+import { INavigationProps } from "./typings/navigation";
 
-export class TabBarPage extends React.Component<NavigationProps> {
+export class TabBarPage extends React.Component<INavigationProps> {
   public renderPage = (props: any) => {
     if (props.match.params.department === "demand") {
       return <DashboardTabBarDemand />;

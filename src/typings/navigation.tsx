@@ -1,9 +1,9 @@
 import { match } from "react-router";
 
-export interface NavigationProps {
-  match: match<matchParameters>;
+export interface INavigationProps {
+  match: match<IMatchParameters>;
 }
 
-interface matchParameters {
+interface IMatchParameters {
   department: string;
 }
