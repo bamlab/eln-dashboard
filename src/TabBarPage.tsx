@@ -39,6 +39,7 @@ export class TabBarPage extends React.Component<INavigationProps> {
 
   public render() {
     const { match } = this.props;
+
     return (
       <React.Fragment>
         {this.renderTabBar()}
