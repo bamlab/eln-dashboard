@@ -11,7 +11,6 @@ const styles = {
     marginRight: 16,
     fontWeight: 700,
     fontSize: "0.875rem",
-    paddingTop: 2,
     color: colors.mainColor
   },
   iconBlue: {
@@ -35,8 +34,7 @@ class SelectMenu extends React.Component<IPropsType> {
     iconColor: "white"
   };
   public state = {
-    displayedValue: this.props.defaultDisplayedValue,
-    labelWidth: 60
+    displayedValue: this.props.defaultDisplayedValue
   };
 
   public handleChange = (event: any) => {
@@ -59,7 +57,7 @@ class SelectMenu extends React.Component<IPropsType> {
           name: "displayedValue"
         }}
         disableUnderline={true}
-        input={<OutlinedInput labelWidth={this.state.labelWidth} />}
+        input={<OutlinedInput labelWidth={0} />}
       >
         {this.props.valueList.map(value => (
           <MenuItem value={value} key={value}>
