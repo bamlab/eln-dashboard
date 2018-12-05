@@ -113,7 +113,6 @@ export const LineColumnChart = WithGoogleData(
     public render() {
       if (this.props.data) {
         const waterfallData = this.props.data.slice(1).map(waterfallDataMapper);
-        console.log(waterfallData);
         return (
           <div>
             <HighchartsReact
