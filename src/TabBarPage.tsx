@@ -4,8 +4,9 @@ import { DashboardTabBarCategory, DashboardTabBarDemand } from "./components";
 import { TabBarCategory } from "./components/TabBarCategory.component";
 import { TabBarDemand } from "./components/TabBarDemand.component";
 import "./index.css";
+import { NavigationProps } from "./typings/navigation";
 
-export class TabBarPage extends React.Component {
+export class TabBarPage extends React.Component<NavigationProps> {
   public renderPage = (props: any) => {
     if (props.match.params.department === "demand") {
       return <DashboardTabBarDemand />;
@@ -16,29 +17,25 @@ export class TabBarPage extends React.Component {
     }
   };
   public renderTabBar = () => {
-    // @ts-ignore
-    if (this.props.match.params.department === "demand") {
+    const { match } = this.props;
+    if (match.params.department === "demand") {
       return <TabBarDemand />;
-      // @ts-ignore
-    } else if (this.props.match.params.department === "category") {
+    } else if (match.params.department === "category") {
       return <TabBarCategory />;
     } else {
       return <Redirect to={"demand"} />;
     }
   };
   public renderDefault = () => {
-    // @ts-ignore
     const { match } = this.props;
     if (match.params.department === "demand") {
       return <Redirect to={`${match.url}/china/all`} />;
-      // @ts-ignore
     } else {
       return <Redirect to={`${match.url}/tailored_nutrition/regular`} />;
     }
   };
 
   public render() {
-    // @ts-ignore
     const { match } = this.props;
     return (
       <React.Fragment>
