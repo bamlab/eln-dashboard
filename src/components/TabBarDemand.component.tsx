@@ -35,10 +35,15 @@ type IPropsType = RouteComponentProps<any> & {
 
 class TabBarComponent extends React.Component<IPropsType> {
   public state = {
-    currentFocusedTab: this.props.location.pathname.includes("/international/")
-      ? "International"
-      : "China"
+    currentFocusedTab: this.props.location.pathname.split("/").includes("china")
+      ? "China"
+      : this.props.location.pathname.split("/").includes("eib")
+      ? "International Label - EIB"
+      : this.props.location.pathname.split("/").includes("di")
+      ? "International Label - DI"
+      : "International Label - IL"
   };
+
   public goToChina = () => {
     const { match } = this.props;
     // find in wich page we currently are in order to redirect to this page.
@@ -83,7 +88,7 @@ class TabBarComponent extends React.Component<IPropsType> {
         match.url + routeSelected.path + "/" + myCurrentSubPath
       );
       this.setState({
-        currentFocusedTab: routeSelected.parent
+        currentFocusedTab: routeSelected.name
       });
     };
     const { classes } = this.props;
@@ -114,10 +119,16 @@ class TabBarComponent extends React.Component<IPropsType> {
                 .filter(route => route.parent === "International")
                 .map(route => route.name)}
               defaultDisplayedValue={
-                routes.filter(route => route.parent === "International")[0].name
+                (
+                  routes.filter(
+                    route =>
+                      route.parent === "International" &&
+                      route.name === this.state.currentFocusedTab
+                  )[0] || { name: "International Label - DI" }
+                ).name
               }
               style={
-                this.state.currentFocusedTab === "International"
+                this.state.currentFocusedTab !== "China"
                   ? styles.focused
                   : styles.notFocused
               }
