@@ -16,6 +16,7 @@ export class TabBarPage extends React.Component<INavigationProps> {
       return <Redirect to={"demand"} />;
     }
   };
+
   public renderTabBar = () => {
     const { match } = this.props;
     if (match.params.department === "demand") {
@@ -26,6 +27,7 @@ export class TabBarPage extends React.Component<INavigationProps> {
       return <Redirect to={"demand"} />;
     }
   };
+
   public renderDefault = () => {
     const { match } = this.props;
     if (match.params.department === "demand") {
