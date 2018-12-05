@@ -4,6 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { TradeFlowChart } from "src/charts/TradedFlowChart";
+import { WaterfallChart } from "src/charts/WaterfallChart";
 import { OfftakeTable } from "src/tables/OfftakeTable";
 
 const styles = {
@@ -27,6 +29,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 Current Cycle Phasing - EIB offtake Quarterly Phasing
               </Typography>
+              <TradeFlowChart range="EIB Total Quarterly phasing!A:E" />
             </CardContent>
           </Card>
         </Grid>
@@ -37,7 +40,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trackable offtake
               </Typography>
             </CardContent>
-            <OfftakeTable range="EIB NL Trackable Offtake display!A:N" />
+            <OfftakeTable range="EIB Total Trackable Offtake display!A:N" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -67,6 +70,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade flow - EIB (total)
               </Typography>
             </CardContent>
+            <TradeFlowChart range="EIB Total Trade Flow Chart!A:D" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -82,8 +86,9 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Risks & opportunites - 2018 EIB Offtake (Oct cycle - Nov cycle)
+                Risks & opportunites - 2018 EIB Offtake (Nov cycle - Dec cycle)
               </Typography>
+              <WaterfallChart range="IEB Total Risk & ops 2018!A:C" />
             </CardContent>
           </Card>
         </Grid>
@@ -91,8 +96,9 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Risks & opportunites - 2019 EIB Offtake (Oct cycle - Nov cycle)
+                Risks & opportunites - 2019 EIB Offtake (Nov cycle - Dec cycle)
               </Typography>
+              <WaterfallChart range="IEB Total Risk & ops 2019!A:C" />
             </CardContent>
           </Card>
         </Grid>
@@ -102,6 +108,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 Bridge between cycles
               </Typography>
+              <WaterfallChart range="IEB Summary Total Bridge!A:C" />
             </CardContent>
           </Card>
         </Grid>

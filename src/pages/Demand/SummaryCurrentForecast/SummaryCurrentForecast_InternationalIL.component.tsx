@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { WaterfallChart } from "src/charts/WaterfallChart";
 import { CustomTable } from "src/tables/table/Table";
 
 const styles = {
@@ -82,6 +83,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 Risks & opportunites - 2018 IL Offtake (Oct cycle - Nov cycle)
               </Typography>
+              <WaterfallChart range="China DI Current Forecast Risk & ops!A:C" />
             </CardContent>
           </Card>
         </Grid>
@@ -91,6 +93,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 Risks & opportunites - 2019 IL Offtake (Oct cycle - Nov cycle)
               </Typography>
+              <WaterfallChart range="China DI Current Forecast Risk & ops!A:C" />
             </CardContent>
           </Card>
         </Grid>
