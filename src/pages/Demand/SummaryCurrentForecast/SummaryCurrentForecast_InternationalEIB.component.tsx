@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
-import { CustomTable } from "src/tables/table/Table";
+import { OfftakeTable } from "src/tables/OfftakeTable";
 
 const styles = {
   root: {
@@ -37,7 +37,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trackable offtake
               </Typography>
             </CardContent>
-            <CustomTable />
+            <OfftakeTable range="EIB NL Trackable Offtake display!A:N" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>

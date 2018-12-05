@@ -2,7 +2,7 @@ import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 const Data = require("highcharts/modules/data");
 import * as React from "react";
-import { WithGoogleClient } from "src/highOrderComponents/withGoogleClient";
+import { WithGoogleData } from "src/highOrderComponents/withGoogleData";
 import { colors } from "src/theme";
 
 Data(Highcharts);
@@ -106,7 +106,7 @@ interface IProps {
   data: any[];
 }
 
-export const LineColumnChart = WithGoogleClient(
+export const LineColumnChart = WithGoogleData(
   class extends React.PureComponent<IProps> {
     public state = { data: [] };
 

@@ -42,7 +42,7 @@ export const WithGoogleData = (
                   this.setState({ data });
                 },
                 (response: any) => {
-                  alert(response.result.error);
+                  console.error(response.result.error);
                 }
               );
           });
