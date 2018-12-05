@@ -3,7 +3,7 @@ import HighchartsReact from "highcharts-react-official";
 import * as React from "react";
 import { colors } from "src/theme";
 const highchartsMore = require("highcharts-more");
-import { WithGoogleClient } from "src/highOrderComponents/withGoogleClient";
+import { WithGoogleData } from "src/highOrderComponents/withGoogleData";
 
 highchartsMore(Highcharts);
 
@@ -76,10 +76,8 @@ interface IProps {
   data: any[];
 }
 
-export const WaterfallChart = WithGoogleClient(
+export const WaterfallChart = WithGoogleData(
   class extends React.PureComponent<IProps> {
-    public state = { data: [] };
-
     public render() {
       if (this.props.data) {
         const waterfallData = this.props.data.slice(1).map(waterfallDataMapper);

@@ -20,7 +20,7 @@ export const TableSubHeaderCell: React.FunctionComponent<
 > = (props: IProps & typeof defaultProps) => {
   props = { ...defaultProps, ...props };
   return (
-    <TableCell style={{ fontWeight: "normal", color: "white" }}>
+    <TableCell style={{ fontWeight: "bold", color: "white" }}>
       {props.children}
     </TableCell>
   );

@@ -1,12 +1,12 @@
 import * as React from "react";
 import { config } from "../config";
 
-interface IProps {
+export interface IWrappedComponentProps {
   data: any[];
 }
 
-export const WithGoogleClient = (
-  WrappedComponent: React.ComponentType<IProps>
+export const WithGoogleData = (
+  WrappedComponent: React.ComponentType<IWrappedComponentProps>
 ) => {
   return class extends React.Component<{ range: string }> {
     public range = "";
@@ -27,7 +27,6 @@ export const WithGoogleClient = (
       client
         .init({
           apiKey: config.apiKey,
-          // Your API key will be automatically added to the Discovery Document URLs.
           discoveryDocs: config.discoveryDocs
         })
         .then(() => {
@@ -35,7 +34,6 @@ export const WithGoogleClient = (
             client.sheets.spreadsheets.values
               .get({
                 spreadsheetId: config.spreadsheetId,
-                // tslint: disable-next-line
                 range: this.range
               })
               .then(
@@ -44,7 +42,7 @@ export const WithGoogleClient = (
                   this.setState({ data });
                 },
                 (response: any) => {
-                  console.log(false, response.result.error);
+                  console.error(response.result.error);
                 }
               );
           });

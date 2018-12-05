@@ -1,6 +1,6 @@
 import { Table, TableBody, TableFooter, TableHead } from "@material-ui/core";
 import * as React from "react";
-import { colors } from "./../theme";
+import { colors } from "../../theme";
 import { TableBlueSubHeader } from "./TableBlueSubHeader";
 import { TableCell } from "./TableCell";
 import { TableFooterCell } from "./TableFooterCell";
