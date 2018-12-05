@@ -38,7 +38,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trackable offtake
               </Typography>
             </CardContent>
-            <OfftakeTable range="EIB NL Trackable Offtake display!A:N" />
+            <OfftakeTable range="EIB Total Trackable Offtake display!A:N" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -83,9 +83,9 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Risks & opportunites - 2018 EIB Offtake (Oct cycle - Nov cycle)
+                Risks & opportunites - 2018 EIB Offtake (Nov cycle - Dec cycle)
               </Typography>
-              <WaterfallChart range="China DI Current Forecast Risk & ops!A:C" />
+              <WaterfallChart range="IEB Total Risk & ops 2018!A:C" />
             </CardContent>
           </Card>
         </Grid>
@@ -93,9 +93,9 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Risks & opportunites - 2019 EIB Offtake (Oct cycle - Nov cycle)
+                Risks & opportunites - 2019 EIB Offtake (Nov cycle - Dec cycle)
               </Typography>
-              <WaterfallChart range="China DI Current Forecast Risk & ops!A:C" />
+              <WaterfallChart range="IEB Total Risk & ops 2019!A:C" />
             </CardContent>
           </Card>
         </Grid>
