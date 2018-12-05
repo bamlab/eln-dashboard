@@ -56,6 +56,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Total offtake
               </Typography>
             </CardContent>
+            <OfftakeTable range="EIB Total - Total Offtake display!A:N" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
