@@ -47,6 +47,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Non-trackable offtake
               </Typography>
             </CardContent>
+            <OfftakeTable range="EIB Total - Total Non-trackable Offtake display!A:N" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>

@@ -48,7 +48,6 @@ export const OfftakeTable = WithGoogleData(
               <CellType key={`valueCell${serieName}${index}`}>{value}</CellType>
             );
           });
-          console.log(valueCells);
           const cells = [
             <TableCell key={`serieName${serieName}`}>{serieName}</TableCell>,
             ...valueCells
