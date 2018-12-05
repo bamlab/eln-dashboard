@@ -11,7 +11,6 @@ const styles: StyleRules = {
   root: {
     flexGrow: 1
   },
-  choucroute: {},
   logo: {
     width: 40,
     height: 40,
