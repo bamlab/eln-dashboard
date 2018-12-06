@@ -25,7 +25,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                DI Offtake Forecast & Bias by brands
+                DC Offtake Forecast & Bias by brands
               </Typography>
             </CardContent>
           </Card>
@@ -37,6 +37,7 @@ const KPISComponent = (props: any) => {
                 Historical Offtake Forecast Accuracy
               </Typography>
             </CardContent>
+            <LineColumnChart range={"DI Historical forecast bias!A:C"} />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -53,7 +54,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                DI Sell-Out Forecast & Bias by brands
+                DC Sell-Out Forecast & Bias by brands
               </Typography>
             </CardContent>
           </Card>
