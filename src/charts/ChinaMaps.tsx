@@ -44,8 +44,9 @@ const options = {
     type: "map",
     map: Highcharts.geojson(chinaHighChartMap)
   },
+  title: null,
   legend: {
-    enabled: true
+    enabled: false
   },
   plotOptions: {
     map: {
