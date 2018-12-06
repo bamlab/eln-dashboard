@@ -79,7 +79,6 @@ export const TradeFlowChart = WithGoogleData(
     public state = { data: [] };
 
     public render() {
-      console.log(this.props);
       if (this.props.data.length) {
         const data = [...this.props.data];
         const serieColors = data.shift().slice(1);
