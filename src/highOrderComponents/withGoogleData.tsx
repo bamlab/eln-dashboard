@@ -40,15 +40,10 @@ export const WithGoogleData = (
                 spreadsheetId: config.spreadsheetId,
                 range: this.range
               })
-              .then(
-                (response: any) => {
-                  const data = response.result.values;
-                  this.setState({ data });
-                },
-                (response: any) => {
-                  console.error(response.result.error);
-                }
-              );
+              .then((response: any) => {
+                const data = response.result.values;
+                this.setState({ data });
+              });
           });
         });
     }

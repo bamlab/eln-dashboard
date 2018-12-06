@@ -78,7 +78,6 @@ export const HeatMap = WithGoogleData(
           yNames: [],
           data: []
         });
-        console.log(waterfallData);
         return (
           <div>
             <HighchartsReact
