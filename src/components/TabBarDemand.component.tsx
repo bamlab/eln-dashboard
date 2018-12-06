@@ -58,7 +58,7 @@ class TabBarComponent extends React.Component<IPropsType> {
 
   public render() {
     const routes = [
-      { name: "China", path: "/china/all", parent: "China" },
+      { name: "China Label - DC", path: "/china/all", parent: "China" },
       {
         name: "International Label - DI",
         path: "/international/di",
@@ -111,7 +111,7 @@ class TabBarComponent extends React.Component<IPropsType> {
                   : styles.notFocused
               }
             >
-              China
+              China Label - DC
             </Button>
             <Selector
               onChange={goToPage}

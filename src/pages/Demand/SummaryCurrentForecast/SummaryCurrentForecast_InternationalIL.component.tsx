@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
-import { WaterfallChart } from "src/charts/WaterfallChart";
+import { TradeFlowChart } from "src/charts/TradedFlowChart";
 import { CustomTable } from "src/tables/table/Table";
 
 const styles = {
@@ -29,6 +29,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Current Cycle Phasing - IL offtake Quarterly Phasing
               </Typography>
             </CardContent>
+            <TradeFlowChart range="EIB Total Quarterly phasing!A:E" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -48,6 +49,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Non-trackable offtake
               </Typography>
             </CardContent>
+            <CustomTable />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -57,6 +59,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Total offtake
               </Typography>
             </CardContent>
+            <CustomTable />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -66,6 +69,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade flow - IL (total)
               </Typography>
             </CardContent>
+            <TradeFlowChart range="EIB Total Trade Flow Chart!A:D" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -75,35 +79,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade Flow
               </Typography>
             </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Risks & opportunites - 2018 IL Offtake (Oct cycle - Nov cycle)
-              </Typography>
-              <WaterfallChart range="China DI Current Forecast Risk & ops!A:C" />
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Risks & opportunites - 2019 IL Offtake (Oct cycle - Nov cycle)
-              </Typography>
-              <WaterfallChart range="China DI Current Forecast Risk & ops!A:C" />
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Bridge between cycles
-              </Typography>
-            </CardContent>
+            <CustomTable />
           </Card>
         </Grid>
       </Grid>

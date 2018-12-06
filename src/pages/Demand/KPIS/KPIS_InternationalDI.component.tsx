@@ -4,6 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { LineColumnChart } from "src/charts/LineColumnChart";
+import { CustomTable } from "src/tables/table/Table";
 
 const styles = {
   root: {
@@ -27,6 +29,26 @@ const KPISComponent = (props: any) => {
                 DI Offtake Forecast & Bias by brands
               </Typography>
             </CardContent>
+            <CustomTable />
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical Forecast Accuracy
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical Forecast Bias
+              </Typography>
+            </CardContent>
+            <LineColumnChart range={"DI Historical forecast bias!A:C"} />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -36,6 +58,26 @@ const KPISComponent = (props: any) => {
                 DI Sell-out Forecast & Bias by brands
               </Typography>
             </CardContent>
+            <CustomTable />
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical Forecast Accuracy - Sell out
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical Forecast Bias - Sell out
+              </Typography>
+            </CardContent>
+            <LineColumnChart range={"DI Historical forecast bias!A:C"} />
           </Card>
         </Grid>
       </Grid>
