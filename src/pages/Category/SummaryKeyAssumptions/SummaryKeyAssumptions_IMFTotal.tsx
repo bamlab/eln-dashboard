@@ -4,16 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { keyAssumptionsStyles } from "src/pages/styles/keyAssumptions.style";
 
-const styles = {
-  root: {
-    padding: 24
-  },
-  font: {
-    fontWeight: 700,
-    fontSize: 16
-  }
-};
 const SummaryKeyAssumptions = (props: any) => {
   const { classes } = props;
 
@@ -70,6 +62,6 @@ const SummaryKeyAssumptions = (props: any) => {
   );
 };
 
-export const SummaryKeyAssumptionsIMFTotal = withStyles(styles)(
+export const SummaryKeyAssumptionsIMFTotal = withStyles(keyAssumptionsStyles)(
   SummaryKeyAssumptions
 );
