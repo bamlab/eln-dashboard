@@ -24,52 +24,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                DC Offtake Forecast Accuracy
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Historical Offtake Forecast Accuracy
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Historical Offtake Forecast Bias
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                DC Sell-in Forecast Accuracy
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Historical Sell-in Forecast Accuracy
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Historical Sell-in Forecast Bias
+                KPIs
               </Typography>
             </CardContent>
           </Card>

@@ -24,7 +24,7 @@ const SummaryForecastFuture = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
+                Forecast Future Summary
               </Typography>
             </CardContent>
           </Card>
@@ -33,7 +33,16 @@ const SummaryForecastFuture = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
+                YoY Change
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical Trend of newborn population (mn)
               </Typography>
             </CardContent>
           </Card>

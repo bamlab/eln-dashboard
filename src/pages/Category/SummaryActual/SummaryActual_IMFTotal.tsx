@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
 
 const styles = {
   root: {
@@ -12,8 +13,14 @@ const styles = {
   font: {
     fontWeight: 700,
     fontSize: 16
+  },
+  subTitle: {
+    fontWeight: 700,
+    fontSize: 16,
+    color: "white"
   }
 };
+
 const SummaryActual = (props: any) => {
   const { classes } = props;
 
@@ -24,7 +31,17 @@ const SummaryActual = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
+                What is historical category demand?
+              </Typography>
+              <CategoryHistoricalDemandContainer classes={classes} />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Deep dive cross-level demand trends
               </Typography>
             </CardContent>
           </Card>
@@ -33,7 +50,7 @@ const SummaryActual = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
+                Indicators by geography
               </Typography>
             </CardContent>
           </Card>
