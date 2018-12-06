@@ -13,11 +13,6 @@ const styles = {
   font: {
     fontWeight: 700,
     fontSize: 16
-  },
-  subTitle: {
-    fontWeight: 700,
-    fontSize: 16,
-    color: "white"
   }
 };
 
@@ -32,7 +27,7 @@ const SummaryActual = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 What is historical category demand?
               </Typography>
-              <CategoryHistoricalDemandContainer classes={classes} />
+              <CategoryHistoricalDemandContainer />
             </CardContent>
           </Card>
         </Grid>
