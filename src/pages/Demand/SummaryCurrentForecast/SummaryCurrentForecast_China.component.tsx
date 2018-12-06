@@ -4,6 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { LineColumnChart } from "src/charts/LineColumnChart";
+import { TradeFlowChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { CustomTable } from "src/tables/table/Table";
 
@@ -26,16 +28,17 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Current Cycle Phasing - DI offtake Quarterly Phasing
+                Current Cycle Phasing - DC offtake Quarterly Phasing
               </Typography>
             </CardContent>
+            <TradeFlowChart range="EIB Total Quarterly phasing!A:E" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Current cycle DI
+                Current cycle DC
               </Typography>
             </CardContent>
             <CustomTable />
@@ -45,18 +48,30 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                DI Offtake from channel perspective
+                Trade Flow DC
               </Typography>
             </CardContent>
+            <LineColumnChart range="DI Historical forecast bias!A:C" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Cycle evolution - DI total offtake bridge by brand (2018,2019)
+                Trade Flow DC by Brand
               </Typography>
             </CardContent>
+            <CustomTable />
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Trade Flow by SKU
+              </Typography>
+            </CardContent>
+            <CustomTable />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -66,33 +81,6 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Risks & opportunities
               </Typography>
               <WaterfallChart range="China DI Current Forecast Risk & ops!A:C" />
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Trade flow DI
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Trade flow DI
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Trade Flow DI
-              </Typography>
             </CardContent>
           </Card>
         </Grid>
