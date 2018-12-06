@@ -2,6 +2,9 @@
   "name": "bcg-danone-interface",
   "version": "0.1.0",
   "private": true,
+  "engine": {
+    "node": "10.9.0"
+  },
   "homepage": "https://bamlab.github.io/eln-dashboard/",
   "dependencies": {
     "@material-ui/core": "^3.6.0",
