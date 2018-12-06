@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { HeatMap } from "src/charts/HeatMap";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
 
 const styles = {
@@ -38,6 +39,7 @@ const SummaryActual = (props: any) => {
                 Previous Offtake
               </Typography>
             </CardContent>
+            <HeatMap range="DeepDive Cross Level Demand Trend" />
           </Card>
         </Grid>
       </Grid>
