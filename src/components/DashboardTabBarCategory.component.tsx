@@ -37,7 +37,6 @@ const hashRoute = {
   "SUMMARY ACTUAL": "summary_actual",
   "SUMMARY FORECAST FUTURE": "summary_forecast_future",
   "SUMMARY INPUT PAST & FUTURE": "summary_input_past_and_future",
-  "SUMMARY FORECAST PAST": "summary_forecast_past",
   "SUMMARY DEFINITIONS": "summary_definitions",
   "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
 };
@@ -99,7 +98,6 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
                   "summary_actual",
                   "summary_forecast_future",
                   "summary_input_and_future",
-                  "summary_forecast_past",
                   "summary_definitions",
                   "summary_key_assumptions"
                 ].includes(this.state.currentFocusedTab)
