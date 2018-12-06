@@ -4,6 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { TradeFlowChart } from "src/charts/TradedFlowChart";
+import { EIBPreviousOfftake } from "src/tables/EIBPreviousOfftake";
 
 const styles = {
   root: {
@@ -27,6 +29,27 @@ const PreviousForeCastsComponent = (props: any) => {
                 Previous Offtake
               </Typography>
             </CardContent>
+            <TradeFlowChart
+              range="EIB Previous Offtake!A:G"
+              customOptions={{
+                yAxis: {
+                  gridLineWidth: 0,
+                  title: null,
+                  labels: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.value)}`;
+                    }
+                  }
+                },
+                tooltip: {
+                  formatter() {
+                    const self: any = this as any;
+                    return `${Math.floor(self.y)}`;
+                  }
+                }
+              }}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -36,6 +59,7 @@ const PreviousForeCastsComponent = (props: any) => {
                 Previous Offtake
               </Typography>
             </CardContent>
+            <EIBPreviousOfftake range="EIB Previous Offtake!J:Y" />
           </Card>
         </Grid>
       </Grid>
