@@ -24,7 +24,7 @@ const SummaryInputPastAndFuture = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
+                Category drivers data
               </Typography>
             </CardContent>
           </Card>
@@ -33,7 +33,44 @@ const SummaryInputPastAndFuture = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
+                Current Model Weighting
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical trend of newborn population (mn)
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical trend of pure breastfeeding rate (0-6 months) %
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical trend of IF demand (lagged 8 months) ('000 ton)
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Historical trend of IF demand (lagged 6-9 months total) ('000
+                ton)
               </Typography>
             </CardContent>
           </Card>

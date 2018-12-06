@@ -24,16 +24,7 @@ const SummaryOverview = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
+                YoY Growth Past & Future
               </Typography>
             </CardContent>
           </Card>
