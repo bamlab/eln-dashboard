@@ -23,7 +23,10 @@ interface ISerie {
   name: string;
 }
 
-const getChartOptions = (tradedFlowSeries: ISerie[]): Highcharts.Options => ({
+const getChartOptions = (
+  tradedFlowSeries: ISerie[],
+  customOptions: Highcharts.Options
+): Highcharts.Options => ({
   title: undefined,
   chart: {
     // @ts-ignore
@@ -62,11 +65,13 @@ const getChartOptions = (tradedFlowSeries: ISerie[]): Highcharts.Options => ({
       return `${Math.floor(self.y)}%`;
     }
   },
-  series: tradedFlowSeries
+  series: tradedFlowSeries,
+  ...customOptions
 });
 
 interface IProps {
   data: any[];
+  customOptions?: any;
 }
 
 export const TradeFlowChart = WithGoogleData(
@@ -74,8 +79,9 @@ export const TradeFlowChart = WithGoogleData(
     public state = { data: [] };
 
     public render() {
+      console.log(this.props);
       if (this.props.data.length) {
-        const data = new Array(...this.props.data);
+        const data = [...this.props.data];
         const serieColors = data.shift().slice(1);
         const serieTypes = data.shift().slice(1);
         const serieNames = data.shift().slice(1);
@@ -96,7 +102,10 @@ export const TradeFlowChart = WithGoogleData(
           <div>
             <HighchartsReact
               highcharts={Highcharts}
-              options={getChartOptions(tradedFlowSeries)}
+              options={getChartOptions(
+                tradedFlowSeries,
+                this.props.customOptions
+              )}
             />
           </div>
         );

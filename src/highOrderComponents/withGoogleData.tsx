@@ -8,7 +8,11 @@ export interface IWrappedComponentProps {
 export const WithGoogleData = (
   WrappedComponent: React.ComponentType<IWrappedComponentProps>
 ) => {
-  return class extends React.Component<{ range: string }> {
+  return class extends React.Component<{
+    range: string;
+    customOptions?: Highcharts.Options;
+  }> {
+    public static defaultProps = { customOptions: {} };
     public range = "";
     public state = { data: [] };
     constructor(props: any) {
