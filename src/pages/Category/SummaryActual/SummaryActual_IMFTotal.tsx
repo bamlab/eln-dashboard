@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { ChinaMap } from "src/charts/ChinaMaps";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
 
 const styles = {
@@ -47,6 +48,7 @@ const SummaryActual = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 Indicators by geography
               </Typography>
+              <ChinaMap />
             </CardContent>
           </Card>
         </Grid>
