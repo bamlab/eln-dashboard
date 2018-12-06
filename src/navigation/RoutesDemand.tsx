@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Error404Page } from "src/pages";
 import { SummaryDefinition, SummaryKeyAssumption } from "../pages/Demand";
 import {
   KPISChina,
@@ -69,5 +70,5 @@ export const renderDemand = ({ match }: { match: any }) => {
     ),
     "/demand/international/di/summary_key_assumptions": <SummaryKeyAssumption />
   };
-  return hashMapRoute[match.url];
+  return hashMapRoute[match.url] || <Error404Page />;
 };

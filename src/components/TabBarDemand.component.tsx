@@ -35,13 +35,13 @@ type IPropsType = RouteComponentProps<any> & {
 
 class TabBarComponent extends React.Component<IPropsType> {
   public state = {
-    currentFocusedTab: this.props.location.pathname.split("/").includes("china")
-      ? "China"
-      : this.props.location.pathname.split("/").includes("eib")
+    currentFocusedTab: this.props.location.pathname.split("/").includes("eib")
       ? "International Label - EIB"
       : this.props.location.pathname.split("/").includes("di")
       ? "International Label - DI"
-      : "International Label - IL"
+      : this.props.location.pathname.split("/").includes("il")
+      ? "International Label - Total IL"
+      : "China"
   };
 
   public goToChina = () => {
@@ -59,6 +59,12 @@ class TabBarComponent extends React.Component<IPropsType> {
   public render() {
     const routes = [
       { name: "China Label - DC", path: "/china/all", parent: "China" },
+
+      {
+        name: "International Label - Total IL",
+        path: "/international/il",
+        parent: "International"
+      },
       {
         name: "International Label - DI",
         path: "/international/di",
@@ -67,11 +73,6 @@ class TabBarComponent extends React.Component<IPropsType> {
       {
         name: "International Label - EIB",
         path: "/international/eib",
-        parent: "International"
-      },
-      {
-        name: "International Label - IL",
-        path: "/international/il",
         parent: "International"
       }
     ];
@@ -124,7 +125,7 @@ class TabBarComponent extends React.Component<IPropsType> {
                     route =>
                       route.parent === "International" &&
                       route.name === this.state.currentFocusedTab
-                  )[0] || { name: "International Label - DI" }
+                  )[0] || { name: "International Label - Total IL" }
                 ).name
               }
               style={
