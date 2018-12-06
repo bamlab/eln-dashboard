@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ChinaMap } from "src/charts/ChinaMaps";
+import { HeatMap } from "src/charts/HeatMap";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
 
 const styles = {
@@ -39,6 +40,7 @@ const SummaryActual = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 Deep dive cross-level demand trends
               </Typography>
+              <HeatMap range="DeepDive Cross Level Demand Trend" />
             </CardContent>
           </Card>
         </Grid>
