@@ -6,7 +6,9 @@ import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ChinaMap } from "src/charts/ChinaMaps";
 import { HeatMap } from "src/charts/HeatMap";
+import { CardHeader } from "src/components/CardHeader";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
+import { YearDropdown } from "src/components/YearDropdown";
 
 const styles = {
   root: {
@@ -47,9 +49,12 @@ const SummaryActual = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Indicators by geography
-              </Typography>
+              <CardHeader
+                title="Indicators by geography"
+                className={classes.font}
+              >
+                <YearDropdown />
+              </CardHeader>
               <ChinaMap />
             </CardContent>
           </Card>
