@@ -9,6 +9,7 @@ const styles = {
   root: {
     marginLeft: 16,
     marginRight: 16,
+    height: 35,
     fontWeight: 700,
     fontSize: "0.875rem",
     color: colors.mainColor
