@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ChinaMap } from "src/charts/ChinaMaps";
 import { HeatMap } from "src/charts/HeatMap";
+import { TradeFlowChart } from "src/charts/TradedFlowChart";
 import { CardHeader } from "src/components/CardHeader";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
 import {
@@ -51,6 +52,38 @@ const SummaryActual = (props: any) => {
                 <YAxisHeatMapDropdown />
               </CardHeader>
               <HeatMap range="DeepDive Cross Level Demand Trend" />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <CardHeader
+                title="How are the demand change with the baby pool evolution"
+                className={classes.font}
+              />
+              <TradeFlowChart
+                isStacked={false}
+                range="IMF total - summary actual & future baby pool mn!A:D"
+                customOptions={{
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  },
+                  tooltip: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.y)}`;
+                    }
+                  }
+                }}
+              />
             </CardContent>
           </Card>
         </Grid>

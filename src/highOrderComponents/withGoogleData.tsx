@@ -11,6 +11,7 @@ export const WithGoogleData = (
   return class extends React.Component<{
     range: string;
     customOptions?: Highcharts.Options;
+    isStacked?: boolean;
   }> {
     public static defaultProps = { customOptions: {} };
     public range = "";
