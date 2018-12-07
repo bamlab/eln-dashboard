@@ -84,6 +84,21 @@ const SummaryActual = (props: any) => {
                   }
                 }}
               />
+              <ColumnLineChart
+                range="IMF total - summary actual & future baby pool ton!A:D"
+                customOptions={{
+                  legend: { enabled: false },
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        return ``;
+                      }
+                    }
+                  }
+                }}
+              />
             </CardContent>
           </Card>
         </Grid>
