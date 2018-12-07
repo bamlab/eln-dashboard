@@ -1,9 +1,12 @@
+import { CardHeader } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { FieldDropdown } from "src/components/FieldDropdown";
+import { YearDropdown } from "src/components/YearDropdown";
 
 const styles = {
   root: {
@@ -23,9 +26,13 @@ const SummaryForecastFuture = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Forecast Future Summary
-              </Typography>
+              <CardHeader
+                title="Forecast Future Summary"
+                className={classes.font}
+              >
+                <YearDropdown />
+                <FieldDropdown />
+              </CardHeader>
             </CardContent>
           </Card>
         </Grid>
