@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
-import { TradeFlowChart } from "src/charts/TradedFlowChart";
+import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { EIBPreviousOfftake } from "src/tables/EIBPreviousOfftake";
 
 const styles = {
@@ -29,7 +29,7 @@ const PreviousForeCastsComponent = (props: any) => {
                 Previous Offtake
               </Typography>
             </CardContent>
-            <TradeFlowChart
+            <ColumnLineChart
               range="EIB Previous Offtake!A:G"
               customOptions={{
                 yAxis: {

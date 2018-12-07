@@ -10,7 +10,8 @@ export const colors = {
   mainFontColor: "#3C3C3C",
   secondaryFontColor: "#AAACAE",
   tertiaryFontColor: "#99C3E1",
-  backgroundSecondaryColor: "#EDF9FE"
+  backgroundSecondaryColor: "#EDF9FE",
+  fourthColor: "#DE723A"
 };
 
 export const theme = createMuiTheme({

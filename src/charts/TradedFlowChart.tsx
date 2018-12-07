@@ -25,7 +25,8 @@ interface ISerie {
 
 const getChartOptions = (
   tradedFlowSeries: ISerie[],
-  customOptions: Highcharts.Options
+  customOptions: Highcharts.Options,
+  isStacked: boolean = true
 ): Highcharts.Options => ({
   title: undefined,
   chart: {
@@ -38,7 +39,7 @@ const getChartOptions = (
   plotOptions: {
     line: { marker: { enabled: false } },
     column: {
-      stacking: "normal",
+      stacking: isStacked ? "normal" : null,
       borderRadius: 3,
       states: {
         hover: { color: "#029FE3" }
@@ -72,9 +73,10 @@ const getChartOptions = (
 interface IProps {
   data: any[];
   customOptions?: any;
+  isStacked?: boolean;
 }
 
-export const TradeFlowChart = WithGoogleData(
+export const ColumnLineChart = WithGoogleData(
   class extends React.PureComponent<IProps> {
     public state = { data: [] };
 
@@ -103,7 +105,8 @@ export const TradeFlowChart = WithGoogleData(
               highcharts={Highcharts}
               options={getChartOptions(
                 tradedFlowSeries,
-                this.props.customOptions
+                this.props.customOptions,
+                this.props.isStacked
               )}
             />
           </div>

@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
-import { TradeFlowChart } from "src/charts/TradedFlowChart";
+import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { OfftakeTable } from "src/tables/OfftakeTable";
 
@@ -29,7 +29,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 Current Cycle Phasing - EIB offtake Quarterly Phasing
               </Typography>
-              <TradeFlowChart range="EIB Total Quarterly phasing!A:E" />
+              <ColumnLineChart range="EIB Total Quarterly phasing!A:E" />
             </CardContent>
           </Card>
         </Grid>
@@ -70,7 +70,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade flow - EIB (total)
               </Typography>
             </CardContent>
-            <TradeFlowChart range="EIB Total Trade Flow Chart!A:D" />
+            <ColumnLineChart range="EIB Total Trade Flow Chart!A:D" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>

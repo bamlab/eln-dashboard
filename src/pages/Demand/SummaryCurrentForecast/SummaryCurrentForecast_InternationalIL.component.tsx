@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
-import { TradeFlowChart } from "src/charts/TradedFlowChart";
+import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { CustomTable } from "src/tables/table/Table";
 
 const styles = {
@@ -29,7 +29,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Current Cycle Phasing - IL offtake Quarterly Phasing
               </Typography>
             </CardContent>
-            <TradeFlowChart range="EIB Total Quarterly phasing!A:E" />
+            <ColumnLineChart range="EIB Total Quarterly phasing!A:E" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -69,7 +69,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade flow - IL (total)
               </Typography>
             </CardContent>
-            <TradeFlowChart range="EIB Total Trade Flow Chart!A:D" />
+            <ColumnLineChart range="EIB Total Trade Flow Chart!A:D" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>

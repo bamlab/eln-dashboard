@@ -6,7 +6,14 @@ import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ChinaMap } from "src/charts/ChinaMaps";
 import { HeatMap } from "src/charts/HeatMap";
+import { ColumnLineChart } from "src/charts/TradedFlowChart";
+import { CardHeader } from "src/components/CardHeader";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
+import {
+  XAxisHeatMapDropdown,
+  YAxisHeatMapDropdown
+} from "src/components/HeatMapDropdown";
+import { YearDropdown } from "src/components/YearDropdown";
 
 const styles = {
   root: {
@@ -37,9 +44,13 @@ const SummaryActual = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Deep dive cross-level demand trends
-              </Typography>
+              <CardHeader
+                title="Deep dive cross-level demand trends"
+                className={classes.font}
+              >
+                <XAxisHeatMapDropdown />
+                <YAxisHeatMapDropdown />
+              </CardHeader>
               <HeatMap range="DeepDive Cross Level Demand Trend" />
             </CardContent>
           </Card>
@@ -47,9 +58,59 @@ const SummaryActual = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Indicators by geography
-              </Typography>
+              <CardHeader
+                title="How are the demand change with the baby pool evolution"
+                className={classes.font}
+              />
+              <ColumnLineChart
+                isStacked={false}
+                range="IMF total - summary actual & future baby pool mn!A:D"
+                customOptions={{
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  },
+                  tooltip: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.y)}`;
+                    }
+                  }
+                }}
+              />
+              <ColumnLineChart
+                range="IMF total - summary actual & future baby pool ton!A:D"
+                customOptions={{
+                  legend: { enabled: false },
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        return ``;
+                      }
+                    }
+                  }
+                }}
+              />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <CardHeader
+                title="Indicators by geography"
+                className={classes.font}
+              >
+                <YearDropdown />
+              </CardHeader>
               <ChinaMap />
             </CardContent>
           </Card>
