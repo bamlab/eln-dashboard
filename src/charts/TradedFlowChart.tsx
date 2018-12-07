@@ -76,7 +76,7 @@ interface IProps {
   isStacked?: boolean;
 }
 
-export const TradeFlowChart = WithGoogleData(
+export const ColumnLineChart = WithGoogleData(
   class extends React.PureComponent<IProps> {
     public state = { data: [] };
 

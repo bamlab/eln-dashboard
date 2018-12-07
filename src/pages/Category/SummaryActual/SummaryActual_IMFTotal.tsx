@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ChinaMap } from "src/charts/ChinaMaps";
 import { HeatMap } from "src/charts/HeatMap";
-import { TradeFlowChart } from "src/charts/TradedFlowChart";
+import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { CardHeader } from "src/components/CardHeader";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
 import {
@@ -62,7 +62,7 @@ const SummaryActual = (props: any) => {
                 title="How are the demand change with the baby pool evolution"
                 className={classes.font}
               />
-              <TradeFlowChart
+              <ColumnLineChart
                 isStacked={false}
                 range="IMF total - summary actual & future baby pool mn!A:D"
                 customOptions={{

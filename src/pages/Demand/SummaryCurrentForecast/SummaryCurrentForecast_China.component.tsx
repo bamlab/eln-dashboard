@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { LineColumnChart } from "src/charts/LineColumnChart";
-import { TradeFlowChart } from "src/charts/TradedFlowChart";
+import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { CustomTable } from "src/tables/table/Table";
 
@@ -31,7 +31,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Current Cycle Phasing - DC offtake Quarterly Phasing
               </Typography>
             </CardContent>
-            <TradeFlowChart range="EIB Total Quarterly phasing!A:E" />
+            <ColumnLineChart range="EIB Total Quarterly phasing!A:E" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
