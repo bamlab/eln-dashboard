@@ -68,7 +68,7 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
               <SelectorOutlined
                 onChange={this.onCountryChange}
                 valueList={countryList}
-                defaultDisplayedValue="Total"
+                defaultDisplayedValue={countryList[0]}
                 iconColor="blue"
               />
             )}
