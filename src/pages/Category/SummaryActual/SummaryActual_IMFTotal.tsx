@@ -8,6 +8,10 @@ import { ChinaMap } from "src/charts/ChinaMaps";
 import { HeatMap } from "src/charts/HeatMap";
 import { CardHeader } from "src/components/CardHeader";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
+import {
+  XAxisHeatMapDropdown,
+  YAxisHeatMapDropdown
+} from "src/components/HeatMapDropdown";
 import { YearDropdown } from "src/components/YearDropdown";
 
 const styles = {
@@ -39,9 +43,13 @@ const SummaryActual = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Deep dive cross-level demand trends
-              </Typography>
+              <CardHeader
+                title="Deep dive cross-level demand trends"
+                className={classes.font}
+              >
+                <XAxisHeatMapDropdown />
+                <YAxisHeatMapDropdown />
+              </CardHeader>
               <HeatMap range="DeepDive Cross Level Demand Trend" />
             </CardContent>
           </Card>

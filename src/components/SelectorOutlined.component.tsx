@@ -1,22 +1,24 @@
 import MenuItem from "@material-ui/core/MenuItem";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import Select from "@material-ui/core/Select";
-import { withStyles } from "@material-ui/core/styles";
+import { StyleRules, withStyles } from "@material-ui/core/styles";
 import * as React from "react";
 import { colors } from "../theme";
 
-const styles = {
+const styles: StyleRules = {
   root: {
     marginLeft: 16,
     marginRight: 16,
     height: 35,
     fontWeight: 700,
     fontSize: "0.875rem",
-    color: colors.mainColor
+    color: colors.mainColor,
+    backgroundColor: "white"
   },
   iconBlue: {
     fill: colors.mainColor
-  }
+  },
+  selectMenu: { backgroundColor: "white" }
 };
 
 interface IPropsType {
@@ -51,7 +53,8 @@ class SelectMenu extends React.Component<IPropsType> {
         onChange={this.handleChange}
         className={classes.root}
         classes={{
-          icon: classes.iconBlue
+          icon: classes.iconBlue,
+          select: classes.selectMenu
         }}
         style={this.props.style}
         inputProps={{
