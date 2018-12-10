@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { HeatMap } from "src/charts/HeatMap";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
+import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 
 const styles = {
   root: {
@@ -25,9 +26,31 @@ const SummaryActual = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                What is the category demand?
-              </Typography>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between"
+                }}
+              >
+                <div>
+                  <Typography gutterBottom={true} className={classes.font}>
+                    What is the category demand?
+                  </Typography>
+                </div>
+                <div>
+                  <SelectorOutlined
+                    defaultDisplayedValue="2015 - 2018"
+                    valueList={["2015 - 2018"]}
+                    onChange={console.log}
+                  />
+                  <SelectorOutlined
+                    defaultDisplayedValue="All"
+                    valueList={["All"]}
+                    onChange={console.log}
+                  />
+                </div>
+              </div>
               <CategoryHistoricalDemandContainer />
             </CardContent>
           </Card>
