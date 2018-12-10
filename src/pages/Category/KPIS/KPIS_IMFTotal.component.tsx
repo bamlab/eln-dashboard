@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { CategoryKPISTable } from "src/tables/CategoryKPISTable";
 
 const styles = {
   root: {
@@ -26,6 +27,7 @@ const KPISComponent = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 KPIs
               </Typography>
+              <CategoryKPISTable range="Category Total IMF KPIS!A:G" />
             </CardContent>
           </Card>
         </Grid>
