@@ -33,9 +33,9 @@ export class TabBarPage extends React.Component<INavigationProps> {
     if (match.params.department === "demand") {
       return <Redirect to={`${match.url}/china/all`} />;
     } else if (match.params.department === "category") {
-      return <Redirect to={`${match.url}/tailored_nutrition/regular`} />;
+      return <Redirect to={`${match.url}/imf/total/summary_overview`} />;
     }
-    return <Redirect to={`category/tailored_nutrition/regular`} />;
+    return <Redirect to={`category/imf/total/summary_overview`} />;
   };
 
   public render() {
