@@ -26,7 +26,7 @@ const SummaryActual = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                What is historical category demand?
+                What is the category demand?
               </Typography>
               <CategoryHistoricalDemandContainer />
             </CardContent>
