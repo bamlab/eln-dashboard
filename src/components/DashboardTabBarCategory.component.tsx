@@ -34,8 +34,7 @@ interface IState {
 }
 const hashRoute = {
   "SUMMARY OVERVIEW": "summary_overview",
-  "SUMMARY ACTUAL": "summary_actual",
-  "SUMMARY FORECAST FUTURE": "summary_forecast_future",
+  "SUMMARY ACTUAL FORECAST": "summary_actual",
   "SUMMARY INPUT PAST & FUTURE": "summary_input_past_and_future",
   "SUMMARY DEFINITIONS": "summary_definitions",
   "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
