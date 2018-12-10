@@ -44,6 +44,19 @@ const SummaryActual = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                How does YoY growth rate change?
+              </Typography>
+              <ColumnLineChart
+                isStacked={false}
+                range="Category Total IMF YoY Growth Rate!A:D"
+              />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
               <CardHeader
                 title="Deep dive cross-level demand trends"
                 className={classes.font}
