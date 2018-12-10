@@ -9,16 +9,15 @@ const styles: StyleRules = {
   root: {
     marginLeft: 16,
     marginRight: 16,
-    height: 35,
     fontWeight: 700,
+    height: 35,
     fontSize: "0.875rem",
     color: colors.mainColor,
     backgroundColor: "white"
   },
   iconBlue: {
     fill: colors.mainColor
-  },
-  selectMenu: { backgroundColor: "white" }
+  }
 };
 
 interface IPropsType {
@@ -53,8 +52,7 @@ class SelectMenu extends React.Component<IPropsType> {
         onChange={this.handleChange}
         className={classes.root}
         classes={{
-          icon: classes.iconBlue,
-          select: classes.selectMenu
+          icon: classes.iconBlue
         }}
         style={this.props.style}
         inputProps={{
