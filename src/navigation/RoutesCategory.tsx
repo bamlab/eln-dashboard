@@ -20,13 +20,6 @@ import {
 } from "../pages/Category/SummaryDefinitions";
 
 import {
-  SummaryForecastFutureIMFGoat,
-  SummaryForecastFutureIMFOrganic,
-  SummaryForecastFutureIMFTotal,
-  SummaryForecastFutureTailored
-} from "../pages/Category/SummaryForecastFuture";
-
-import {
   SummaryOverviewIMFGoat,
   SummaryOverviewIMFOrganic,
   SummaryOverviewIMFTotal,
@@ -69,20 +62,6 @@ export const renderCategory = ({ match }: { match: any }) => {
     "/category/imf/organic/summary_actual": <SummaryActualIMFOrganic />,
     "/category/tailored_nutrition/regular/summary_actual": (
       <SummaryActualTailored />
-    ),
-
-    // Forecast Future
-    "/category/imf/total/summary_forecast_future": (
-      <SummaryForecastFutureIMFTotal />
-    ),
-    "/category/imf/goat/summary_forecast_future": (
-      <SummaryForecastFutureIMFGoat />
-    ),
-    "/category/imf/organic/summary_forecast_future": (
-      <SummaryForecastFutureIMFOrganic />
-    ),
-    "/category/tailored_nutrition/regular/summary_forecast_future": (
-      <SummaryForecastFutureTailored />
     ),
 
     // Input Past & Future
