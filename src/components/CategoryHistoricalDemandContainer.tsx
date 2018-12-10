@@ -13,7 +13,8 @@ const styles = {
   subTitle: {
     fontWeight: 700,
     fontSize: 14,
-    marginTop: 16
+    marginTop: 16,
+    marginBottom: 8
   }
 };
 

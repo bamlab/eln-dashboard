@@ -56,7 +56,12 @@ const getChartOptions = (waterfallData: any) => ({
       data: waterfallData.data,
       dataLabels: {
         enabled: true,
-        color: "#000000"
+        color: "#000000",
+        style: {
+          fontWeight: "bold",
+          color: "white",
+          fontSize: 16
+        }
       }
     }
   ]
