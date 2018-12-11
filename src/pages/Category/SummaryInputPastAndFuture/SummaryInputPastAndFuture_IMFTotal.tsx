@@ -1,3 +1,4 @@
+import { List, Paper } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
@@ -15,6 +16,13 @@ const styles = {
   font: {
     fontWeight: 700,
     fontSize: 16
+  },
+  title: {
+    color: "blue"
+  },
+  titleBar: {
+    background:
+      "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)"
   }
 };
 const SummaryInputPastAndFuture = (props: any) => {
@@ -87,6 +95,20 @@ const SummaryInputPastAndFuture = (props: any) => {
                 Historical trend of newborn population (mn)
               </Typography>
             </CardContent>
+            <Paper style={{ maxWidth: "100%", overflow: "auto" }}>
+              <List style={{ padding: 0 }}>
+                <CommonTable
+                  range="IMF Total - Historical Trend of pure breastfeeding!A:Z"
+                  width={2500}
+                  styleRows={[
+                    scheme.rowBlue,
+                    scheme.rowGrey,
+                    scheme.rowDefault
+                  ]}
+                  styleCells={[[scheme.whiteBold], [scheme.default]]}
+                />
+              </List>
+            </Paper>
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -96,6 +118,20 @@ const SummaryInputPastAndFuture = (props: any) => {
                 Historical trend of pure breastfeeding rate (0-6 months) %
               </Typography>
             </CardContent>
+            <Paper style={{ maxWidth: "100%", overflow: "auto" }}>
+              <List style={{ padding: 0 }}>
+                <CommonTable
+                  range="IMF Total - Historical trend new born pop!A:AH"
+                  width={2500}
+                  styleRows={[
+                    scheme.rowBlue,
+                    scheme.rowGrey,
+                    scheme.rowDefault
+                  ]}
+                  styleCells={[[scheme.whiteBold], [scheme.default]]}
+                />
+              </List>
+            </Paper>
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -105,16 +141,20 @@ const SummaryInputPastAndFuture = (props: any) => {
                 Historical trend of IF demand (lagged 8 months) ('000 ton)
               </Typography>
             </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Historical trend of IF demand (lagged 6-9 months total) ('000
-                ton)
-              </Typography>
-            </CardContent>
+            <Paper style={{ maxWidth: "100%", overflow: "auto" }}>
+              <List style={{ padding: 0 }}>
+                <CommonTable
+                  range="IMF Total - Historical trend of if demand(8months)!A:Z"
+                  width={2500}
+                  styleRows={[
+                    scheme.rowBlue,
+                    scheme.rowGrey,
+                    scheme.rowDefault
+                  ]}
+                  styleCells={[[scheme.whiteBold], [scheme.default]]}
+                />
+              </List>
+            </Paper>
           </Card>
         </Grid>
       </Grid>

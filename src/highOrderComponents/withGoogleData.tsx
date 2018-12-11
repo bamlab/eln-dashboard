@@ -18,6 +18,7 @@ export const WithGoogleData = (
     isStacked?: boolean;
     styleCells?: Array<Array<{}>>;
     styleRows?: Array<{}>;
+    width?: number;
   }> {
     public static defaultProps = { customOptions: {} };
     public state = { data: [], gid: "" };

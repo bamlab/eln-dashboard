@@ -7,6 +7,7 @@ interface IProps {
   data: string[][];
   styleCells?: CellCSSProperty[][];
   styleRows?: CellCSSProperty[];
+  width?: number;
 }
 
 export const CommonTable = WithGoogleData(
@@ -24,7 +25,7 @@ export const CommonTable = WithGoogleData(
       });
 
       return (
-        <Table padding="checkbox">
+        <Table padding="checkbox" style={{ width: this.props.width || "100%" }}>
           {table.map((row, rowIndex) => (
             <TableRow
               key={`row${rowIndex}`}
