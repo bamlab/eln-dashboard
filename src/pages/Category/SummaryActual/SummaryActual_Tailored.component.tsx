@@ -97,16 +97,23 @@ const SummaryActual = (props: any) => {
                 IMF Demand ('000 ton)
               </Typography>
               <ColumnLineChart
+                isStacked={false}
                 range="IMF total - summary actual & future baby pool ton!A:D"
                 customOptions={{
-                  legend: { enabled: false },
                   yAxis: {
                     gridLineWidth: 0,
                     title: null,
                     labels: {
                       formatter() {
-                        return ``;
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
                       }
+                    }
+                  },
+                  tooltip: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.y)}`;
                     }
                   }
                 }}
