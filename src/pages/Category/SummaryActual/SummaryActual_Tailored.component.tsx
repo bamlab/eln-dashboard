@@ -25,6 +25,7 @@ const styles = {
 };
 
 const SummaryActual = (props: any) => {
+  const fn = () => null;
   const { classes } = props;
   return (
     <div className={classes.root}>
@@ -48,12 +49,12 @@ const SummaryActual = (props: any) => {
                   <SelectorOutlined
                     defaultDisplayedValue="2015 - 2018"
                     valueList={["2015 - 2018"]}
-                    onChange={console.log}
+                    onChange={fn}
                   />
                   <SelectorOutlined
                     defaultDisplayedValue="All"
                     valueList={["All"]}
-                    onChange={console.log}
+                    onChange={fn}
                   />
                 </div>
               </div>
