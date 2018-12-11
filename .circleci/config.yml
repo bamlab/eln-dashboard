@@ -3,6 +3,20 @@ jobs:
   build:
     docker:
       - image: circleci/node:10.9.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn build
+  deploy:
+    docker:
+      - image: circleci/node:10.9.0
     branches:
       only:
         - master
