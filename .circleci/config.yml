@@ -14,12 +14,9 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn build
-  deploy:
+  deploy-staging:
     docker:
       - image: circleci/node:10.9.0
-    branches:
-      only:
-        - master
     steps:
       - checkout
       - restore_cache:
@@ -36,3 +33,15 @@ jobs:
             git config --global user.email $GH_EMAIL
             git config --global user.name $GH_NAME
             yarn deploy
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+  build-deploy:
+    jobs:
+      - deploy-staging:
+          filters:
+            branches:
+              only: master
