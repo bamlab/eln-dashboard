@@ -1,12 +1,12 @@
 import { Table, TableCell, TableRow } from "@material-ui/core";
 import * as React from "react";
 import { WithGoogleData } from "src/highOrderComponents/withGoogleData";
-import { scheme } from "./tableScheme";
+import { CellCSSProperty, scheme } from "./tableScheme";
 
 interface IProps {
   data: string[][];
-  styleCells?: Array<Array<{}>>;
-  styleRows?: Array<{}>;
+  styleCells?: CellCSSProperty[][];
+  styleRows?: CellCSSProperty[];
 }
 
 export const CommonTable = WithGoogleData(
@@ -51,28 +51,33 @@ export const CommonTable = WithGoogleData(
   }
 );
 
-const evaluateRowStyle = (rowIndex: number, styleRows: any): any => {
-  try {
-    if (!styleRows[rowIndex]) {
-      return evaluateRowStyle(styleRows.length - 1, rowIndex);
-    }
-    if (styleRows[rowIndex]) {
-      return styleRows[rowIndex];
-    } else {
-      return evaluateRowStyle(rowIndex, styleRows);
-    }
-  } catch (e) {
-    return scheme.rowDefault;
+const evaluateRowStyle = (
+  rowIndex: number,
+  styleRows: CellCSSProperty[] | undefined
+): React.CSSProperties => {
+  if (!styleRows) {
+    return scheme.rowDefault();
+  }
+  if (!styleRows[rowIndex]) {
+    return evaluateRowStyle(styleRows.length - 1, styleRows);
+  }
+  if (styleRows[rowIndex]) {
+    return styleRows[rowIndex]();
+  } else {
+    return evaluateRowStyle(rowIndex, styleRows);
   }
 };
 
 const evaluateCellStyle = (
   rowIndex: number,
   cellIndex: number,
-  styleCells: any,
+  styleCells: CellCSSProperty[][] | undefined,
   cell: string
-): any => {
+): React.CSSProperties => {
   try {
+    if (!styleCells) {
+      return scheme.default(cell);
+    }
     if (!styleCells[rowIndex]) {
       return evaluateCellStyle(
         styleCells.length - 1,

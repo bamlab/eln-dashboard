@@ -1,37 +1,41 @@
 import { colors } from "../../theme";
 
-export const scheme = {
-  blackBold: (cell: any) => ({
+export type CellCSSProperty = (cell?: string) => React.CSSProperties;
+
+export const scheme: {
+  [key: string]: CellCSSProperty;
+} = {
+  blackBold: () => ({
     color: "black",
     borderBottom: 0,
     fontSize: 14,
     fontWeight: 600
   }),
-  whiteBold: (cell: any) => ({
+  whiteBold: () => ({
     color: "white",
     borderBottom: 0,
     fontSize: 14,
     fontWeight: 600
   }),
-  whiteBoldAlignRight: (cell: any) => ({
+  whiteBoldAlignRight: () => ({
     color: "white",
     borderBottom: 0,
     fontSize: 14,
     fontWeight: 600,
     textAlign: "right"
   }),
-  blueBold: (cell: any) => ({
+  blueBold: () => ({
     color: colors.mainColor,
     borderBottom: 0,
     fontSize: 14,
     fontWeight: 600
   }),
-  default: (cell: any) => ({
+  default: () => ({
     color: "black",
     borderBottom: 0,
     fontSize: 14
   }),
-  numberCell: (cell: any) => {
+  numberCell: cell => {
     let color;
     if ((cell + "").startsWith("-")) {
       color = "red";
@@ -45,13 +49,13 @@ export const scheme = {
       textAlign: "right"
     };
   },
-  rowDefault: {
+  rowDefault: () => ({
     backgroundColor: "white"
-  },
-  rowBlue: {
+  }),
+  rowBlue: () => ({
     backgroundColor: colors.mainColor
-  },
-  rowGrey: {
+  }),
+  rowGrey: () => ({
     backgroundColor: "rgba(161,218,247,0.15)"
-  }
+  })
 };
