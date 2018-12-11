@@ -4,6 +4,10 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { SelectorOutlined } from "src/components/SelectorOutlined.component";
+import { CategoryDriversDataTable } from "src/tables/CategoryDriversDataTable";
+import { CommonTable } from "src/tables/table/CommonTable";
+import { scheme } from "src/tables/table/tableScheme";
 
 const styles = {
   root: {
@@ -16,6 +20,7 @@ const styles = {
 };
 const SummaryInputPastAndFuture = (props: any) => {
   const { classes } = props;
+  const fn = () => null;
 
   return (
     <div className={classes.root}>
@@ -27,15 +32,39 @@ const SummaryInputPastAndFuture = (props: any) => {
                 Category drivers data
               </Typography>
             </CardContent>
+            <CategoryDriversDataTable range="IMF Total - Category driver data!A:I" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Current Model Weighting
-              </Typography>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <Typography gutterBottom={true} className={classes.font}>
+                  Current Model Weighting
+                </Typography>
+                <SelectorOutlined
+                  onChange={fn}
+                  valueList={["Short term", "Long term"]}
+                  defaultDisplayedValue="Short term"
+                  iconColor="blue"
+                />
+              </div>
             </CardContent>
+
+            <CommonTable
+              range="IMF Total - Current Model Weighting!A:L"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [scheme.whiteBold],
+                [scheme.blackBold, scheme.default]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>

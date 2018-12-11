@@ -12,6 +12,8 @@ export const WithGoogleData = (
     range: string;
     customOptions?: Highcharts.Options;
     isStacked?: boolean;
+    styleCells?: Array<Array<{}>>;
+    styleRows?: Array<{}>;
   }> {
     public static defaultProps = { customOptions: {} };
     public range = "";
