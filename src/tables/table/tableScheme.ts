@@ -13,6 +13,13 @@ export const scheme = {
     fontSize: 14,
     fontWeight: 600
   }),
+  whiteBoldAlignRight: (cell: any) => ({
+    color: "white",
+    borderBottom: 0,
+    fontSize: 14,
+    fontWeight: 600,
+    textAlign: "right"
+  }),
   blueBold: (cell: any) => ({
     color: colors.mainColor,
     borderBottom: 0,
@@ -34,7 +41,8 @@ export const scheme = {
     return {
       color,
       borderBottom: 0,
-      fontSize: 14
+      fontSize: 14,
+      textAlign: "right"
     };
   },
   rowDefault: {

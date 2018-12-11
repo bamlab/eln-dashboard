@@ -24,7 +24,7 @@ export const CommonTable = WithGoogleData(
       });
 
       return (
-        <Table padding="dense">
+        <Table padding="checkbox">
           {table.map((row, rowIndex) => (
             <TableRow
               key={`row${rowIndex}`}
