@@ -1,7 +1,6 @@
 import { Grid, Typography, withStyles } from "@material-ui/core";
 import * as React from "react";
-import { ColumnChart } from "src/charts/ColumnChart";
-import { LineChart } from "src/charts/LineChart";
+import { ColumnLineChart } from "src/charts/TradedFlowChart";
 
 const styles = {
   root: {
@@ -13,8 +12,9 @@ const styles = {
   },
   subTitle: {
     fontWeight: 700,
-    fontSize: 16,
-    color: "white"
+    fontSize: 14,
+    marginTop: 16,
+    marginBottom: 8
   }
 };
 
@@ -23,52 +23,50 @@ export const CategoryHistoricalDemandContainer = withStyles(styles)(
     const { classes } = props;
     return (
       <Grid container={true} spacing={24}>
-        <Grid item={true} xs={2}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center"
+        <Grid item={true} xs={12}>
+          <Typography color="primary" className={classes.subTitle}>
+            Absolute ('000 ton)
+          </Typography>
+          <ColumnLineChart
+            range="Historical Category Demand!A:C"
+            isStacked={false}
+            customOptions={{
+              legend: {
+                enabled: false
+              },
+              tooltip: {
+                formatter() {
+                  const self: any = this as any;
+                  return `${self.series.userOptions.name}: ${self.y}%`;
+                }
+              }
             }}
-          >
-            <div
-              style={{
-                backgroundColor: "#026AB5",
-                display: "inline-block",
-                borderRadius: 2,
-                paddingLeft: 10,
-                paddingRight: 10,
-                paddingTop: 8
-              }}
-            >
-              <Typography gutterBottom={true} className={classes.subTitle}>
-                Absolute
-              </Typography>
-            </div>
-          </div>
+          />
         </Grid>
-        <Grid item={true} xs={10}>
-          <ColumnChart range="Historical Category Demand!A:B" />
-        </Grid>
-        <Grid item={true} xs={2}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div
-              style={{
-                backgroundColor: "#026AB5",
-                display: "inline-block",
-                borderRadius: 2,
-                paddingLeft: 10,
-                paddingRight: 10,
-                paddingTop: 8
-              }}
-            >
-              <Typography gutterBottom={true} className={classes.subTitle}>
-                YoY Growth rate
-              </Typography>
-            </div>
-          </div>
-        </Grid>
-        <Grid item={true} xs={10}>
-          <LineChart range="Historical Category Demand!D:E" />
+        <Grid item={true} xs={12}>
+          <Typography color="primary" className={classes.subTitle}>
+            YoY growth rate
+          </Typography>
+          <ColumnLineChart
+            range="Historical Category Demand!E:F"
+            customOptions={{
+              yAxis: {
+                gridLineWidth: 0,
+                min: 0,
+                max: 30,
+                title: null,
+                labels: {
+                  formatter() {
+                    const self: any = this as any;
+                    return `${Math.floor(self.value)}%`;
+                  }
+                }
+              },
+              legend: {
+                enabled: false
+              }
+            }}
+          />
         </Grid>
       </Grid>
     );
