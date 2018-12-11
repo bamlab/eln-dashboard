@@ -5,7 +5,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
-import { CategoryDriversDataTable } from "src/tables/CategoryDriversDataTable";
 import { CommonTable } from "src/tables/table/CommonTable";
 import { scheme } from "src/tables/table/tableScheme";
 
@@ -32,7 +31,21 @@ const SummaryInputPastAndFuture = (props: any) => {
                 Category drivers data
               </Typography>
             </CardContent>
-            <CategoryDriversDataTable range="IMF Total - Category driver data!A:I" />
+            <CommonTable
+              range="IMF Total - Category driver data!A:I"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [scheme.whiteBold],
+                [scheme.blackBold, scheme.default]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
