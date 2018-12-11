@@ -37,7 +37,7 @@ const KPISComponent = (props: any) => {
                 Historical Offtake Forecast Accuracy
               </Typography>
             </CardContent>
-            <LineColumnChart range={"DI Historical forecast bias!A:C"} />
+            <LineColumnChart range={"DC Historical forecast bias!A:C"} />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -47,7 +47,7 @@ const KPISComponent = (props: any) => {
                 Historical Offtake Forecast Bias
               </Typography>
             </CardContent>
-            <LineColumnChart range={"DI Historical forecast bias!A:C"} />
+            <LineColumnChart range={"DC Historical forecast bias!A:C"} />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -75,7 +75,7 @@ const KPISComponent = (props: any) => {
                 Historical Sell-Out Forecast Bias
               </Typography>
             </CardContent>
-            <LineColumnChart range={"DI Historical forecast bias!A:C"} />
+            <LineColumnChart range={"DC Historical forecast bias!A:C"} />
           </Card>
         </Grid>
       </Grid>

@@ -58,7 +58,7 @@ const KPISComponent = (props: any) => {
                 Historical Forecast Bias
               </Typography>
             </CardContent>
-            <LineColumnChart range="DI Historical forecast bias!A:C" />
+            <LineColumnChart range="DC Historical forecast bias!A:C" />
           </Card>
         </Grid>
       </Grid>

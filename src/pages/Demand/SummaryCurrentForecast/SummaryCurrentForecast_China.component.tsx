@@ -51,7 +51,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade Flow DC
               </Typography>
             </CardContent>
-            <LineColumnChart range="DI Historical forecast bias!A:C" />
+            <LineColumnChart range="DC Historical forecast bias!A:C" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
