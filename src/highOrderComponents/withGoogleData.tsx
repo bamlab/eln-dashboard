@@ -5,6 +5,10 @@ export interface IWrappedComponentProps {
   data: any[];
 }
 
+interface ISheet {
+  properties: { sheetId: number; title: string };
+}
+
 export const WithGoogleData = (
   WrappedComponent: React.ComponentType<IWrappedComponentProps>
 ) => {
@@ -15,10 +19,12 @@ export const WithGoogleData = (
   }> {
     public static defaultProps = { customOptions: {} };
     public range = "";
-    public state = { data: [] };
+    public sheetTitle = "";
+    public state = { data: [], gid: "" };
     constructor(props: any) {
       super(props);
       this.range = props.range;
+      this.sheetTitle = props.range.match(/^[^!]*/)[0];
       this.initClient = this.initClient.bind(this);
     }
 
@@ -36,6 +42,27 @@ export const WithGoogleData = (
         })
         .then(() => {
           client.load("sheets", "v4", () => {
+            const self = this;
+            client.sheets.spreadsheets
+              .get({
+                spreadsheetId: config.spreadsheetId
+              })
+              .then((response: any) => {
+                const gids = (response.result.sheets as ISheet[]).reduce(
+                  (gidByTitle, sheet) => {
+                    gidByTitle[sheet.properties.title] =
+                      sheet.properties.sheetId;
+                    return gidByTitle;
+                  },
+                  {}
+                );
+                const gid = gids[self.sheetTitle];
+                self.setState({ gid });
+              });
+          });
+        })
+        .then(() => {
+          client.load("sheets", "v4", () => {
             client.sheets.spreadsheets.values
               .get({
                 spreadsheetId: config.spreadsheetId,
@@ -50,7 +77,28 @@ export const WithGoogleData = (
     }
 
     public render() {
-      return <WrappedComponent data={this.state.data} {...this.props} />;
+      return (
+        <React.Fragment>
+          {this.state.data.length ? (
+            <a
+              href={`https://docs.google.com/spreadsheets/d/1rUencQt965RIFAGXac1VkyDEnx9TmId6Z-4NbC-8Sts/edit#gid=${
+                this.state.gid
+              }`}
+              target="_blank"
+              style={{
+                fontSize: "xx-small",
+                textDecoration: "none",
+                color: "lightgrey"
+              }}
+            >
+              data
+            </a>
+          ) : (
+            ""
+          )}
+          <WrappedComponent data={this.state.data} {...this.props} />
+        </React.Fragment>
+      );
     }
   };
 };
