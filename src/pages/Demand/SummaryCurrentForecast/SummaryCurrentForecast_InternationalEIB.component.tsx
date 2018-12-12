@@ -29,7 +29,19 @@ const SummaryCurrentForecastComponent = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 Current Cycle Phasing - EIB offtake Quarterly Phasing
               </Typography>
-              <ColumnLineChart range="EIB Total Quarterly phasing!A:E" />
+              <ColumnLineChart
+                range="EIB Total Quarterly phasing!A:E"
+                customOptions={{
+                  yAxis: {
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  }
+                }}
+              />
             </CardContent>
           </Card>
         </Grid>
