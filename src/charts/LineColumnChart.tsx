@@ -57,8 +57,6 @@ const getChartOptions = (
       }
     ],
     title: null,
-    max: 100,
-    min: -100,
     labels: {
       formatter() {
         const self: any = this as any;

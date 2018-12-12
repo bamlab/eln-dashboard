@@ -43,7 +43,6 @@ const getChartOptions = (waterfallData: any) => ({
   },
 
   colorAxis: {
-    min: 0,
     minColor: "#A1DAF7",
     maxColor: "#026AB5"
   },
