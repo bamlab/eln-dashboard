@@ -62,6 +62,21 @@ export const scheme: {
       textAlign: "right"
     };
   },
+  boldNumberCell: cell => {
+    let color;
+    if ((cell + "").startsWith("-")) {
+      color = colors.errorColor;
+    } else {
+      color = "green";
+    }
+    return {
+      color,
+      borderBottom: 0,
+      fontSize: 14,
+      fontWeight: 600,
+      textAlign: "right"
+    };
+  },
   absoluteRedGreen: cell => {
     const isOrange = (cell + "").match(/^[-]?[1]\d/);
     const isRed = (cell + "").match(/^[-]?[23456789]\d/);
