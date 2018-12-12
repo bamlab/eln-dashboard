@@ -4,11 +4,11 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
-import { LineColumnChart } from "src/charts/LineColumnChart";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
 import { CustomTable } from "src/tables/table/Table";
+import { TradeFlowDC } from "src/tables/TradeFlowDC";
 
 const styles = {
   root: {
@@ -49,20 +49,14 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Trade Flow DC
+                Trade Flow - DC
               </Typography>
-            </CardContent>
-            <LineColumnChart range="DC Historical forecast bias!A:C" />
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
+              <ColumnLineChart range="China DC  Trade Flow DC" />
               <Typography gutterBottom={true} className={classes.font}>
                 Trade Flow DC by Brand
               </Typography>
             </CardContent>
-            <CustomTable />
+            <TradeFlowDC range="China DC  Trade Flow DC by Brand" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
