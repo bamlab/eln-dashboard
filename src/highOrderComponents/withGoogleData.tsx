@@ -19,6 +19,7 @@ export const WithGoogleData = (
     styleCells?: Array<Array<{}>>;
     styleRows?: Array<{}>;
     width?: number;
+    toto?: string;
   }> {
     public static defaultProps = { customOptions: {} };
     public state = { data: [], gid: "" };

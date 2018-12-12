@@ -30,12 +30,21 @@ type IPropsType = RouteComponentProps<any> & {
 
 interface IState {
   currentFocusedTab: string;
-  country: string;
+  mesure: string;
+  hashRoute: {
+    [key: string]: string;
+  };
 }
-const hashRoute = {
+const hashRouteVolume = {
   "SUMMARY OVERVIEW": "summary_overview",
   "SUMMARY ACTUAL AND FORECAST": "summary_actual",
   "SUMMARY INPUT PAST & FUTURE": "summary_input_past_and_future",
+  "SUMMARY DEFINITIONS": "summary_definitions",
+  "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
+};
+
+const hashRouteValue = {
+  "SUMMARY ACTUAL AND FORECAST": "summary_actual",
   "SUMMARY DEFINITIONS": "summary_definitions",
   "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
 };
@@ -44,14 +53,18 @@ const unitList = ["Volume", "Value"];
 
 class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
   public state = {
-    currentFocusedTab: this.props.location.pathname.split("/").pop() || "",
-    country: "Total"
+    mesure: "Volume",
+    hashRoute: hashRouteVolume,
+    currentFocusedTab: this.props.location.pathname.split("/").pop() || ""
   };
   public onSelectChange = (value: string) => {
-    this.goToTab(hashRoute[value])();
+    this.goToTab(this.state.hashRoute[value])();
   };
-  public onCountryChange = (value: string) => {
-    this.setState({ country: value });
+  public onMesureChange = (value: string) => {
+    this.setState({
+      mesure: value,
+      hashRoute: value === "Volume" ? hashRouteVolume : hashRouteValue
+    });
   };
 
   public goToTab = (tab: string) => () => {
@@ -71,7 +84,7 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
         <AppBar position="static" style={{ backgroundColor: "white" }}>
           <Toolbar>
             <SelectorOutlined
-              onChange={this.onCountryChange}
+              onChange={this.onMesureChange}
               valueList={unitList}
               defaultDisplayedValue={unitList[0]}
               iconColor="blue"
@@ -89,7 +102,7 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
             </Button>
             <Selector
               onChange={this.onSelectChange}
-              valueList={Object.keys(hashRoute)}
+              valueList={Object.keys(this.state.hashRoute)}
               defaultDisplayedValue="SUMMARY OVERVIEW"
               style={
                 [
