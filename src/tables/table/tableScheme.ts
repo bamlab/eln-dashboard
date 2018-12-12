@@ -49,6 +49,21 @@ export const scheme: {
       textAlign: "right"
     };
   },
+  absoluteRedGreen: cell => {
+    const isOrange = (cell + "").match(/^[-]?[1]\d/);
+    const isRed = (cell + "").match(/^[-]?[23456789]\d/);
+    const color = isOrange
+      ? colors.fourthColor
+      : isRed
+      ? colors.errorColor
+      : "black";
+    return {
+      color,
+      borderBottom: 0,
+      fontSize: 14,
+      textAlign: "right"
+    };
+  },
   rowDefault: () => ({
     backgroundColor: "white"
   }),
