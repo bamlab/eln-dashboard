@@ -8,12 +8,14 @@ import { colors } from "src/theme";
 Data(Highcharts);
 
 const dataReducer = (tradedFlowSeries: ISerie[], values: string[]) => {
-  const date = values.shift() || "";
-  values.reduce((tradedFlowSeries2, value: string, serieIndex: number) => {
+  const tradedFlowSeriesCopy = [...tradedFlowSeries];
+  const valuesCopy = [...values];
+  const date = valuesCopy.shift() || "";
+  valuesCopy.reduce((tradedFlowSeries2, value: string, serieIndex: number) => {
     tradedFlowSeries2[serieIndex].data.push([date, Number(value)]);
     return tradedFlowSeries2;
-  }, tradedFlowSeries);
-  return tradedFlowSeries;
+  }, tradedFlowSeriesCopy);
+  return tradedFlowSeriesCopy;
 };
 
 interface ISerie {
@@ -74,6 +76,7 @@ interface IProps {
   data: any[];
   customOptions?: any & Partial<Highcharts.Options>;
   isStacked?: boolean;
+  toto?: string;
 }
 
 export const ColumnLineChart = WithGoogleData(

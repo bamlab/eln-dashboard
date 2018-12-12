@@ -10,10 +10,7 @@ import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { CardHeader } from "src/components/CardHeader";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
 import { CustomSlider } from "src/components/CustomSlider";
-import {
-  XAxisHeatMapDropdown,
-  YAxisHeatMapDropdown
-} from "src/components/HeatMapDropdown";
+import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { SelectorOutlinedMultiple } from "src/components/SelectorOutlinedMultiple.component";
 import { YearDropdown } from "src/components/YearDropdown";
 
@@ -80,6 +77,7 @@ const list = [
 
 const SummaryActual = (props: any) => {
   const { classes } = props;
+  const fn = () => null;
 
   return (
     <div className={classes.root}>
@@ -120,8 +118,30 @@ const SummaryActual = (props: any) => {
                 title="How does cross-level category ('000 ton) evolve?"
                 className={classes.font}
               >
-                <XAxisHeatMapDropdown />
-                <YAxisHeatMapDropdown />
+                <SelectorOutlined
+                  onChange={fn}
+                  valueList={[
+                    "X-axis: Stage",
+                    "X-axis: Channel",
+                    "X-axis: Label",
+                    "X-axis: Price Tier",
+                    "X-axis: City Tier"
+                  ]}
+                  defaultDisplayedValue={"X-axis: Stage"}
+                  iconColor="blue"
+                />
+                <SelectorOutlined
+                  onChange={fn}
+                  valueList={[
+                    "Y-axis: Stage",
+                    "Y-axis: Channel",
+                    "Y-axis: Label",
+                    "Y-axis: Price Tier",
+                    "Y-axis: City Tier"
+                  ]}
+                  defaultDisplayedValue={"Y-axis: Label"}
+                  iconColor="blue"
+                />
               </CardHeader>
               <HeatMap range="DeepDive Cross Level Demand Trend" />
             </CardContent>

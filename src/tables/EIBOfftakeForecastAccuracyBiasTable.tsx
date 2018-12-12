@@ -16,7 +16,7 @@ export const EIBOfftakeForecastAccuracyBiasTable = WithGoogleData(
   class extends React.Component<IWrappedComponentProps> {
     public render() {
       if (this.props.data.length) {
-        const data = new Array(...this.props.data);
+        const data = [...this.props.data];
         const secondHeaders = data.shift();
         const secondHeadersJSX = secondHeaders
           .slice(1)

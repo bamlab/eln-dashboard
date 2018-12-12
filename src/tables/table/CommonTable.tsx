@@ -1,4 +1,4 @@
-import { Table, TableCell, TableRow } from "@material-ui/core";
+import { Table, TableBody, TableCell, TableRow } from "@material-ui/core";
 import * as React from "react";
 import { WithGoogleData } from "src/highOrderComponents/withGoogleData";
 import { CellCSSProperty, scheme } from "./tableScheme";
@@ -26,26 +26,28 @@ export const CommonTable = WithGoogleData(
 
       return (
         <Table padding="checkbox" style={{ width: this.props.width || "100%" }}>
-          {table.map((row, rowIndex) => (
-            <TableRow
-              key={`row${rowIndex}`}
-              style={evaluateRowStyle(rowIndex, styleRows)}
-            >
-              {row.map((cell, cellIndex) => (
-                <TableCell
-                  key={`row${cellIndex}`}
-                  style={evaluateCellStyle(
-                    rowIndex,
-                    cellIndex,
-                    styleCells,
-                    cell
-                  )}
-                >
-                  {cell}
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
+          <TableBody>
+            {table.map((row, rowIndex) => (
+              <TableRow
+                key={`row${rowIndex}`}
+                style={evaluateRowStyle(rowIndex, styleRows)}
+              >
+                {row.map((cell, cellIndex) => (
+                  <TableCell
+                    key={`row${cellIndex}`}
+                    style={evaluateCellStyle(
+                      rowIndex,
+                      cellIndex,
+                      styleCells,
+                      cell
+                    )}
+                  >
+                    {cell}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
         </Table>
       );
     }
