@@ -15,6 +15,9 @@ export const colors = {
 };
 
 export const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true
+  },
   palette: {
     primary: {
       main: colors.mainColor
