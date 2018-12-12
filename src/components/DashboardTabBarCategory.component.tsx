@@ -40,7 +40,7 @@ const hashRoute = {
   "SUMMARY - KEY ASSUMPTIONS": "summary_key_assumptions"
 };
 
-const unitList = ["Volume"];
+const unitList = ["Volume", "Value"];
 
 class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
   public state = {
