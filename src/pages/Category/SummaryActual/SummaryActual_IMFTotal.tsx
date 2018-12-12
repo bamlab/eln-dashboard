@@ -13,6 +13,7 @@ import {
   XAxisHeatMapDropdown,
   YAxisHeatMapDropdown
 } from "src/components/HeatMapDropdown";
+import { SelectorOutlinedMultiple } from "src/components/SelectorOutlinedMultiple.component";
 import { YearDropdown } from "src/components/YearDropdown";
 
 const styles = {
@@ -34,9 +35,15 @@ const SummaryActual = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                What is historical category demand?
-              </Typography>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <Typography gutterBottom={true} className={classes.font}>
+                  What is historical category demand?
+                </Typography>
+                <SelectorOutlinedMultiple
+                  defaultValues={["2015", "2018"]}
+                  valueList={["2015", "2016", "2017", "2018"]}
+                />
+              </div>
               <CategoryHistoricalDemandContainer />
             </CardContent>
           </Card>

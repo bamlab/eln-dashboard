@@ -8,6 +8,7 @@
   "homepage": "https://bamlab.github.io/eln-dashboard/",
   "dependencies": {
     "@material-ui/core": "^3.6.0",
+    "@material-ui/lab": "^3.0.0-alpha.25",
     "@types/highcharts": "^5.0.33",
     "@types/luxon": "^1.4.1",
     "@types/react-router-dom": "^4.3.1",
