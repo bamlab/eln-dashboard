@@ -7,7 +7,6 @@ import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
-import { CustomTable } from "src/tables/table/Table";
 import { TradeFlowDC } from "src/tables/TradeFlowDC";
 
 const styles = {
@@ -66,7 +65,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trade Flow by SKU
               </Typography>
             </CardContent>
-            <CustomTable />
+            <TradeFlowDC range="China DC  Trade Flow DC by SKU" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
