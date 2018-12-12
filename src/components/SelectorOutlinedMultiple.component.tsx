@@ -51,7 +51,10 @@ class SelectMenu extends React.Component<IProps> {
       >
         {this.props.valueList.map(name => (
           <MenuItem key={name} value={name}>
-            <Checkbox checked={this.state.name.includes(name)} />
+            <Checkbox
+              checked={this.state.name.includes(name)}
+              color="primary"
+            />
             <ListItemText primary={name} />
           </MenuItem>
         ))}
