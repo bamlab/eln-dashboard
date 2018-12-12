@@ -4,7 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
-import { CategoryKPISTable } from "src/tables/CategoryKPISTable";
+import { CommonTable } from "src/tables/table/CommonTable";
+import { scheme } from "src/tables/table/tableScheme";
 
 const styles = {
   root: {
@@ -25,10 +26,150 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                KPIs
+                KPI
               </Typography>
-              <CategoryKPISTable range="Category Total IMF KPIS!A:G" />
             </CardContent>
+            <CommonTable
+              range="Category Total IMF KPIS!A:G"
+              styleRows={[
+                scheme.rowDefault,
+                scheme.rowBlue,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowBlue,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowBlue,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [scheme.blueBold, scheme.absoluteRedGreen],
+                [scheme.whiteBold, scheme.absoluteRedGreen],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [scheme.whiteBold, scheme.absoluteRedGreen],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [scheme.whiteBold, scheme.absoluteRedGreen],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ],
+                [
+                  scheme.blueBold,
+                  scheme.blackBold,
+                  scheme.default,
+                  scheme.absoluteRedGreen
+                ]
+              ]}
+            />
           </Card>
         </Grid>
       </Grid>
