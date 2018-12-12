@@ -72,7 +72,7 @@ const getChartOptions = (
 
 interface IProps {
   data: any[];
-  customOptions?: any;
+  customOptions?: any & Partial<Highcharts.Options>;
   isStacked?: boolean;
 }
 

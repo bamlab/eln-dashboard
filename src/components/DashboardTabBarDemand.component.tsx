@@ -10,7 +10,6 @@ import { withRouter } from "react-router-dom";
 import { renderPage } from "../navigation/Navigation";
 import { colors } from "../theme";
 import { Selector } from "./Selector.component";
-import { SelectorOutlined } from "./SelectorOutlined.component";
 
 const styles = {
   focused: {
@@ -28,12 +27,9 @@ type IPropsType = RouteComponentProps<any> & {
   classes: { [key: string]: string };
 };
 
-const countryList = ["Total", "ANZ", "NL", "DE", "UK"];
-
 class DashboardTabBarComponent extends React.Component<IPropsType> {
   public state = {
-    currentFocusedTab: this.props.location.pathname.split("/").pop(),
-    country: "Total"
+    currentFocusedTab: this.props.location.pathname.split("/").pop()
   };
   public onSelectChange = (value: string) => {
     const hashRoute = {
@@ -64,14 +60,6 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
       <div>
         <AppBar position="static" style={{ backgroundColor: "white" }}>
           <Toolbar>
-            {this.props.match.params.zona !== "china" && (
-              <SelectorOutlined
-                onChange={this.onCountryChange}
-                valueList={countryList}
-                defaultDisplayedValue={countryList[0]}
-                iconColor="blue"
-              />
-            )}
             <Button
               onClick={this.goToTab("previous_forecasts")}
               classes={{
