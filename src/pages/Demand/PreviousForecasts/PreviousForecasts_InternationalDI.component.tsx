@@ -28,38 +28,32 @@ const PreviousForeCastsComponent = (props: any) => {
               <Typography gutterBottom={true} className={classes.font}>
                 Previous Offtake
               </Typography>
-            </CardContent>
-            <ColumnLineChart
-              range="EIB Previous Offtake!A:G"
-              customOptions={{
-                yAxis: {
-                  gridLineWidth: 0,
-                  title: null,
-                  labels: {
+              <ColumnLineChart
+                range="China DI previous Forecast"
+                customOptions={{
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  },
+                  tooltip: {
                     formatter() {
                       const self: any = this as any;
-                      return `${Math.floor(self.value)}`;
+                      return `${Math.floor(self.y)}`;
                     }
                   }
-                },
-                tooltip: {
-                  formatter() {
-                    const self: any = this as any;
-                    return `${Math.floor(self.y)}`;
-                  }
-                }
-              }}
-            />
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
+                }}
+              />
               <Typography gutterBottom={true} className={classes.font}>
                 Previous Offtake
               </Typography>
             </CardContent>
-            <EIBPreviousOfftake range="EIB Previous Offtake!J:Y" />
+            <EIBPreviousOfftake range="China DI Previous Offtake" />
           </Card>
         </Grid>
       </Grid>
