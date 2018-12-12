@@ -9,6 +9,7 @@ import { HeatMap } from "src/charts/HeatMap";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { CardHeader } from "src/components/CardHeader";
 import { CategoryHistoricalDemandContainer } from "src/components/CategoryHistoricalDemandContainer";
+import { CustomSlider } from "src/components/CustomSlider";
 import {
   XAxisHeatMapDropdown,
   YAxisHeatMapDropdown
@@ -25,6 +26,57 @@ const styles = {
     fontSize: 16
   }
 };
+
+const list = [
+  "2015-01",
+  "2015-02",
+  "2015-03",
+  "2015-04",
+  "2015-05",
+  "2015-06",
+  "2015-07",
+  "2015-08",
+  "2015-09",
+  "2015-10",
+  "2015-11",
+  "2015-12",
+  "2016-01",
+  "2016-02",
+  "2016-03",
+  "2016-04",
+  "2016-05",
+  "2016-06",
+  "2016-07",
+  "2016-08",
+  "2016-09",
+  "2016-10",
+  "2016-11",
+  "2016-12",
+  "2017-01",
+  "2017-02",
+  "2017-03",
+  "2017-04",
+  "2017-05",
+  "2017-06",
+  "2017-07",
+  "2017-08",
+  "2017-09",
+  "2017-10",
+  "2017-11",
+  "2017-12",
+  "2018-01",
+  "2018-02",
+  "2018-03",
+  "2018-04",
+  "2018-05",
+  "2018-06",
+  "2018-07",
+  "2018-08",
+  "2018-09",
+  "2018-10",
+  "2018-11",
+  "2018-12"
+];
 
 const SummaryActual = (props: any) => {
   const { classes } = props;
@@ -79,7 +131,7 @@ const SummaryActual = (props: any) => {
           <Card>
             <CardContent>
               <CardHeader
-                title="How are the demand change with the baby pool evolution"
+                title="How does category change with baby pool evolution"
                 className={classes.font}
               />
               <ColumnLineChart
@@ -126,6 +178,7 @@ const SummaryActual = (props: any) => {
                   }
                 }}
               />
+              <CustomSlider list={list} />
             </CardContent>
           </Card>
         </Grid>
