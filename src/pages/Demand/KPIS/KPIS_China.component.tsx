@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { ForecastBiasTable } from "src/tables/ForecastBiais";
 import { LineColumnChart } from "./../../../charts/LineColumnChart";
 
 const styles = {
@@ -28,6 +29,7 @@ const KPISComponent = (props: any) => {
                 DC Offtake Forecast & Bias by brands
               </Typography>
             </CardContent>
+            <ForecastBiasTable range="China DC Forecast accuracy and Bias" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
