@@ -37,7 +37,17 @@ export const CategoryHistoricalDemandContainer = withStyles(styles)(
               tooltip: {
                 formatter() {
                   const self: any = this as any;
-                  return `${self.series.userOptions.name}: ${self.y}%`;
+                  return `${self.series.userOptions.name}: ${self.y}`;
+                }
+              },
+              yAxis: {
+                gridLineWidth: 0,
+                title: null,
+                labels: {
+                  formatter() {
+                    const self: any = this as any;
+                    return `${Math.floor(self.value)}`;
+                  }
                 }
               }
             }}
@@ -52,8 +62,6 @@ export const CategoryHistoricalDemandContainer = withStyles(styles)(
             customOptions={{
               yAxis: {
                 gridLineWidth: 0,
-                min: 0,
-                max: 30,
                 title: null,
                 labels: {
                   formatter() {
