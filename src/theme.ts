@@ -11,7 +11,8 @@ export const colors = {
   secondaryFontColor: "#AAACAE",
   tertiaryFontColor: "#99C3E1",
   backgroundSecondaryColor: "#EDF9FE",
-  fourthColor: "#DE723A"
+  fourthColor: "#DE723A",
+  lightError: "#FFE4E7"
 };
 
 export const theme = createMuiTheme({

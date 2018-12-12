@@ -7,6 +7,7 @@ import * as React from "react";
 import { LineColumnChart } from "src/charts/LineColumnChart";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
+import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
 import { CustomTable } from "src/tables/table/Table";
 
 const styles = {
@@ -41,7 +42,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Current cycle DC
               </Typography>
             </CardContent>
-            <CustomTable />
+            <CurrentCycleDCTable range="China DC Current Cycle DC" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
