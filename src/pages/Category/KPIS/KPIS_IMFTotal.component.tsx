@@ -56,117 +56,117 @@ const KPISComponent = (props: any) => {
                 scheme.rowGrey
               ]}
               styleCells={[
-                [scheme.blueBold, scheme.absoluteRedGreen],
-                [scheme.whiteBold, scheme.absoluteRedGreen],
+                [scheme.cellBlueBold, scheme.cellOrangeRedBlack],
+                [scheme.cellWhiteBold, scheme.cellOrangeRedBlack],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
-                [scheme.whiteBold, scheme.absoluteRedGreen],
+                [scheme.cellWhiteBold, scheme.cellOrangeRedBlack],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
-                ],
-                [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
-                ],
-                [scheme.whiteBold, scheme.absoluteRedGreen],
-                [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
+                ],
+                [scheme.cellWhiteBold, scheme.cellOrangeRedBlack],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ],
                 [
-                  scheme.blueBold,
-                  scheme.blackBold,
-                  scheme.default,
-                  scheme.absoluteRedGreen
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellOrangeRedBlack
                 ]
               ]}
             />

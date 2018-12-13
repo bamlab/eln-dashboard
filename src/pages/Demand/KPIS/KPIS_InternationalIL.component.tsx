@@ -5,7 +5,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { LineColumnChart } from "src/charts/LineColumnChart";
-import { EIBOfftakeForecastAccuracyBiasTable } from "src/tables/EIBOfftakeForecastAccuracyBiasTable";
+import { CommonTable } from "src/tables/table/CommonTable";
+import { scheme } from "src/tables/table/tableScheme";
 
 const styles = {
   root: {
@@ -29,7 +30,79 @@ const KPISComponent = (props: any) => {
                 IL Offtake Forecast Accuracy
               </Typography>
             </CardContent>
-            <EIBOfftakeForecastAccuracyBiasTable range="EIB Offtake Forecast Accuracy!A:K" />
+            <CommonTable
+              range="EIB Offtake Forecast Accuracy"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -39,7 +112,79 @@ const KPISComponent = (props: any) => {
                 IL Offtake Forecast Bias
               </Typography>
             </CardContent>
-            <EIBOfftakeForecastAccuracyBiasTable range="EIB Offtake Forecast Accuracy!A:K" />
+            <CommonTable
+              range="EIB Offtake Forecast Accuracy"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>

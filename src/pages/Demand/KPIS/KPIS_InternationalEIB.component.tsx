@@ -22,12 +22,12 @@ const styles = {
     fontWeight: 700,
     fontSize: 16,
     color: colors.mainColor,
-    marginTop: 16
+    marginTop: 24,
+    marginLeft: 24
   }
 };
 const KPISComponent = (props: any) => {
   const { classes } = props;
-  // EIBOfftakeForecastAccuracyBiasTable
   return (
     <div className={classes.root}>
       <Grid container={true} spacing={24}>
@@ -38,11 +38,9 @@ const KPISComponent = (props: any) => {
                 EIB Offtake Forecast Accuracy & bias
               </Typography>
             </CardContent>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.subTitle}>
-                Forecast Accuracy
-              </Typography>
-            </CardContent>
+            <Typography className={classes.subTitle}>
+              Forecast Accuracy
+            </Typography>
             <CommonTable
               range="EIB Offtake Forecast Accuracy"
               styleRows={[
@@ -60,27 +58,63 @@ const KPISComponent = (props: any) => {
               ]}
               styleCells={[
                 [
-                  scheme.whiteBold,
-                  scheme.whiteBold,
-                  scheme.whiteBoldAlignRight
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
                 ],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell],
-                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell]
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
               ]}
             />
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.subTitle}>
-                Forecast Bias
-              </Typography>
-            </CardContent>
+            <Typography className={classes.subTitle}>Forecast Bias</Typography>
             <CommonTable
               range="International EIB - KPIS Forecast Bias"
               styleRows={[
@@ -103,25 +137,85 @@ const KPISComponent = (props: any) => {
               ]}
               styleCells={[
                 [
-                  scheme.whiteBold,
-                  scheme.whiteBold,
-                  scheme.whiteBoldAlignRight
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
                 ],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell],
-                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell],
-                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell]
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
               ]}
             />
           </Card>
@@ -146,7 +240,197 @@ const KPISComponent = (props: any) => {
             <LineColumnChart range="DC Historical forecast bias!A:C" />
           </Card>
         </Grid>
-
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                EIB Sell in Forecast Accuracy & bias
+              </Typography>
+            </CardContent>
+            <Typography gutterBottom={true} className={classes.subTitle}>
+              Forecast Accuracy
+            </Typography>
+            <CommonTable
+              range="EIB Offtake Forecast Accuracy"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
+              ]}
+            />
+            <Typography gutterBottom={true} className={classes.subTitle}>
+              Forecast Bias
+            </Typography>
+            <CommonTable
+              range="International EIB - KPIS Forecast Bias"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
+              ]}
+            />
+          </Card>
+        </Grid>
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>

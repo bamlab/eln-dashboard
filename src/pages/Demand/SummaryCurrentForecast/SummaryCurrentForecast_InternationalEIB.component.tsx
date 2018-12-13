@@ -7,7 +7,6 @@ import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
-import { OfftakeTable } from "src/tables/OfftakeTable";
 import { CommonTable } from "src/tables/table/CommonTable";
 import { scheme } from "src/tables/table/tableScheme";
 
@@ -29,9 +28,21 @@ const SummaryCurrentForecastComponent = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Current Cycle Phasing - EIB offtake Quarterly Phasing
-              </Typography>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between"
+                }}
+              >
+                <Typography gutterBottom={true} className={classes.font}>
+                  Current Cycle Phasing - EIB offtake Quarterly Phasing
+                </Typography>
+                <SelectorOutlined
+                  defaultDisplayedValue={"ANZ"}
+                  valueList={["ANZ", "DE", "UK", "NL"]}
+                />
+              </div>
               <ColumnLineChart
                 range="EIB Total Quarterly phasing!A:E"
                 customOptions={{
@@ -55,7 +66,33 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Trackable offtake
               </Typography>
             </CardContent>
-            <OfftakeTable range="EIB Total Trackable Offtake display!A:N" />
+            <CommonTable
+              range="EIB Total Trackable Offtake display"
+              styleRows={[
+                scheme.rowDefault,
+                scheme.rowBlue,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowBlue
+              ]}
+              styleCells={[
+                [scheme.cellBlueBoldNoWrap],
+                [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRightNoWrap],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellWhiteBoldNoWrap, scheme.cellWhiteGreyBold]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -65,7 +102,33 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Non-trackable offtake
               </Typography>
             </CardContent>
-            <OfftakeTable range="EIB Total - Total Non-trackable Offtake display!A:N" />
+            <CommonTable
+              range="EIB Total - Total Non-trackable Offtake display"
+              styleRows={[
+                scheme.rowDefault,
+                scheme.rowBlue,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowBlue
+              ]}
+              styleCells={[
+                [scheme.cellBlueBoldNoWrap],
+                [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRightNoWrap],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellWhiteBoldNoWrap, scheme.cellWhiteGreyBold]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -75,7 +138,27 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Total offtake
               </Typography>
             </CardContent>
-            <OfftakeTable range="EIB Total - Total Offtake display!A:N" />
+            <CommonTable
+              range="EIB Total - Total Offtake display"
+              styleRows={[
+                scheme.rowDefault,
+                scheme.rowBlue,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowBlue
+              ]}
+              styleCells={[
+                [scheme.cellBlueBoldNoWrap],
+                [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRightNoWrap],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellWhiteBoldNoWrap, scheme.cellWhiteGreyBold]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -116,8 +199,8 @@ const SummaryCurrentForecastComponent = (props: any) => {
               range="International EIB - Trade flow table!A:N"
               styleRows={[scheme.rowBlue, scheme.rowDefault]}
               styleCells={[
-                [scheme.whiteBold],
-                [scheme.blueBold, scheme.blackBold]
+                [scheme.cellWhiteBold],
+                [scheme.cellBlueBold, scheme.cellBlackBold]
               ]}
             />
           </Card>
@@ -126,7 +209,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Risks & opportunites - 2018 EIB Offtake (Nov cycle - Dec cycle)
+                Cycle Evolution - 2018 EIB Offtake (Nov cycle - Dec cycle)
               </Typography>
               <WaterfallChart range="IEB Total Risk & ops 2018!A:C" />
             </CardContent>
@@ -136,7 +219,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Risks & opportunites - 2019 EIB Offtake (Nov cycle - Dec cycle)
+                Cycle Evolution - 2019 EIB Offtake (Nov cycle - Dec cycle)
               </Typography>
               <WaterfallChart range="IEB Total Risk & ops 2019!A:C" />
             </CardContent>
