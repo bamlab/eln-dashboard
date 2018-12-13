@@ -3,7 +3,27 @@ import { colors } from "../../theme";
 export type CellCSSProperty = (cell?: string) => React.CSSProperties;
 
 export const scheme: {
-  [key: string]: CellCSSProperty;
+  blackBold: CellCSSProperty;
+  whiteBold: CellCSSProperty;
+  whiteBoldAlignRight: CellCSSProperty;
+  whiteAlignRight: CellCSSProperty;
+  blueBold: CellCSSProperty;
+  blueBoldAlignRight: CellCSSProperty;
+  default: CellCSSProperty;
+  boldNumberCell: CellCSSProperty;
+  absoluteRedGreen: CellCSSProperty;
+  blueBoldNoWrap: CellCSSProperty;
+  numberCell: CellCSSProperty;
+  alignRightCell: CellCSSProperty;
+  blackNumberCell: CellCSSProperty;
+  boldBlueNumberCell: CellCSSProperty;
+  boldWhiteNumberCell: CellCSSProperty;
+  rowDefault: CellCSSProperty;
+  rowSmallDefault: CellCSSProperty;
+  rowBlue: CellCSSProperty;
+  rowSmallBlue: CellCSSProperty;
+  rowSmallGrey: CellCSSProperty;
+  rowGrey: CellCSSProperty;
 } = {
   blackBold: () => ({
     color: "black",

@@ -105,14 +105,9 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
               valueList={Object.keys(this.state.hashRoute)}
               defaultDisplayedValue="SUMMARY OVERVIEW"
               style={
-                [
-                  "summary_overview",
-                  "summary_actual",
-                  "summary_forecast_future",
-                  "summary_input_and_future",
-                  "summary_definitions",
-                  "summary_key_assumptions"
-                ].includes(this.state.currentFocusedTab)
+                Object.values(hashRouteVolume).includes(
+                  this.state.currentFocusedTab
+                )
                   ? styles.focused
                   : styles.notFocused
               }

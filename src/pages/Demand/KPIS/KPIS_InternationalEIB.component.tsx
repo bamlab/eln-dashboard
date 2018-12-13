@@ -6,7 +6,9 @@ import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { LineColumnChart } from "src/charts/LineColumnChart";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
-import { EIBOfftakeForecastAccuracyBiasTable } from "src/tables/EIBOfftakeForecastAccuracyBiasTable";
+import { CommonTable } from "src/tables/table/CommonTable";
+import { scheme } from "src/tables/table/tableScheme";
+import { colors } from "src/theme";
 
 const styles = {
   root: {
@@ -15,11 +17,17 @@ const styles = {
   font: {
     fontWeight: 700,
     fontSize: 16
+  },
+  subTitle: {
+    fontWeight: 700,
+    fontSize: 16,
+    color: colors.mainColor,
+    marginTop: 16
   }
 };
 const KPISComponent = (props: any) => {
   const { classes } = props;
-
+  // EIBOfftakeForecastAccuracyBiasTable
   return (
     <div className={classes.root}>
       <Grid container={true} spacing={24}>
@@ -30,17 +38,92 @@ const KPISComponent = (props: any) => {
                 EIB Offtake Forecast Accuracy & bias
               </Typography>
             </CardContent>
-            <EIBOfftakeForecastAccuracyBiasTable range="EIB Offtake Forecast Accuracy!A:K" />
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                EIB Offtake Forecast Bias
+              <Typography gutterBottom={true} className={classes.subTitle}>
+                Forecast Accuracy
               </Typography>
             </CardContent>
-            <EIBOfftakeForecastAccuracyBiasTable range="EIB Offtake Forecast Accuracy!A:K" />
+            <CommonTable
+              range="EIB Offtake Forecast Accuracy"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.whiteBold,
+                  scheme.whiteBold,
+                  scheme.whiteBoldAlignRight
+                ],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell],
+                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell]
+              ]}
+            />
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.subTitle}>
+                Forecast Bias
+              </Typography>
+            </CardContent>
+            <CommonTable
+              range="International EIB - KPIS Forecast Bias"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.whiteBold,
+                  scheme.whiteBold,
+                  scheme.whiteBoldAlignRight
+                ],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell],
+                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell],
+                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -63,6 +146,7 @@ const KPISComponent = (props: any) => {
             <LineColumnChart range="DC Historical forecast bias!A:C" />
           </Card>
         </Grid>
+
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
