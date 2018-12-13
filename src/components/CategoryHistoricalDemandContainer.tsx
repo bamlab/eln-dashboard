@@ -28,7 +28,7 @@ export const CategoryHistoricalDemandContainer = withStyles(styles)(
             Absolute ('000 ton)
           </Typography>
           <ColumnLineChart
-            range="Historical Category Demand!A:C"
+            range="IMF Total Historical Category Demand (ton)"
             isStacked={false}
             customOptions={{
               legend: {
@@ -58,7 +58,7 @@ export const CategoryHistoricalDemandContainer = withStyles(styles)(
             YoY growth rate
           </Typography>
           <ColumnLineChart
-            range="Historical Category Demand!E:H"
+            range="IMF Total Historical Category Demand (rate)"
             customOptions={{
               yAxis: {
                 gridLineWidth: 0,
