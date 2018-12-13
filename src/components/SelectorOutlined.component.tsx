@@ -21,7 +21,7 @@ const styles: StyleRules = {
 };
 
 interface IPropsType {
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
   defaultDisplayedValue: string;
   valueList: string[];
   classes: { [key: string]: string };
@@ -40,9 +40,11 @@ class SelectMenu extends React.Component<IPropsType> {
   };
 
   public handleChange = (event: any) => {
-    this.setState({ [event.target.name]: event.target.value }, () =>
-      this.props.onChange(this.state.displayedValue)
-    );
+    this.setState({ [event.target.name]: event.target.value }, () => {
+      if (this.props.onChange) {
+        this.props.onChange(this.state.displayedValue);
+      }
+    });
   };
   public render() {
     const { classes } = this.props;

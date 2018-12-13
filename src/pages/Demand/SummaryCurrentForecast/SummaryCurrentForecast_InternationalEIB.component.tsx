@@ -6,7 +6,10 @@ import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
+import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { OfftakeTable } from "src/tables/OfftakeTable";
+import { CommonTable } from "src/tables/table/CommonTable";
+import { scheme } from "src/tables/table/tableScheme";
 
 const styles = {
   root: {
@@ -78,20 +81,45 @@ const SummaryCurrentForecastComponent = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Trade flow - EIB (total)
-              </Typography>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between"
+                }}
+              >
+                <Typography gutterBottom={true} className={classes.font}>
+                  Trade Flow
+                </Typography>
+                <div>
+                  <SelectorOutlined
+                    defaultDisplayedValue={"All countries"}
+                    valueList={["All countries", "ANZ", "DE", "UK", "NL"]}
+                  />
+                  <SelectorOutlined
+                    defaultDisplayedValue={"All brands"}
+                    valueList={["All brands"]}
+                  />
+                  <SelectorOutlined
+                    defaultDisplayedValue={"All sub-brands"}
+                    valueList={["All sub-brands"]}
+                  />
+                  <SelectorOutlined
+                    defaultDisplayedValue={"Stage"}
+                    valueList={["Stage"]}
+                  />
+                </div>
+              </div>
             </CardContent>
             <ColumnLineChart range="EIB Total Trade Flow Chart!A:D" />
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Trade Flow
-              </Typography>
-            </CardContent>
+            <CommonTable
+              range="International EIB - Trade flow table!A:N"
+              styleRows={[scheme.rowBlue, scheme.rowDefault]}
+              styleCells={[
+                [scheme.whiteBold],
+                [scheme.blueBold, scheme.blackBold]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
