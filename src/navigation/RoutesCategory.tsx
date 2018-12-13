@@ -33,6 +33,7 @@ import {
   SummaryInputPastAndFutureTailored
 } from "../pages/Category/SummaryInputPastAndFuture";
 
+import { CreateNewForecast } from "src/pages/Category/NewForecast/CreateNewForecast";
 import {
   SummaryKeyAssumptionsIMFGoat,
   SummaryKeyAssumptionsIMFOrganic,
@@ -100,7 +101,10 @@ export const renderCategory = ({ match }: { match: any }) => {
     ),
     "/category/tailored_nutrition/regular/summary_key_assumptions": (
       <SummaryKeyAssumptionsTailored />
-    )
+    ),
+
+    // Create New forecast
+    "/category/imf/total/create_new_forecast": <CreateNewForecast />
   };
   return hashMapRoute[match.url];
 };
