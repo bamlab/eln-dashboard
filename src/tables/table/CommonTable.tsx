@@ -1,4 +1,11 @@
-import { Table, TableBody, TableCell, TableRow } from "@material-ui/core";
+import {
+  List,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableRow
+} from "@material-ui/core";
 import * as React from "react";
 import { WithGoogleData } from "src/highOrderComponents/withGoogleData";
 import { CellCSSProperty, scheme } from "./tableScheme";
@@ -25,30 +32,37 @@ export const CommonTable = WithGoogleData(
       });
 
       return (
-        <Table padding="default" style={{ width: this.props.width || "100%" }}>
-          <TableBody>
-            {table.map((row, rowIndex) => (
-              <TableRow
-                key={`row${rowIndex}`}
-                style={evaluateRowStyle(rowIndex, styleRows)}
-              >
-                {row.map((cell, cellIndex) => (
-                  <TableCell
-                    key={`row${cellIndex}`}
-                    style={evaluateCellStyle(
-                      rowIndex,
-                      cellIndex,
-                      styleCells,
-                      cell
-                    )}
+        <Paper style={{ maxWidth: "100%", overflow: "auto" }}>
+          <List style={{ padding: 0 }}>
+            <Table
+              padding="checkbox"
+              style={{ width: this.props.width || "100%" }}
+            >
+              <TableBody>
+                {table.map((row, rowIndex) => (
+                  <TableRow
+                    key={`row${rowIndex}`}
+                    style={evaluateRowStyle(rowIndex, styleRows)}
                   >
-                    {cell}
-                  </TableCell>
+                    {row.map((cell, cellIndex) => (
+                      <TableCell
+                        key={`row${cellIndex}`}
+                        style={evaluateCellStyle(
+                          rowIndex,
+                          cellIndex,
+                          styleCells,
+                          cell
+                        )}
+                      >
+                        {cell}
+                      </TableCell>
+                    ))}
+                  </TableRow>
                 ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+              </TableBody>
+            </Table>
+          </List>
+        </Paper>
       );
     }
   }
@@ -79,7 +93,7 @@ const evaluateCellStyle = (
 ): React.CSSProperties => {
   try {
     if (!styleCells) {
-      return scheme.default(cell);
+      return scheme.cellDefault(cell);
     }
     if (!styleCells[rowIndex]) {
       return evaluateCellStyle(
@@ -100,6 +114,6 @@ const evaluateCellStyle = (
       );
     }
   } catch (e) {
-    return scheme.default(cell);
+    return scheme.cellDefault(cell);
   }
 };

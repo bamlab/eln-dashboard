@@ -47,20 +47,60 @@ const KPISComponent = (props: any) => {
               ]}
               styleCells={[
                 [
-                  scheme.whiteBold,
-                  scheme.whiteBold,
-                  scheme.whiteBoldAlignRight
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
                 ],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell],
-                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell]
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
               ]}
             />
           </Card>
@@ -89,20 +129,60 @@ const KPISComponent = (props: any) => {
               ]}
               styleCells={[
                 [
-                  scheme.whiteBold,
-                  scheme.whiteBold,
-                  scheme.whiteBoldAlignRight
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
                 ],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.default, scheme.default, scheme.alignRightCell],
-                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell],
-                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell]
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
               ]}
             />
           </Card>

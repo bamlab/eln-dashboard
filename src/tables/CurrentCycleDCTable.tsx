@@ -8,9 +8,9 @@ interface IProps {
 
 export class CurrentCycleDCTable extends React.Component<IProps> {
   public render() {
-    const regularNumberRow = [scheme.default, scheme.blackNumberCell];
-    const boldNumberRow = [scheme.blueBold, scheme.boldBlueNumberCell];
-    const whiteNumberRow = [scheme.whiteBold, scheme.boldWhiteNumberCell];
+    const regularNumberRow = [scheme.cellDefault, scheme.cellRedBlack];
+    const boldNumberRow = [scheme.cellBlueBold, scheme.cellBlueRedBold];
+    const whiteNumberRow = [scheme.cellWhiteBold, scheme.cellWhiteGreyBold];
     return (
       <CommonTable
         range={this.props.range}
@@ -45,18 +45,18 @@ export class CurrentCycleDCTable extends React.Component<IProps> {
           scheme.rowSmallBlue
         ]}
         styleCells={[
-          [scheme.blueBoldNoWrap],
+          [scheme.cellBlueBoldNoWrap],
           [
-            scheme.whiteAlignRight,
-            scheme.whiteAlignRight,
-            scheme.whiteAlignRight,
-            scheme.whiteAlignRight,
-            scheme.whiteBoldAlignRight,
-            scheme.whiteAlignRight,
-            scheme.whiteBoldAlignRight,
-            scheme.whiteAlignRight,
-            scheme.whiteBoldAlignRight,
-            scheme.whiteAlignRight
+            scheme.cellWhiteAlignRight,
+            scheme.cellWhiteAlignRight,
+            scheme.cellWhiteAlignRight,
+            scheme.cellWhiteAlignRight,
+            scheme.cellWhiteBoldAlignRight,
+            scheme.cellWhiteAlignRight,
+            scheme.cellWhiteBoldAlignRight,
+            scheme.cellWhiteAlignRight,
+            scheme.cellWhiteBoldAlignRight,
+            scheme.cellWhiteAlignRight
           ],
           regularNumberRow,
           regularNumberRow,

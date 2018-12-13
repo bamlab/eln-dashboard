@@ -3,21 +3,25 @@ import { colors } from "../../theme";
 export type CellCSSProperty = (cell?: string) => React.CSSProperties;
 
 export const scheme: {
-  blackBold: CellCSSProperty;
-  whiteBold: CellCSSProperty;
-  whiteBoldAlignRight: CellCSSProperty;
-  whiteAlignRight: CellCSSProperty;
-  blueBold: CellCSSProperty;
-  blueBoldAlignRight: CellCSSProperty;
-  default: CellCSSProperty;
-  boldNumberCell: CellCSSProperty;
-  absoluteRedGreen: CellCSSProperty;
-  blueBoldNoWrap: CellCSSProperty;
-  numberCell: CellCSSProperty;
-  alignRightCell: CellCSSProperty;
-  blackNumberCell: CellCSSProperty;
-  boldBlueNumberCell: CellCSSProperty;
-  boldWhiteNumberCell: CellCSSProperty;
+  cellBlackBold: CellCSSProperty;
+  cellWhiteBold: CellCSSProperty;
+  cellWhiteBoldNoWrap: CellCSSProperty;
+  cellWhiteBoldAlignRight: CellCSSProperty;
+  cellWhiteAlignRight: CellCSSProperty;
+  cellBlueBold: CellCSSProperty;
+  cellBlueBoldAlignRight: CellCSSProperty;
+  cellDefault: CellCSSProperty;
+  cellRedGreenBold: CellCSSProperty;
+  cellOrangeRedBlack: CellCSSProperty;
+  cellBlueBoldNoWrap: CellCSSProperty;
+  cellRedGreen: CellCSSProperty;
+  cellDefaultAlignRight: CellCSSProperty;
+  cellRedBlack: CellCSSProperty;
+  cellBlueRedBold: CellCSSProperty;
+  cellWhiteGreyBold: CellCSSProperty;
+  cellDefaultBoldNoWrap: CellCSSProperty;
+  cellDefaultNoWrap: CellCSSProperty;
+  cellWhiteBoldAlignRightNoWrap: CellCSSProperty;
   rowDefault: CellCSSProperty;
   rowSmallDefault: CellCSSProperty;
   rowBlue: CellCSSProperty;
@@ -25,50 +29,57 @@ export const scheme: {
   rowSmallGrey: CellCSSProperty;
   rowGrey: CellCSSProperty;
 } = {
-  blackBold: () => ({
+  cellBlackBold: () => ({
     color: "black",
     borderBottom: 0,
     fontSize: 14,
     fontWeight: 600
   }),
-  whiteBold: () => ({
+  cellWhiteBold: () => ({
     color: "white",
     borderBottom: 0,
     fontSize: 14,
     fontWeight: 600
   }),
-  whiteBoldAlignRight: () => ({
+  cellWhiteBoldNoWrap: () => ({
+    whiteSpace: "nowrap",
+    color: "white",
+    borderBottom: 0,
+    fontSize: 14,
+    fontWeight: 600
+  }),
+  cellWhiteBoldAlignRight: () => ({
     color: "white",
     borderBottom: 0,
     fontSize: 14,
     fontWeight: 600,
     textAlign: "right"
   }),
-  whiteAlignRight: () => ({
+  cellWhiteAlignRight: () => ({
     color: "white",
     borderBottom: 0,
     fontSize: 14,
     textAlign: "right"
   }),
-  blueBold: () => ({
+  cellBlueBold: () => ({
     color: colors.mainColor,
     borderBottom: 0,
     fontSize: 14,
     fontWeight: 600
   }),
-  blueBoldAlignRight: () => ({
+  cellBlueBoldAlignRight: () => ({
     color: colors.mainColor,
     borderBottom: 0,
     fontSize: 14,
     fontWeight: 600,
     textAlign: "right"
   }),
-  default: () => ({
+  cellDefault: () => ({
     color: "black",
     borderBottom: 0,
     fontSize: 14
   }),
-  numberCell: cell => {
+  cellRedGreen: cell => {
     let color;
     if ((cell + "").startsWith("-")) {
       color = colors.errorColor;
@@ -82,7 +93,7 @@ export const scheme: {
       textAlign: "right"
     };
   },
-  boldNumberCell: cell => {
+  cellRedGreenBold: cell => {
     let color;
     if ((cell + "").startsWith("-")) {
       color = colors.errorColor;
@@ -97,7 +108,7 @@ export const scheme: {
       textAlign: "right"
     };
   },
-  absoluteRedGreen: cell => {
+  cellOrangeRedBlack: cell => {
     const isOrange = (cell + "").match(/^[-]?[1]\d/);
     const isRed = (cell + "").match(/^[-]?[23456789]\d/);
     const color = isOrange
@@ -112,20 +123,43 @@ export const scheme: {
       textAlign: "right"
     };
   },
-  blueBoldNoWrap: () => ({
+  cellBlueBoldNoWrap: () => ({
     whiteSpace: "nowrap",
     color: colors.mainColor,
     borderBottom: 0,
     fontSize: 14,
     fontWeight: 600
   }),
-  alignRightCell: () => ({
+  cellDefaultBoldNoWrap: () => ({
+    whiteSpace: "nowrap",
+    width: 20,
+    color: "black",
+    borderBottom: 0,
+    fontSize: 14,
+    fontWeight: 600
+  }),
+  cellDefaultNoWrap: () => ({
+    whiteSpace: "nowrap",
+    width: 20,
+    color: "black",
+    borderBottom: 0,
+    fontSize: 14
+  }),
+  cellWhiteBoldAlignRightNoWrap: () => ({
+    whiteSpace: "nowrap",
+    color: "white",
+    borderBottom: 0,
+    fontSize: 14,
+    fontWeight: 600,
+    textAlign: "right"
+  }),
+  cellDefaultAlignRight: () => ({
     color: "black",
     borderBottom: 0,
     fontSize: 14,
     textAlign: "right"
   }),
-  blackNumberCell: cell => {
+  cellRedBlack: cell => {
     let color;
     if ((cell + "").startsWith("-") || (cell + "").startsWith("(")) {
       color = colors.errorColor;
@@ -139,7 +173,7 @@ export const scheme: {
       textAlign: "right"
     };
   },
-  boldBlueNumberCell: cell => {
+  cellBlueRedBold: cell => {
     let color;
     if ((cell + "").startsWith("-") || (cell + "").startsWith("(")) {
       color = colors.errorColor;
@@ -154,7 +188,7 @@ export const scheme: {
       textAlign: "right"
     };
   },
-  boldWhiteNumberCell: cell => {
+  cellWhiteGreyBold: cell => {
     let color;
     if ((cell + "").startsWith("-") || (cell + "").startsWith("(")) {
       color = colors.lightError;

@@ -8,8 +8,8 @@ interface IProps {
 
 export class TradeFlowDC extends React.Component<IProps> {
   public render() {
-    const regularNumberRow = [scheme.default, scheme.blackNumberCell];
-    const boldNumberRow = [scheme.blueBold, scheme.boldBlueNumberCell];
+    const regularNumberRow = [scheme.cellDefault, scheme.cellRedBlack];
+    const boldNumberRow = [scheme.cellBlueBold, scheme.cellBlueRedBold];
     return (
       <CommonTable
         range={this.props.range}
@@ -32,7 +32,7 @@ export class TradeFlowDC extends React.Component<IProps> {
           scheme.rowSmallDefault
         ]}
         styleCells={[
-          [scheme.whiteBoldAlignRight],
+          [scheme.cellWhiteBoldAlignRight],
           regularNumberRow,
           regularNumberRow,
           boldNumberRow,
@@ -40,7 +40,7 @@ export class TradeFlowDC extends React.Component<IProps> {
           regularNumberRow,
           boldNumberRow,
           boldNumberRow,
-          [scheme.whiteBoldAlignRight],
+          [scheme.cellWhiteBoldAlignRight],
           regularNumberRow,
           regularNumberRow,
           boldNumberRow,

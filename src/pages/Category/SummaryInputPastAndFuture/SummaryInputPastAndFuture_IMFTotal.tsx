@@ -1,4 +1,3 @@
-import { List, Paper } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
@@ -50,8 +49,8 @@ const SummaryInputPastAndFuture = (props: any) => {
                 scheme.rowGrey
               ]}
               styleCells={[
-                [scheme.whiteBold],
-                [scheme.blackBold, scheme.default]
+                [scheme.cellWhiteBold],
+                [scheme.cellBlackBold, scheme.cellDefault]
               ]}
             />
           </Card>
@@ -82,8 +81,8 @@ const SummaryInputPastAndFuture = (props: any) => {
                 scheme.rowGrey
               ]}
               styleCells={[
-                [scheme.whiteBold],
-                [scheme.blackBold, scheme.default]
+                [scheme.cellWhiteBold],
+                [scheme.cellBlackBold, scheme.cellDefault]
               ]}
             />
           </Card>
@@ -95,20 +94,12 @@ const SummaryInputPastAndFuture = (props: any) => {
                 Historical trend of newborn population (mn)
               </Typography>
             </CardContent>
-            <Paper style={{ maxWidth: "100%", overflow: "auto" }}>
-              <List style={{ padding: 0 }}>
-                <CommonTable
-                  range="IMF Total - Historical Trend of pure breastfeeding!A:Z"
-                  width={2500}
-                  styleRows={[
-                    scheme.rowBlue,
-                    scheme.rowGrey,
-                    scheme.rowDefault
-                  ]}
-                  styleCells={[[scheme.whiteBold], [scheme.default]]}
-                />
-              </List>
-            </Paper>
+            <CommonTable
+              range="IMF Total - Historical Trend of pure breastfeeding!A:Z"
+              width={2500}
+              styleRows={[scheme.rowBlue, scheme.rowGrey, scheme.rowDefault]}
+              styleCells={[[scheme.cellWhiteBold], [scheme.cellDefault]]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -118,20 +109,12 @@ const SummaryInputPastAndFuture = (props: any) => {
                 Historical trend of pure breastfeeding rate (0-6 months) %
               </Typography>
             </CardContent>
-            <Paper style={{ maxWidth: "100%", overflow: "auto" }}>
-              <List style={{ padding: 0 }}>
-                <CommonTable
-                  range="IMF Total - Historical trend new born pop!A:AH"
-                  width={2500}
-                  styleRows={[
-                    scheme.rowBlue,
-                    scheme.rowGrey,
-                    scheme.rowDefault
-                  ]}
-                  styleCells={[[scheme.whiteBold], [scheme.default]]}
-                />
-              </List>
-            </Paper>
+            <CommonTable
+              range="IMF Total - Historical trend new born pop!A:AH"
+              width={2500}
+              styleRows={[scheme.rowBlue, scheme.rowGrey, scheme.rowDefault]}
+              styleCells={[[scheme.cellWhiteBold], [scheme.cellDefault]]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -141,20 +124,12 @@ const SummaryInputPastAndFuture = (props: any) => {
                 Historical trend of IF demand (lagged 8 months) ('000 ton)
               </Typography>
             </CardContent>
-            <Paper style={{ maxWidth: "100%", overflow: "auto" }}>
-              <List style={{ padding: 0 }}>
-                <CommonTable
-                  range="IMF Total - Historical trend of if demand(8months)!A:Z"
-                  width={2500}
-                  styleRows={[
-                    scheme.rowBlue,
-                    scheme.rowGrey,
-                    scheme.rowDefault
-                  ]}
-                  styleCells={[[scheme.whiteBold], [scheme.default]]}
-                />
-              </List>
-            </Paper>
+            <CommonTable
+              range="IMF Total - Historical trend of if demand(8months)!A:Z"
+              width={2500}
+              styleRows={[scheme.rowBlue, scheme.rowGrey, scheme.rowDefault]}
+              styleCells={[[scheme.cellWhiteBold], [scheme.cellDefault]]}
+            />
           </Card>
         </Grid>
       </Grid>

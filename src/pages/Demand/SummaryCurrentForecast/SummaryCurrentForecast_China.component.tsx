@@ -72,7 +72,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Risks & opportunities
+                Cycle evolution - DC Total offtake bridge by brand (2018)
               </Typography>
               <WaterfallChart range="China DC Current Forecast Risk & ops!A:C" />
             </CardContent>

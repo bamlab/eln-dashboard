@@ -9,10 +9,10 @@ interface IProps {
 export class SmallForecastBiasTable extends React.Component<IProps> {
   public render() {
     const boldNumberRow = [
-      scheme.blueBold,
-      scheme.boldBlueNumberCell,
-      scheme.boldBlueNumberCell,
-      scheme.boldNumberCell
+      scheme.cellBlueBold,
+      scheme.cellBlueRedBold,
+      scheme.cellBlueRedBold,
+      scheme.cellRedGreenBold
     ];
     return (
       <CommonTable
@@ -25,7 +25,7 @@ export class SmallForecastBiasTable extends React.Component<IProps> {
           scheme.rowSmallGrey
         ]}
         styleCells={[
-          [scheme.whiteBold, scheme.whiteBoldAlignRight],
+          [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRight],
           boldNumberRow
         ]}
       />
