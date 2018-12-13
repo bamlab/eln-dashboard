@@ -76,7 +76,6 @@ interface IProps {
   data: any[];
   customOptions?: any & Partial<Highcharts.Options>;
   isStacked?: boolean;
-  toto?: string;
 }
 
 export const ColumnLineChart = WithGoogleData(

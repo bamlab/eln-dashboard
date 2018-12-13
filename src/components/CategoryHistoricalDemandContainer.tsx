@@ -28,7 +28,6 @@ export const CategoryHistoricalDemandContainer = withStyles(styles)(
             Absolute ('000 ton)
           </Typography>
           <ColumnLineChart
-            toto={"yoooooo"}
             range="Historical Category Demand!A:C"
             isStacked={false}
             customOptions={{
