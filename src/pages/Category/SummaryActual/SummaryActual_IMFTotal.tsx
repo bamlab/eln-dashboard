@@ -173,7 +173,8 @@ const SummaryActual = (props: any) => {
                       const self: any = this as any;
                       return `${Math.floor(self.y)}`;
                     }
-                  }
+                  },
+                  chart: { height: 250 }
                 }}
               />
               <ColumnLineChart
@@ -195,7 +196,8 @@ const SummaryActual = (props: any) => {
                       const self: any = this as any;
                       return `${Math.floor(self.y)}`;
                     }
-                  }
+                  },
+                  chart: { height: 250 }
                 }}
               />
               <CustomSlider list={list} />
