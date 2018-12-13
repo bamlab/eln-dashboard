@@ -87,11 +87,11 @@ const SummaryActual = (props: any) => {
             <CardContent>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <Typography gutterBottom={true} className={classes.font}>
-                  What is historical category demand?
+                  What is category demand?
                 </Typography>
                 <SelectorOutlinedMultiple
-                  defaultValues={["2015", "2018"]}
-                  valueList={["2015", "2016", "2017", "2018"]}
+                  defaultValues={["2017", "2018", "2019"]}
+                  valueList={["2015", "2016", "2017", "2018", "2019"]}
                 />
               </div>
               <CategoryHistoricalDemandContainer />

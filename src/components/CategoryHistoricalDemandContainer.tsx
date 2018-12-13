@@ -58,7 +58,7 @@ export const CategoryHistoricalDemandContainer = withStyles(styles)(
             YoY growth rate
           </Typography>
           <ColumnLineChart
-            range="Historical Category Demand!E:F"
+            range="Historical Category Demand!E:H"
             customOptions={{
               yAxis: {
                 gridLineWidth: 0,
