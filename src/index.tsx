@@ -9,7 +9,9 @@ import { theme } from "./theme";
 ReactDOM.render(
   <BrowserRouter basename="/eln-dashboard/#/">
     <MuiThemeProvider theme={theme}>
-      <App />
+      <div style={{ marginLeft: 100, marginRight: 100 }}>
+        <App />
+      </div>
     </MuiThemeProvider>
   </BrowserRouter>,
   document.getElementById("root") as HTMLElement
