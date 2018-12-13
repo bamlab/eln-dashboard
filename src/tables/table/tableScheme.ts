@@ -170,21 +170,24 @@ export const scheme: {
     };
   },
   rowDefault: () => ({
-    backgroundColor: "white"
+    backgroundColor: "white",
+    height: 30
   }),
   rowSmallDefault: () => ({
     backgroundColor: "white",
     height: 30
   }),
   rowBlue: () => ({
-    backgroundColor: colors.mainColor
+    backgroundColor: colors.mainColor,
+    height: 30
   }),
   rowSmallBlue: () => ({
     backgroundColor: colors.mainColor,
     height: 30
   }),
   rowGrey: () => ({
-    backgroundColor: "rgba(161,218,247,0.15)"
+    backgroundColor: "rgba(161,218,247,0.15)",
+    height: 30
   }),
   rowSmallGrey: () => ({
     backgroundColor: "rgba(161,218,247,0.15)",

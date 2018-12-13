@@ -25,7 +25,7 @@ export const CommonTable = WithGoogleData(
       });
 
       return (
-        <Table padding="checkbox" style={{ width: this.props.width || "100%" }}>
+        <Table padding="default" style={{ width: this.props.width || "100%" }}>
           <TableBody>
             {table.map((row, rowIndex) => (
               <TableRow

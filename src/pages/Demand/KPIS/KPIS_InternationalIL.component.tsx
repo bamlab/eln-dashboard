@@ -5,7 +5,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { LineColumnChart } from "src/charts/LineColumnChart";
-import { EIBOfftakeForecastAccuracyBiasTable } from "src/tables/EIBOfftakeForecastAccuracyBiasTable";
+import { CommonTable } from "src/tables/table/CommonTable";
+import { scheme } from "src/tables/table/tableScheme";
 
 const styles = {
   root: {
@@ -29,7 +30,39 @@ const KPISComponent = (props: any) => {
                 IL Offtake Forecast Accuracy
               </Typography>
             </CardContent>
-            <EIBOfftakeForecastAccuracyBiasTable range="EIB Offtake Forecast Accuracy!A:K" />
+            <CommonTable
+              range="EIB Offtake Forecast Accuracy"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.whiteBold,
+                  scheme.whiteBold,
+                  scheme.whiteBoldAlignRight
+                ],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell],
+                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -39,7 +72,39 @@ const KPISComponent = (props: any) => {
                 IL Offtake Forecast Bias
               </Typography>
             </CardContent>
-            <EIBOfftakeForecastAccuracyBiasTable range="EIB Offtake Forecast Accuracy!A:K" />
+            <CommonTable
+              range="EIB Offtake Forecast Accuracy"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.whiteBold,
+                  scheme.whiteBold,
+                  scheme.whiteBoldAlignRight
+                ],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.default, scheme.default, scheme.alignRightCell],
+                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell],
+                [scheme.blueBold, scheme.blueBold, scheme.boldBlueNumberCell]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
