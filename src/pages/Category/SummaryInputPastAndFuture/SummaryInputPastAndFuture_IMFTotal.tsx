@@ -95,7 +95,7 @@ const SummaryInputPastAndFuture = (props: any) => {
               </Typography>
             </CardContent>
             <CommonTable
-              range="IMF Total - Historical Trend of pure breastfeeding!A:Z"
+              range="IMF Total - Historical Trend of pure breastfeeding"
               width={2500}
               styleRows={[scheme.rowBlue, scheme.rowGrey, scheme.rowDefault]}
               styleCells={[[scheme.cellWhiteBold], [scheme.cellDefault]]}
@@ -110,7 +110,7 @@ const SummaryInputPastAndFuture = (props: any) => {
               </Typography>
             </CardContent>
             <CommonTable
-              range="IMF Total - Historical trend new born pop!A:AH"
+              range="IMF Total - Historical trend new born pop"
               width={2500}
               styleRows={[scheme.rowBlue, scheme.rowGrey, scheme.rowDefault]}
               styleCells={[[scheme.cellWhiteBold], [scheme.cellDefault]]}
