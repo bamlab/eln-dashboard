@@ -27,13 +27,15 @@ interface IPropsType {
   classes: { [key: string]: string };
   style?: any;
   iconColor?: string;
+  autoWidth?: boolean;
 }
 
 class SelectMenu extends React.Component<IPropsType> {
   public static defaultProps = {
     defaultDisplayedValue: "",
     style: {},
-    iconColor: "white"
+    iconColor: "white",
+    autoWidth: true
   };
   public state = {
     displayedValue: this.props.defaultDisplayedValue
@@ -46,10 +48,17 @@ class SelectMenu extends React.Component<IPropsType> {
       }
     });
   };
+
+  // @ts-ignore
+  public componentWillReceiveProps(newProps) {
+    this.setState({ displayedValue: newProps.defaultDisplayedValue });
+  }
+
   public render() {
     const { classes } = this.props;
     return (
       <Select
+        autoWidth={this.props.autoWidth}
         value={this.state.displayedValue}
         onChange={this.handleChange}
         className={classes.root}

@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
+import { OrganizationSelector } from "src/components/OrganizationSelector";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { CommonTable } from "src/tables/table/CommonTable";
 import { scheme } from "src/tables/table/tableScheme";
@@ -175,22 +176,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                   Trade Flow
                 </Typography>
                 <div>
-                  <SelectorOutlined
-                    defaultDisplayedValue={"All countries"}
-                    valueList={["All countries", "ANZ", "DE", "UK", "NL"]}
-                  />
-                  <SelectorOutlined
-                    defaultDisplayedValue={"All brands"}
-                    valueList={["All brands"]}
-                  />
-                  <SelectorOutlined
-                    defaultDisplayedValue={"All sub-brands"}
-                    valueList={["All sub-brands"]}
-                  />
-                  <SelectorOutlined
-                    defaultDisplayedValue={"Stage"}
-                    valueList={["Stage"]}
-                  />
+                  <OrganizationSelector />
                 </div>
               </div>
             </CardContent>
