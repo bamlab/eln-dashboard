@@ -128,6 +128,85 @@ const CreateNewForecastComponent = (props: any) => {
             </CardContent>
           </Card>
         </Grid>
+        <Typography color="primary" style={blueTitleStyle}>
+          SENSE CHECK
+        </Typography>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Category forecast by market research firm A (‘000 ton)
+              </Typography>
+              <ColumnLineChart
+                range="Category forecast by market research firm A (‘000 ton)"
+                customOptions={{
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  },
+                  legend: { enabled: false }
+                }}
+              />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Baby diapers market size forecast by market research firm B (bn
+                pieces)
+              </Typography>
+              <ColumnLineChart
+                range="Baby diapers market size forecast by market research firm B (bn pieces)"
+                customOptions={{
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  },
+                  legend: { enabled: false }
+                }}
+              />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Category forecast by competitor X (‘000 ton)
+              </Typography>
+              <ColumnLineChart
+                range="Category forecast by competitor X (‘000 ton)"
+                customOptions={{
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  },
+                  legend: { enabled: false }
+                }}
+              />
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
     </div>
   );
