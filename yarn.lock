@@ -88,6 +88,11 @@
   dependencies:
     "@babel/runtime" "7.1.2"
 
+"@types/gapi@^0.0.36":
+  version "0.0.36"
+  resolved "https://registry.yarnpkg.com/@types/gapi/-/gapi-0.0.36.tgz#e7fb3d4d4a6fbdbd0a9aef1cbd93d3b115d59a3d"
+  integrity sha512-biMDn3eNRoPEMaPTEn5DwKXu64ng3U3cDQkePOllZ7uTRcA9lpPqwcLrDPF1cP0v+CrAtyv8w95/eVDSsQYPYQ==
+
 "@types/geojson@*":
   version "7946.0.4"
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-7946.0.4.tgz#4e049756383c3f055dd8f3d24e63fb543e98eb07"
