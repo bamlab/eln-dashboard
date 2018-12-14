@@ -72,6 +72,11 @@ interface IProps {
   customOptions?: any;
 }
 
+interface IState {
+  data: any[];
+  selectedData: any[];
+}
+
 const list = [
   "2015-01",
   "2015-02",
@@ -124,23 +129,50 @@ const list = [
 ];
 
 export const HeatMap = WithGoogleData(
-  class extends React.PureComponent<IProps> {
-    public state = { data: [] };
+  class extends React.PureComponent<IProps, IState> {
+    constructor(props: any) {
+      super(props);
+      this.state = { data: [...this.props.data], selectedData: [] };
+    }
+
+    public componentDidUpdate = () => {
+      this.setState({ data: this.props.data }, () => {
+        if (this.state.selectedData.length === 0) {
+          this.setState({ selectedData: this.state.data });
+        }
+      });
+    };
+
+    public refreshData = (num: number) => {
+      const newData = this.state.data.map((row: string[]) => {
+        return row.map((value: string) => {
+          if (isNaN(Number(value))) {
+            return value;
+          } else {
+            return Math.ceil(Number(value) * Math.random());
+          }
+        });
+      });
+      this.setState({ selectedData: newData });
+    };
 
     public render() {
-      if (this.props.data.length) {
-        const waterfallData = this.props.data.reduce(waterfallDataMapper, {
-          xNames: [],
-          yNames: [],
-          data: []
-        });
+      if (this.state.data.length) {
+        const waterfallData = this.state.selectedData.reduce(
+          waterfallDataMapper,
+          {
+            xNames: [],
+            yNames: [],
+            data: []
+          }
+        );
         return (
           <div>
             <HighchartsReact
               highcharts={Highcharts}
               options={getChartOptions(waterfallData)}
             />
-            <CustomSlider list={list} />
+            <CustomSlider list={list} onChange={this.refreshData} />
           </div>
         );
       }

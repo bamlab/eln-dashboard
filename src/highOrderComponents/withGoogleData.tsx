@@ -1,5 +1,6 @@
 import * as React from "react";
 import { config } from "../config";
+declare var gapi: any;
 
 export interface IWrappedComponentProps {
   data: any[];
@@ -24,11 +25,10 @@ export const WithGoogleData = (
     public state = { data: [], gid: "" };
 
     public componentDidMount() {
-      (window as any).gapi.load("client", this.initClient);
+      gapi.load("client", this.initClient.bind(this));
     }
 
     public initClient = () => {
-      const gapi = (window as any).gapi;
       const client = gapi.client;
       client
         .init({
