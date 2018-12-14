@@ -82,37 +82,52 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
     return (
       <div>
         <AppBar position="static" style={{ backgroundColor: "white" }}>
-          <Toolbar>
-            <SelectorOutlined
-              onChange={this.onMesureChange}
-              valueList={unitList}
-              defaultDisplayedValue={unitList[0]}
-              iconColor="blue"
-            />
-            <Button
-              onClick={this.goToTab("kpis")}
-              classes={{
-                root:
-                  this.state.currentFocusedTab === "kpis"
-                    ? classes.focused
-                    : classes.notFocused
-              }}
-            >
-              KPIS
-            </Button>
-            <Selector
-              onChange={this.onSelectChange}
-              valueList={Object.keys(this.state.hashRoute)}
-              defaultDisplayedValue="SUMMARY OVERVIEW"
-              style={
-                Object.values(hashRouteVolume).includes(
-                  this.state.currentFocusedTab
-                )
-                  ? styles.focused
-                  : styles.notFocused
-              }
-              iconColor="blue"
-            />
+          <Toolbar style={{ justifyContent: "space-between" }}>
+            <div>
+              <SelectorOutlined
+                onChange={this.onMesureChange}
+                valueList={unitList}
+                defaultDisplayedValue={unitList[0]}
+                iconColor="blue"
+              />
+              <Button
+                onClick={this.goToTab("kpis")}
+                classes={{
+                  root:
+                    this.state.currentFocusedTab === "kpis"
+                      ? classes.focused
+                      : classes.notFocused
+                }}
+              >
+                KPIS
+              </Button>
+              <Selector
+                onChange={this.onSelectChange}
+                valueList={Object.keys(this.state.hashRoute)}
+                defaultDisplayedValue="SUMMARY OVERVIEW"
+                style={
+                  Object.values(hashRouteVolume).includes(
+                    this.state.currentFocusedTab
+                  )
+                    ? styles.focused
+                    : styles.notFocused
+                }
+                iconColor="blue"
+              />
+            </div>
+            <div>
+              <Button
+                style={{
+                  backgroundColor: colors.mainColor,
+                  color: "white",
+                  borderRadius: 40,
+                  fontWeight: "bold"
+                }}
+                onClick={this.goToTab("create_new_forecast")}
+              >
+                Create new forecast
+              </Button>
+            </div>
           </Toolbar>
         </AppBar>
         <Switch>
