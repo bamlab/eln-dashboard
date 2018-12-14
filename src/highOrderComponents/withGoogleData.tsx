@@ -6,6 +6,10 @@ export interface IWrappedComponentProps {
   data: any[];
 }
 
+interface ISheet {
+  properties: { sheetId: number; title: string };
+}
+
 export const WithGoogleData = (
   WrappedComponent: React.ComponentType<IWrappedComponentProps>
 ) => {
@@ -24,12 +28,33 @@ export const WithGoogleData = (
       gapi.load("client", this.initClient.bind(this));
     }
 
-    public initClient() {
+    public initClient = () => {
       const client = gapi.client;
       client
         .init({
           apiKey: config.apiKey,
           discoveryDocs: config.discoveryDocs
+        })
+        .then(() => {
+          client.load("sheets", "v4", () => {
+            client.sheets.spreadsheets
+              .get({
+                spreadsheetId: config.spreadsheetId
+              })
+              .then((response: any) => {
+                const gids = (response.result.sheets as ISheet[]).reduce(
+                  (gidByTitle, sheet) => {
+                    gidByTitle[sheet.properties.title] =
+                      sheet.properties.sheetId;
+                    return gidByTitle;
+                  },
+                  {}
+                );
+                // @ts-ignore
+                const gid = gids[this.props.range.match(/^[^!]*/)[0]];
+                this.setState({ gid });
+              });
+          });
         })
         .then(() => {
           client.load("sheets", "v4", () => {
@@ -44,7 +69,7 @@ export const WithGoogleData = (
               });
           });
         });
-    }
+    };
 
     public render() {
       return (

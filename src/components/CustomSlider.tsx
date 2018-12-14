@@ -6,6 +6,7 @@ import { colors } from "src/theme";
 interface IProps {
   classes: { [key: string]: any };
   list: string[];
+  onChange?: (value: number) => void;
 }
 
 interface IState {
@@ -37,6 +38,9 @@ class AppSlider extends React.Component<IProps, IState> {
 
   public handleChange = (event: any, value: number) => {
     this.setState({ value });
+    if (this.props.onChange) {
+      this.props.onChange(value);
+    }
   };
 
   public render() {
