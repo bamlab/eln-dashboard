@@ -24,6 +24,20 @@ const styles = {
   }
 };
 
+const textBoxStyle: React.CSSProperties = {
+  border: "solid 1px",
+  borderRadius: 5,
+  padding: 10
+};
+
+const textBoxWrapper: React.CSSProperties = {
+  width: 300,
+  margin: 15,
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center"
+};
+
 const whiteButtonStyle: React.CSSProperties = {
   backgroundColor: "white",
   color: colors.mainColor,
@@ -82,22 +96,33 @@ const CreateNewForecastComponent = (props: any) => {
                   Refresh
                 </Button>
               </CardHeader>
-
-              <ColumnLineChart
-                range="Create New forecast newborn"
-                customOptions={{
-                  yAxis: {
-                    gridLineWidth: 0,
-                    title: null,
-                    labels: {
-                      formatter() {
-                        const self: any = this as any;
-                        return `${Math.floor(self.value)}`;
+              <div style={{ display: "flex" }}>
+                <ColumnLineChart
+                  range="Create New forecast newborn"
+                  customOptions={{
+                    yAxis: {
+                      gridLineWidth: 0,
+                      title: null,
+                      labels: {
+                        formatter() {
+                          const self: any = this as any;
+                          return `${Math.floor(self.value)}`;
+                        }
                       }
                     }
-                  }
-                }}
-              />
+                  }}
+                />
+                <div style={textBoxWrapper}>
+                  <div style={textBoxStyle}>
+                    <div style={{ textAlign: "center", fontWeight: "bold" }}>
+                      11,2
+                    </div>
+                    <div style={{ paddingTop: 20 }}>
+                      Ton category per 1% higher newborn population
+                    </div>
+                  </div>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </Grid>
