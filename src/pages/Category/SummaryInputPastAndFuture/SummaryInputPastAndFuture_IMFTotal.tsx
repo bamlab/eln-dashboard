@@ -35,7 +35,7 @@ const SummaryInputPastAndFuture = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Category drivers data
+                Category forecast drivers (input data)
               </Typography>
             </CardContent>
             <CommonTable
@@ -80,7 +80,7 @@ const SummaryInputPastAndFuture = (props: any) => {
             <CardContent>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <Typography gutterBottom={true} className={classes.font}>
-                  Current Model Weighting
+                  Input data weightings in model
                 </Typography>
                 <SelectorOutlined
                   onChange={fn}
@@ -113,6 +113,21 @@ const SummaryInputPastAndFuture = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
+                Historical trend of new born population (mn)
+              </Typography>
+            </CardContent>
+            <CommonTable
+              range="IMF Total - Historical trend new born pop"
+              width={3000}
+              styleRows={[scheme.rowBlue, scheme.rowGrey, scheme.rowDefault]}
+              styleCells={[[scheme.cellWhiteBold], [scheme.cellDefault]]}
+            />
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
                 Historical trend of pure breastfeeding rate (0-6 months) %
               </Typography>
             </CardContent>
@@ -128,11 +143,11 @@ const SummaryInputPastAndFuture = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical trend of newborn population (mn)
+                Historical trend of pure breastfeeding rate (7-12 months) %
               </Typography>
             </CardContent>
             <CommonTable
-              range="IMF Total - Historical trend new born pop"
+              range="IMF Total - Historical Trend of breastfeeding 7-12"
               width={2500}
               styleRows={[scheme.rowBlue, scheme.rowGrey, scheme.rowDefault]}
               styleCells={[[scheme.cellWhiteBold], [scheme.cellDefault]]}
