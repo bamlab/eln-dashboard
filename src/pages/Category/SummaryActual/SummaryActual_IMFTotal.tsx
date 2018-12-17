@@ -21,6 +21,12 @@ const styles = {
   font: {
     fontWeight: 700,
     fontSize: 16
+  },
+  subTitle: {
+    fontWeight: 700,
+    fontSize: 14,
+    marginTop: 16,
+    marginBottom: 8
   }
 };
 
@@ -102,11 +108,30 @@ const SummaryActual = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                How does YoY growth rate change?
+                What is the YoY change ?
               </Typography>
               <ColumnLineChart
                 isStacked={false}
                 range="Category Total IMF YoY Growth Rate!A:D"
+                customOptions={{
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  },
+                  tooltip: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.y)}`;
+                    }
+                  },
+                  chart: { height: 250 }
+                }}
               />
             </CardContent>
           </Card>
@@ -151,9 +176,12 @@ const SummaryActual = (props: any) => {
           <Card>
             <CardContent>
               <CardHeader
-                title="How does category change with baby pool evolution"
+                title="How does category change with baby pool evolution?"
                 className={classes.font}
               />
+              <Typography color="primary" className={classes.subTitle}>
+                Baby pool (mn)
+              </Typography>
               <ColumnLineChart
                 isStacked={false}
                 range="IMF total - summary actual & future baby pool mn!A:D"
@@ -177,6 +205,9 @@ const SummaryActual = (props: any) => {
                   chart: { height: 250 }
                 }}
               />
+              <Typography color="primary" className={classes.subTitle}>
+                IMF Demand ('000 ton)
+              </Typography>
               <ColumnLineChart
                 isStacked={false}
                 range="IMF total - summary actual & future baby pool ton!A:D"
@@ -208,7 +239,7 @@ const SummaryActual = (props: any) => {
           <Card>
             <CardContent>
               <CardHeader
-                title="Indicators by geography"
+                title="What is the geographical distributions of category and baby pool ?"
                 className={classes.font}
               >
                 <YearDropdown />
