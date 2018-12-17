@@ -16,6 +16,7 @@ export const scheme: {
   cellBlueBoldNoWrap: CellCSSProperty;
   cellRedGreen: CellCSSProperty;
   cellDefaultAlignRight: CellCSSProperty;
+  cellDefaultAlignCenter: CellCSSProperty;
   cellRedBlack: CellCSSProperty;
   cellBlueRedBold: CellCSSProperty;
   cellWhiteGreyBold: CellCSSProperty;
@@ -158,6 +159,12 @@ export const scheme: {
     borderBottom: 0,
     fontSize: 14,
     textAlign: "right"
+  }),
+  cellDefaultAlignCenter: () => ({
+    color: "black",
+    borderBottom: 0,
+    fontSize: 14,
+    textAlign: "center"
   }),
   cellRedBlack: cell => {
     let color;
