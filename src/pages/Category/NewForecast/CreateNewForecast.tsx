@@ -154,28 +154,14 @@ const CreateNewForecastComponent = (props: any) => {
                 </Button>
               </CardHeader>
               <div style={{ display: "flex" }}>
-                <ColumnLineChart
-                  range="Create New forecast newborn"
-                  customOptions={{
-                    yAxis: {
-                      gridLineWidth: 0,
-                      title: null,
-                      labels: {
-                        formatter() {
-                          const self: any = this as any;
-                          return `${Math.floor(self.value)}`;
-                        }
-                      }
-                    }
-                  }}
-                />
+                <ColumnLineChart range="Create New Forecast Breastfeeding rate" />
                 <div style={textBoxWrapper}>
                   <div style={textBoxStyle}>
                     <div style={{ textAlign: "center", fontWeight: "bold" }}>
-                      11,2
+                      9,6
                     </div>
                     <div style={{ paddingTop: 20 }}>
-                      Ton category per 1% higher newborn population
+                      Ton category per 1% lower breastfeeding rate
                     </div>
                   </div>
                 </div>
@@ -190,7 +176,7 @@ const CreateNewForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Forecast Result
+                Forecast Result (kt)
               </Typography>
               <ColumnLineChart
                 range="Create New forecast result!F:H"
