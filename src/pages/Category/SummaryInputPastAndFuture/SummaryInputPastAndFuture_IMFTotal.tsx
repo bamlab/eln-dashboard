@@ -44,13 +44,33 @@ const SummaryInputPastAndFuture = (props: any) => {
                 scheme.rowBlue,
                 scheme.rowGrey,
                 scheme.rowDefault,
-                scheme.rowGrey,
+                scheme.rowDefault,
                 scheme.rowGrey,
                 scheme.rowGrey
               ]}
               styleCells={[
-                [scheme.cellWhiteBold],
-                [scheme.cellBlackBold, scheme.cellDefault]
+                [
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight,
+                  scheme.cellWhiteBoldAlignRight,
+                  scheme.cellWhiteBoldAlignRight,
+                  scheme.cellWhiteBoldAlignRight,
+                  scheme.cellWhiteBoldAlignRight,
+                  scheme.cellWhiteBoldAlignRight,
+                  scheme.cellWhiteBoldAlignRight
+                ],
+                [
+                  scheme.cellBlackBold,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight,
+                  scheme.cellDefaultAlignRight,
+                  scheme.cellDefaultAlignRight,
+                  scheme.cellRedGreen,
+                  scheme.cellDefaultAlignRight,
+                  scheme.cellDefaultAlignRight,
+                  scheme.cellRedGreen
+                ]
               ]}
             />
           </Card>
@@ -77,6 +97,8 @@ const SummaryInputPastAndFuture = (props: any) => {
                 scheme.rowBlue,
                 scheme.rowGrey,
                 scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
                 scheme.rowGrey,
                 scheme.rowGrey
               ]}
@@ -91,7 +113,7 @@ const SummaryInputPastAndFuture = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical trend of newborn population (mn)
+                Historical trend of pure breastfeeding rate (0-6 months) %
               </Typography>
             </CardContent>
             <CommonTable
@@ -106,7 +128,7 @@ const SummaryInputPastAndFuture = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical trend of pure breastfeeding rate (0-6 months) %
+                Historical trend of newborn population (mn)
               </Typography>
             </CardContent>
             <CommonTable
