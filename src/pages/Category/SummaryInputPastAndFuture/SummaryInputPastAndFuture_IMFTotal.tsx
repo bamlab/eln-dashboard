@@ -44,7 +44,7 @@ const SummaryInputPastAndFuture = (props: any) => {
                 scheme.rowBlue,
                 scheme.rowGrey,
                 scheme.rowDefault,
-                scheme.rowGrey,
+                scheme.rowDefault,
                 scheme.rowGrey,
                 scheme.rowGrey
               ]}
@@ -97,6 +97,8 @@ const SummaryInputPastAndFuture = (props: any) => {
                 scheme.rowBlue,
                 scheme.rowGrey,
                 scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
                 scheme.rowGrey,
                 scheme.rowGrey
               ]}
