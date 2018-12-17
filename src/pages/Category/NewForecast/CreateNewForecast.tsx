@@ -172,10 +172,10 @@ const CreateNewForecastComponent = (props: any) => {
                 <div style={textBoxWrapper}>
                   <div style={textBoxStyle}>
                     <div style={{ textAlign: "center", fontWeight: "bold" }}>
-                      11,2
+                      9,6
                     </div>
                     <div style={{ paddingTop: 20 }}>
-                      Ton category per 1% higher newborn population
+                      Ton category per 1% lower breastfeeding rate
                     </div>
                   </div>
                 </div>
