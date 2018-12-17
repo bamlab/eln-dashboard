@@ -50,7 +50,7 @@ const SummaryOverview = (props: any) => {
                   marginTop: 16
                 }}
               >
-                <div style={{ marginRight: 24, width: "50%" }}>
+                <div style={{ marginRight: 12, width: "45%" }}>
                   <Typography
                     gutterBottom={true}
                     className={classes.subTitle}
@@ -60,7 +60,7 @@ const SummaryOverview = (props: any) => {
                   </Typography>
                   <IMFTotalSummaryOverview range="IMF Total - SummaryOverview!A:G" />
                 </div>
-                <div style={{ width: "50%" }}>
+                <div style={{ marginLeft: 12, width: "55%" }}>
                   <Typography
                     gutterBottom={true}
                     className={classes.subTitle}
