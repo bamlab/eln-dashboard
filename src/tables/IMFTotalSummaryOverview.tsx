@@ -26,7 +26,9 @@ export class IMFTotalSummaryOverview extends React.Component<IProps> {
           scheme.rowGrey,
           scheme.rowGrey,
           scheme.rowGrey,
-          scheme.rowGrey
+          scheme.rowGrey,
+          scheme.rowDefault,
+          scheme.rowDefault
         ]}
         styleCells={[
           [
