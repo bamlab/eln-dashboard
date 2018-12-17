@@ -26,7 +26,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                KPI
+                KPIs
               </Typography>
             </CardContent>
             <CommonTable
@@ -56,118 +56,96 @@ const KPISComponent = (props: any) => {
                 scheme.rowGrey
               ]}
               styleCells={[
-                [scheme.cellBlueBold, scheme.cellOrangeRedBlack],
+                [scheme.cellBlueBold, scheme.cellDefaultAlignCenter],
                 [scheme.cellWhiteBold, scheme.cellOrangeRedBlack],
                 [
                   scheme.cellBlueBold,
                   scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
+                  scheme.cellDefaultAlignRight
                 ],
                 [
                   scheme.cellBlueBold,
                   scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
+                  scheme.cellRedGreen
                 ],
                 [
                   scheme.cellBlueBold,
                   scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
-                ],
-                [scheme.cellWhiteBold, scheme.cellOrangeRedBlack],
-                [
-                  scheme.cellBlueBold,
-                  scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
-                ],
-                [
-                  scheme.cellBlueBold,
-                  scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
-                ],
-                [
-                  scheme.cellBlueBold,
-                  scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
-                ],
-                [
-                  scheme.cellBlueBold,
-                  scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
-                ],
-                [
-                  scheme.cellBlueBold,
-                  scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
-                ],
-                [
-                  scheme.cellBlueBold,
-                  scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
-                ],
-                [
-                  scheme.cellBlueBold,
-                  scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
-                ],
-                [
-                  scheme.cellBlueBold,
-                  scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
-                ],
-                [
-                  scheme.cellBlueBold,
-                  scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
+                  scheme.cellRedGreen
                 ],
                 [scheme.cellWhiteBold, scheme.cellOrangeRedBlack],
                 [
                   scheme.cellBlueBold,
                   scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
+                  scheme.cellDefaultAlignRight
                 ],
                 [
                   scheme.cellBlueBold,
                   scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
+                  scheme.cellRedGreen
                 ],
                 [
                   scheme.cellBlueBold,
                   scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
+                  scheme.cellRedGreen
                 ],
                 [
                   scheme.cellBlueBold,
                   scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
+                  scheme.cellDefaultAlignRight
                 ],
                 [
                   scheme.cellBlueBold,
                   scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
+                  scheme.cellRedGreen
                 ],
                 [
                   scheme.cellBlueBold,
                   scheme.cellBlackBold,
-                  scheme.cellDefault,
-                  scheme.cellOrangeRedBlack
-                ]
+                  scheme.cellRedGreen
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellRedGreen
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellRedGreen
+                ],
+                [scheme.cellWhiteBold, scheme.cellOrangeRedBlack],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellRedGreen
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellRedGreen
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlackBold,
+                  scheme.cellRedGreen
+                ],
+                [scheme.cellBlueBold, scheme.cellBlackBold, scheme.cellRedGreen]
               ]}
             />
           </Card>
