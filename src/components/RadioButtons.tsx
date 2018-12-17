@@ -47,6 +47,7 @@ export class RadioButtonsComponent extends React.Component<IProps, IState> {
           {this.props.valueList.map(el => (
             <FormControlLabel
               value={el}
+              key={el}
               control={<Radio color="primary" />}
               label={el}
               classes={{
