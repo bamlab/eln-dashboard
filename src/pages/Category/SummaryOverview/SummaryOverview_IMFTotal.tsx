@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { RadioButtons } from "src/components/RadioButtons";
 import { IMFTotalSummaryOverview } from "../../../tables/IMFTotalSummaryOverview";
 
 const styles = {
@@ -28,9 +29,20 @@ const SummaryOverview = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Overview
-              </Typography>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between"
+                }}
+              >
+                <Typography gutterBottom={true} className={classes.font}>
+                  Overview
+                </Typography>
+                <RadioButtons
+                  valueList={["Growth rate view", "Absolute value view"]}
+                />
+              </div>
               <div
                 style={{
                   display: "flex",
@@ -38,7 +50,7 @@ const SummaryOverview = (props: any) => {
                   marginTop: 16
                 }}
               >
-                <div style={{ marginRight: 16 }}>
+                <div style={{ marginRight: 24, width: "50%" }}>
                   <Typography
                     gutterBottom={true}
                     className={classes.subTitle}
@@ -48,7 +60,7 @@ const SummaryOverview = (props: any) => {
                   </Typography>
                   <IMFTotalSummaryOverview range="IMF Total - SummaryOverview!A:G" />
                 </div>
-                <div>
+                <div style={{ width: "50%" }}>
                   <Typography
                     gutterBottom={true}
                     className={classes.subTitle}
