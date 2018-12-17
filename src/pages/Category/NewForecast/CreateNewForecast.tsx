@@ -126,6 +126,63 @@ const CreateNewForecastComponent = (props: any) => {
             </CardContent>
           </Card>
         </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <CardHeader
+                className={classes.font}
+                title="Trend of pure breastfeeding rate (0-6months) (%)"
+              >
+                <Button
+                  style={whiteButtonStyle}
+                  onClick={navigateToExcel}
+                  // variant="outlined"
+                >
+                  Change data in Excel
+                </Button>
+                <Button
+                  style={{
+                    backgroundColor: colors.mainColor,
+                    color: "white",
+                    borderRadius: 40,
+                    fontWeight: "bold",
+                    textTransform: "none"
+                  }}
+                  onClick={refreshPage}
+                >
+                  Refresh
+                </Button>
+              </CardHeader>
+              <div style={{ display: "flex" }}>
+                <ColumnLineChart
+                  range="Create New forecast newborn"
+                  customOptions={{
+                    yAxis: {
+                      gridLineWidth: 0,
+                      title: null,
+                      labels: {
+                        formatter() {
+                          const self: any = this as any;
+                          return `${Math.floor(self.value)}`;
+                        }
+                      }
+                    }
+                  }}
+                />
+                <div style={textBoxWrapper}>
+                  <div style={textBoxStyle}>
+                    <div style={{ textAlign: "center", fontWeight: "bold" }}>
+                      11,2
+                    </div>
+                    <div style={{ paddingTop: 20 }}>
+                      Ton category per 1% higher newborn population
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </Grid>
         <Typography color="primary" style={blueTitleStyle}>
           FORECAST RESULT
         </Typography>
