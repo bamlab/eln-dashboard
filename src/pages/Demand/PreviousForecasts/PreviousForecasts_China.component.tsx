@@ -63,15 +63,6 @@ const PreviousForeCastsComponent = (props: any) => {
                 }}
               />
             </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
-              </Typography>
-            </CardContent>
             <EIBPreviousOfftake range="China DC Previous Offtake" />
           </Card>
         </Grid>
@@ -79,8 +70,6 @@ const PreviousForeCastsComponent = (props: any) => {
     </div>
   );
 };
-
-// EIBPreviousOfftake
 
 export const PreviousForecastsChina = withStyles(styles)(
   PreviousForeCastsComponent

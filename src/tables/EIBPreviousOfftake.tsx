@@ -26,7 +26,8 @@ export const EIBPreviousOfftake = WithGoogleData(
             );
           });
 
-        const tableRows = data.map((serie: string[]) => {
+        const tableRows = data.map((readonlySerie: ReadonlyArray<string>) => {
+          const serie = [...readonlySerie];
           const serieName = serie.shift();
           const valueCells = serie.map((value: string, index: number) => {
             const trimedString = value.trim();

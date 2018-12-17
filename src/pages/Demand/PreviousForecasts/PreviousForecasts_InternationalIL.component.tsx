@@ -49,9 +49,6 @@ const PreviousForeCastsComponent = (props: any) => {
                   }
                 }}
               />
-              <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
-              </Typography>
             </CardContent>
             <EIBPreviousOfftake range="China IL Previous Offtake" />
           </Card>

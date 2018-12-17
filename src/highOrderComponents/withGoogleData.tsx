@@ -3,7 +3,7 @@ import { config } from "../config";
 declare var gapi: any;
 
 export interface IWrappedComponentProps {
-  data: any[];
+  data: ReadonlyArray<any>;
 }
 
 interface ISheet {
