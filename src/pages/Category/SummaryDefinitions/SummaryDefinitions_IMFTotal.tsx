@@ -1,3 +1,4 @@
+import { Card, CardContent, Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import * as React from "react";
@@ -29,7 +30,13 @@ const SummaryDefinitions = (props: any) => {
     <div className={classes.root}>
       <Grid container={true} spacing={24}>
         <Grid item={true} xs={12}>
-          Category definition (tree)
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.title}>
+                Work in Progress
+              </Typography>
+            </CardContent>
+          </Card>
         </Grid>
       </Grid>
     </div>
