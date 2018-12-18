@@ -12,6 +12,29 @@ import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
 import { TradeFlowDC } from "src/tables/TradeFlowDC";
 
+const quarterArray = [
+  ["", ""],
+  ["", ""],
+  ["", ""],
+  ["", ""],
+  ["34%", "11.0"],
+  ["25%", "11.5"],
+  ["60%", "13.2"],
+  ["65%", "13.3"],
+  ["3%", "13.4"],
+  ["7%", "14.3"],
+  ["34%", "14.7"],
+  ["14%", "14.8"],
+  ["20%", "15.1"],
+  ["8%", "15.3"],
+  ["20%", "15.5"],
+  ["8%", "15.6"],
+  ["5%", "15.6"],
+  ["10%", "16.0"],
+  ["5%", "16.1"],
+  ["6%", "16.3"]
+];
+
 const styles = {
   root: {
     padding: 24
@@ -36,6 +59,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
             </CardContent>
             <ColumnLineChart
               range="China DC Total Quarterly phasing"
+              // @ts-ignore
               customOptions={{
                 yAxis: {
                   gridLineWidth: 0,
@@ -44,6 +68,29 @@ const SummaryCurrentForecastComponent = (props: any) => {
                     formatter() {
                       const self: any = this as any;
                       return `${Math.floor(self.value)}`;
+                    }
+                  }
+                },
+                xAxis: {
+                  labels: {
+                    autoRotation: 0,
+                    useHTML: true,
+                    formatter() {
+                      return (
+                        // @ts-ignore
+                        quarterArray[this.pos][0] &&
+                        `<div style="display:flex;flex-direction:column;align-items:center;">
+                    <div>${this.value}</div>
+                    <div style="height: 19px;	width: 30px;	border-radius: 3px;	background-color: #99C3E1;text-align:center;line-height:19px;margin-top:8px;color: #002677;font-weight:bold;">${
+                      // @ts-ignore
+                      quarterArray[this.pos][0]
+                    }</div>
+                    <div style="height: 19px;	width: 30px;	border-radius: 3px;	background-color: #A1DAF7;text-align:center;line-height:19px;margin-top:4px;color: #002677;font-weight:bold;">${
+                      // @ts-ignore
+                      quarterArray[this.pos][1]
+                    }</div>
+                    </div>`
+                      );
                     }
                   }
                 }
@@ -79,7 +126,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                   defaultDisplayedValue={"NC"}
                 />
               </div>
-              <ColumnLineChart range="China DC  Trade Flow DC" />
+              {/* <ColumnLineChart range="China DC  Trade Flow DC" /> */}
               <Typography gutterBottom={true} className={classes.font}>
                 Trade Flow - DC
               </Typography>

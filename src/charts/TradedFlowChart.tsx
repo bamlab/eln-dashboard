@@ -5,29 +5,6 @@ import * as React from "react";
 import { WithGoogleData } from "src/highOrderComponents/withGoogleData";
 import { colors } from "src/theme";
 
-const quarterArray = [
-  ["", ""],
-  ["", ""],
-  ["", ""],
-  ["", ""],
-  ["34%", "11.0"],
-  ["25%", "11.5"],
-  ["60%", "13.2"],
-  ["65%", "13.3"],
-  ["3%", "13.4"],
-  ["7%", "14.3"],
-  ["34%", "14.7"],
-  ["14%", "14.8"],
-  ["20%", "15.1"],
-  ["8%", "15.3"],
-  ["20%", "15.5"],
-  ["8%", "15.6"],
-  ["5%", "15.6"],
-  ["10%", "16.0"],
-  ["5%", "16.1"],
-  ["6%", "16.3"]
-];
-
 Data(Highcharts);
 
 const dataReducer = (
@@ -56,13 +33,15 @@ const getChartOptions = (
   customOptions: Highcharts.Options,
   isStacked: boolean = true
 ): Highcharts.Options => ({
+  ...customOptions,
   title: undefined,
   chart: {
     // @ts-ignore
     scrollablePlotArea: {
       minWidth: tradedFlowSeries[0].data.length * 40,
       scrollPositionX: 0
-    }
+    },
+    ...customOptions.chart
   },
   plotOptions: {
     line: { marker: { enabled: false } },
@@ -72,33 +51,14 @@ const getChartOptions = (
       states: {
         hover: { color: "#029FE3" }
       }
-    }
+    },
+    ...customOptions.plotOptions
   },
   // @ts-ignore
   xAxis: {
     categories: Array.from(new Set(tradedFlowSeries[0].data.map(el => el[0]))),
     tickWidth: 0,
-    labels: {
-      autoRotation: 0,
-      useHTML: true,
-      formatter() {
-        return (
-          // @ts-ignore
-          quarterArray[this.pos][0] &&
-          `<div style="display:flex;flex-direction:column;align-items:center;">
-      <div>${this.value}</div>
-      <div style="height: 19px;	width: 30px;	border-radius: 3px;	background-color: #99C3E1;text-align:center;line-height:19px;margin-top:8px;color: #002677;font-weight:bold;">${
-        // @ts-ignore
-        quarterArray[this.pos][0]
-      }</div>
-      <div style="height: 19px;	width: 30px;	border-radius: 3px;	background-color: #A1DAF7;text-align:center;line-height:19px;margin-top:4px;color: #002677;font-weight:bold;">${
-        // @ts-ignore
-        quarterArray[this.pos][1]
-      }</div>
-      </div>`
-        );
-      }
-    }
+    ...customOptions.xAxis
   },
   yAxis: {
     gridLineWidth: 0,
@@ -108,16 +68,17 @@ const getChartOptions = (
         const self: any = this as any;
         return `${Math.floor(self.value)}%`;
       }
-    }
+    },
+    ...customOptions.yAxis
   },
   tooltip: {
     formatter() {
       const self: any = this as any;
       return `${Math.floor(self.y)}%`;
-    }
+    },
+    ...customOptions.tooltip
   },
-  series: [...tradedFlowSeries],
-  ...customOptions
+  series: [...tradedFlowSeries]
 });
 
 interface IProps {
