@@ -18,17 +18,20 @@ interface IProps {
   displayBrand: boolean;
   displaySubBrand: boolean;
   displayStage: boolean;
+  displayCountry: boolean;
+  defaultGroup?: string;
 }
 
 export class OrganizationSelector extends React.Component<IProps, IState> {
   public static defaultProps = {
     displayBrand: true,
     displaySubBrand: true,
-    displayStage: true
+    displayStage: true,
+    displayCountry: true
   };
   constructor(props: any) {
     super(props);
-    const country = getCountries()[0];
+    const country = getCountries(this.props.defaultGroup)[0];
     const brand = getBrands(country)[0];
     const subBrand = getSubBrands(country, brand)[0];
     const stage = getStages(country, brand, subBrand)[0];
@@ -77,11 +80,13 @@ export class OrganizationSelector extends React.Component<IProps, IState> {
   public render() {
     return (
       <div>
-        <SelectorOutlined
-          onChange={this.onCountryChange}
-          defaultDisplayedValue={this.state.country}
-          valueList={getCountries()}
-        />
+        {this.props.displayCountry && (
+          <SelectorOutlined
+            onChange={this.onCountryChange}
+            defaultDisplayedValue={this.state.country}
+            valueList={getCountries()}
+          />
+        )}
         {this.props.displayBrand && (
           <SelectorOutlined
             onChange={this.onBrandChange}

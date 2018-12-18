@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
+import { OrganizationSelector } from "src/components/OrganizationSelector";
+import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
 import { TradeFlowDC } from "src/tables/TradeFlowDC";
 
@@ -47,9 +49,21 @@ const SummaryCurrentForecastComponent = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Trade Flow - DC
-              </Typography>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between"
+                }}
+              >
+                <Typography gutterBottom={true} className={classes.font}>
+                  Trade Flow - DC
+                </Typography>
+                <SelectorOutlined
+                  valueList={["NC", "NP", "AC", "AP"]}
+                  defaultDisplayedValue={"NC"}
+                />
+              </div>
               <ColumnLineChart range="China DC  Trade Flow DC" />
               <Typography gutterBottom={true} className={classes.font}>
                 Trade Flow DC by Brand
@@ -61,9 +75,22 @@ const SummaryCurrentForecastComponent = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Trade Flow by SKU
-              </Typography>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between"
+                }}
+              >
+                <Typography gutterBottom={true} className={classes.font}>
+                  Trade Flow by SKU
+                </Typography>
+                <OrganizationSelector
+                  displayStage={false}
+                  displayCountry={false}
+                  defaultGroup={"DC"}
+                />
+              </div>
             </CardContent>
             <TradeFlowDC range="China DC  Trade Flow DC by SKU" />
           </Card>
