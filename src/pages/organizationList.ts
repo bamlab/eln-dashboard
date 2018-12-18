@@ -745,8 +745,12 @@ export const organizationList = [
 
 const unique = (array: string[]) => Array.from(new Set(array));
 
-export const getCountries = () =>
-  unique(organizationList.map(el => el.Country));
+export const getCountries = (group?: string) =>
+  unique(
+    organizationList
+      .filter(el => el.Group === (group || el.Group))
+      .map(el => el.Country)
+  );
 
 export const getBrands = (country: string) =>
   unique(
