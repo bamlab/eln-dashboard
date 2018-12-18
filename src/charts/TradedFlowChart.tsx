@@ -7,7 +7,10 @@ import { colors } from "src/theme";
 
 Data(Highcharts);
 
-const dataReducer = (tradedFlowSeries: ISerie[], values: string[]) => {
+const dataReducer = (
+  tradedFlowSeries: ReadonlyArray<ISerie>,
+  values: string[]
+) => {
   const tradedFlowSeriesCopy = [...tradedFlowSeries];
   const valuesCopy = [...values];
   const date = valuesCopy.shift() || "";
@@ -26,7 +29,7 @@ interface ISerie {
 }
 
 const getChartOptions = (
-  tradedFlowSeries: ISerie[],
+  tradedFlowSeries: ReadonlyArray<ISerie>,
   customOptions: Highcharts.Options,
   isStacked: boolean = true
 ): Highcharts.Options => ({
@@ -68,7 +71,7 @@ const getChartOptions = (
       return `${Math.floor(self.y)}%`;
     }
   },
-  series: tradedFlowSeries,
+  series: [...tradedFlowSeries],
   ...customOptions
 });
 
