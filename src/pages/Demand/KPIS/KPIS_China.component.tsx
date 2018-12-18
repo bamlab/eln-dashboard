@@ -28,7 +28,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                DC Offtake Forecast & Bias by brands
+              DC Offtake Forecast Accuracy & Bias
               </Typography>
             </CardContent>
             <ForecastBiasTable range="China DC Forecast accuracy and Bias" />
