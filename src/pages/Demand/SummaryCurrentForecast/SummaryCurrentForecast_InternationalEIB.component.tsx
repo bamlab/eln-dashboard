@@ -195,7 +195,8 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Cycle Evolution - 2018 EIB Offtake (Nov cycle - Dec cycle)
+                Cycle evolution - 2018 EIB total offtake bridge by country (Oct
+                - Nov cycle)
               </Typography>
               <WaterfallChart range="IEB Total Risk & ops 2018!A:C" />
             </CardContent>
@@ -205,7 +206,8 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Cycle Evolution - 2019 EIB Offtake (Nov cycle - Dec cycle)
+                Cycle evolution - 2019 EIB total offtake bridge by country (Oct
+                - Nov cycle)
               </Typography>
               <WaterfallChart range="IEB Total Risk & ops 2019!A:C" />
             </CardContent>
@@ -215,7 +217,8 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Bridge between cycles
+                Cycle evolution - 2018 to 2019 EIB total offtake breakdown by
+                country
               </Typography>
               <WaterfallChart range="IEB Summary Total Bridge!A:C" />
             </CardContent>
