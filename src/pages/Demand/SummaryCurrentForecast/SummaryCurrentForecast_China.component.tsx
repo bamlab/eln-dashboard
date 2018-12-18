@@ -126,10 +126,6 @@ const SummaryCurrentForecastComponent = (props: any) => {
                   defaultDisplayedValue={"NC"}
                 />
               </div>
-              {/* <ColumnLineChart range="China DC  Trade Flow DC" /> */}
-              <Typography gutterBottom={true} className={classes.font}>
-                Trade Flow - DC
-              </Typography>
               <ColumnLineChartTradeFlow range="China DC  Trade Flow DC" />
               <Typography gutterBottom={true} className={classes.font}>
                 Trade Flow DC by Brand
