@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
+import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { keyAssumptionsStyles } from "src/pages/styles/keyAssumptions.style";
 
 const SummaryKeyAssumptionComponent = (props: any) => {
@@ -41,6 +42,85 @@ const SummaryKeyAssumptionComponent = (props: any) => {
                 <li className={classes.paragraph}>Others</li>
               </Typography>
             </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.title}>
+                Category Forecast ('000 tons)
+              </Typography>
+              <ColumnLineChart
+                range="Category forecast ('000) tons"
+                customOptions={{
+                  legend: {
+                    enabled: false
+                  },
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  }
+                }}
+              />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.title}>
+                Historical trend of marketing spend (Mn RMB)
+              </Typography>
+              <ColumnLineChart
+                range="Historical Trend of offtake price"
+                customOptions={{
+                  legend: {
+                    enabled: false
+                  },
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  }
+                }}
+              />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <Typography gutterBottom={true} className={classes.title}>
+              <CardContent>Historical trend of offtake price (RMB)</CardContent>
+            </Typography>
+            <ColumnLineChart
+              range="Historical Trend of marketing spent"
+              customOptions={{
+                legend: {
+                  enabled: false
+                },
+                yAxis: {
+                  gridLineWidth: 0,
+                  title: null,
+                  labels: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.value)}`;
+                    }
+                  }
+                }
+              }}
+            />
           </Card>
         </Grid>
       </Grid>
