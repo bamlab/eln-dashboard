@@ -33,7 +33,21 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Current Cycle Phasing - DC offtake Quarterly Phasing
               </Typography>
             </CardContent>
-            <ColumnLineChart range="EIB Total Quarterly phasing!A:E" />
+            <ColumnLineChart
+              range="China DC Total Quarterly phasing"
+              customOptions={{
+                yAxis: {
+                  gridLineWidth: 0,
+                  title: null,
+                  labels: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.value)}`;
+                    }
+                  }
+                }
+              }}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
