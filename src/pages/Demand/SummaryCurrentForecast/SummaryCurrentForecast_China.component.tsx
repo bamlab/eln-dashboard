@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
+import { ColumnLineChartTradeFlow } from "src/charts/TradedFlowChartWith2Yaxis";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { OrganizationSelector } from "src/components/OrganizationSelector";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
@@ -79,6 +80,10 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 />
               </div>
               <ColumnLineChart range="China DC  Trade Flow DC" />
+              <Typography gutterBottom={true} className={classes.font}>
+                Trade Flow - DC
+              </Typography>
+              <ColumnLineChartTradeFlow range="China DC  Trade Flow DC" />
               <Typography gutterBottom={true} className={classes.font}>
                 Trade Flow DC by Brand
               </Typography>
