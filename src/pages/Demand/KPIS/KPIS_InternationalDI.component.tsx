@@ -5,7 +5,10 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { LineColumnChart } from "src/charts/LineColumnChart";
-import { CustomTable } from "src/tables/table/Table";
+import { ColumnLineChart } from "src/charts/TradedFlowChart";
+import { CommonTable } from "src/tables/table/CommonTable";
+import { scheme } from "src/tables/table/tableScheme";
+import { colors } from "src/theme";
 
 const styles = {
   root: {
@@ -14,11 +17,17 @@ const styles = {
   font: {
     fontWeight: 700,
     fontSize: 16
+  },
+  subTitle: {
+    fontWeight: 700,
+    fontSize: 16,
+    color: colors.mainColor,
+    marginTop: 24,
+    marginLeft: 24
   }
 };
 const KPISComponent = (props: any) => {
   const { classes } = props;
-
   return (
     <div className={classes.root}>
       <Grid container={true} spacing={24}>
@@ -26,58 +35,420 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                DI Offtake Forecast & Bias by brands
+                DI Offtake Forecast Accuracy & bias
               </Typography>
             </CardContent>
-            <CustomTable />
+            <Typography className={classes.subTitle}>
+              Forecast Accuracy
+            </Typography>
+            <CommonTable
+              range="DI Offtake Forecast Accuracy"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
+              ]}
+            />
+            <Typography className={classes.subTitle}>Forecast Bias</Typography>
+            <CommonTable
+              range="International DI - KPIS Forecast Bias"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Forecast Accuracy
+                Historical Forecast Accuracy - Offtake
               </Typography>
             </CardContent>
+            <ColumnLineChart range="DI Historical Forecast Accuracy!A:C" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Forecast Bias
+                Historical Forecast Bias - Offtake
               </Typography>
             </CardContent>
-            <LineColumnChart range={"DC Historical forecast bias!A:C"} />
+            <LineColumnChart range="DC Historical forecast bias!A:C" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                DI Sell-out Forecast & Bias by brands
+                DI Sell in Forecast Accuracy & bias
               </Typography>
             </CardContent>
-            <CustomTable />
+            <Typography gutterBottom={true} className={classes.subTitle}>
+              Forecast Accuracy
+            </Typography>
+            <CommonTable
+              range="DI Offtake Forecast Accuracy"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
+              ]}
+            />
+            <Typography gutterBottom={true} className={classes.subTitle}>
+              Forecast Bias
+            </Typography>
+            <CommonTable
+              range="International DI - KPIS Forecast Bias"
+              styleRows={[
+                scheme.rowBlue,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowGrey,
+                scheme.rowGrey,
+                scheme.rowGrey
+              ]}
+              styleCells={[
+                [
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBold,
+                  scheme.cellWhiteBoldAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellDefault,
+                  scheme.cellDefault,
+                  scheme.cellDefaultAlignRight
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ],
+                [
+                  scheme.cellBlueBold,
+                  scheme.cellBlueBold,
+                  scheme.cellBlueRedBold
+                ]
+              ]}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Forecast Accuracy - Sell out
+                Historical Forecast Accuracy - Sell in
               </Typography>
             </CardContent>
+            <ColumnLineChart range="DI Historical Forecast Accuracy!A:C" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Forecast Bias - Sell out
+                Historical Forecast Bias - Sell in
               </Typography>
             </CardContent>
-            <LineColumnChart range={"DC Historical forecast bias!A:C"} />
+            <LineColumnChart range="DC Historical forecast bias!A:C" />
           </Card>
         </Grid>
       </Grid>

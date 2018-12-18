@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
+import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { EIBPreviousOfftake } from "src/tables/EIBPreviousOfftake";
 
 const styles = {
@@ -25,9 +26,35 @@ const PreviousForeCastsComponent = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Previous Offtake
-              </Typography>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between"
+                }}
+              >
+                <Typography gutterBottom={true} className={classes.font}>
+                  Previous Offtake
+                </Typography>
+                <div>
+                  <SelectorOutlined
+                    defaultDisplayedValue={"Country - ANZ"}
+                    valueList={["Country - ANZ"]}
+                  />
+                  <SelectorOutlined
+                    defaultDisplayedValue={"Brand"}
+                    valueList={["Brand"]}
+                  />
+                  <SelectorOutlined
+                    defaultDisplayedValue={"Subbrand"}
+                    valueList={["Subbrand"]}
+                  />
+                  <SelectorOutlined
+                    defaultDisplayedValue={"Stage"}
+                    valueList={["Stage"]}
+                  />
+                </div>
+              </div>
               <ColumnLineChart
                 range="China DI previous Forecast"
                 customOptions={{
