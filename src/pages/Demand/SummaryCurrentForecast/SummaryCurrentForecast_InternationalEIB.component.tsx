@@ -45,7 +45,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 />
               </div>
               <ColumnLineChart
-                range="EIB Total Quarterly phasing!A:E"
+                range="EIB Total Quarterly phasing"
                 customOptions={{
                   yAxis: {
                     labels: {

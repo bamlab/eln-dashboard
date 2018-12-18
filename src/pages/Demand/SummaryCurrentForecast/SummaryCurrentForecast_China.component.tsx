@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
+import { ColumnLineChartTradeFlow } from "src/charts/TradedFlowChartWith2Yaxis";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { OrganizationSelector } from "src/components/OrganizationSelector";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
@@ -33,7 +34,21 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Current Cycle Phasing - DC offtake Quarterly Phasing
               </Typography>
             </CardContent>
-            <ColumnLineChart range="EIB Total Quarterly phasing!A:E" />
+            <ColumnLineChart
+              range="China DC Total Quarterly phasing"
+              customOptions={{
+                yAxis: {
+                  gridLineWidth: 0,
+                  title: null,
+                  labels: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.value)}`;
+                    }
+                  }
+                }
+              }}
+            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -65,6 +80,10 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 />
               </div>
               <ColumnLineChart range="China DC  Trade Flow DC" />
+              <Typography gutterBottom={true} className={classes.font}>
+                Trade Flow - DC
+              </Typography>
+              <ColumnLineChartTradeFlow range="China DC  Trade Flow DC" />
               <Typography gutterBottom={true} className={classes.font}>
                 Trade Flow DC by Brand
               </Typography>

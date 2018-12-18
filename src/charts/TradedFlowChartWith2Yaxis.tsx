@@ -55,16 +55,30 @@ const getChartOptions = (
     categories: Array.from(new Set(tradedFlowSeries[0].data.map(el => el[0]))),
     tickWidth: 0
   },
-  yAxis: {
-    gridLineWidth: 0,
-    title: null,
-    labels: {
-      formatter() {
-        const self: any = this as any;
-        return `${Math.floor(self.value)}%`;
+  yAxis: [
+    {
+      gridLineWidth: 0,
+      title: null,
+      labels: {
+        formatter() {
+          const self: any = this as any;
+          return `${Math.floor(self.value)}%`;
+        }
       }
+    },
+    { visible: false },
+    {
+      gridLineWidth: 0,
+      title: null,
+      labels: {
+        formatter() {
+          const self: any = this as any;
+          return `${Math.floor(self.value)}`;
+        }
+      },
+      opposite: true
     }
-  },
+  ],
   tooltip: {
     formatter() {
       const self: any = this as any;
@@ -81,7 +95,7 @@ interface IProps {
   isStacked?: boolean;
 }
 
-export const ColumnLineChart = WithGoogleData(
+export const ColumnLineChartTradeFlow = WithGoogleData(
   class extends React.PureComponent<IProps> {
     public state = { data: [] };
 
@@ -98,10 +112,13 @@ export const ColumnLineChart = WithGoogleData(
               name: serieName,
               color: colors[serieColors[index]],
               type: serieTypes[index],
-              data: []
+              data: [],
+              yAxis: index
             };
           }
         );
+
+        debugger;
 
         data.reduce(dataReducer, tradedFlowSeries);
         return (
