@@ -1,12 +1,14 @@
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
+import SvgIcon from "@material-ui/core/SvgIcon";
 import Toolbar from "@material-ui/core/Toolbar";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 
+import { IconButton } from "@material-ui/core";
 import { renderPage } from "../navigation/Navigation";
 import { colors } from "../theme";
 import { Selector } from "./Selector.component";
@@ -127,6 +129,25 @@ class DashboardTabBarComponent extends React.Component<IPropsType, IState> {
               >
                 Create new forecast
               </Button>
+              <IconButton
+                style={{
+                  marginLeft: 16,
+                  boxShadow: "0 0 10px 0 rgba(0,0,0,0.15)",
+                  color: "white"
+                }}
+              >
+                <SvgIcon
+                  width={24}
+                  height={24}
+                  fill="none"
+                  stroke={colors.mainColor}
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                </SvgIcon>
+              </IconButton>
             </div>
           </Toolbar>
         </AppBar>
