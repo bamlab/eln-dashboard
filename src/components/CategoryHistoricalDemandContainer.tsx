@@ -28,31 +28,6 @@ export const CategoryHistoricalDemandContainer = withStyles(styles)(
           <Typography color="primary" className={classes.subTitle}>
             Absolute ('000 ton)
           </Typography>
-          <ColumnLineChart
-            range="IMF Total Historical Category Demand (ton)"
-            isStacked={false}
-            customOptions={{
-              legend: {
-                enabled: false
-              },
-              tooltip: {
-                formatter() {
-                  const self: any = this as any;
-                  return `${self.series.userOptions.name}: ${self.y}`;
-                }
-              },
-              yAxis: {
-                gridLineWidth: 0,
-                title: null,
-                labels: {
-                  formatter() {
-                    const self: any = this as any;
-                    return `${Math.floor(self.value)}`;
-                  }
-                }
-              }
-            }}
-          />
         </Grid>
         <Grid item={true} xs={12}>
           <Typography color="primary" className={classes.subTitle}>
