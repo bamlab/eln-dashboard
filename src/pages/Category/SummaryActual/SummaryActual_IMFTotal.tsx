@@ -13,6 +13,7 @@ import { CustomSlider } from "src/components/CustomSlider";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { SelectorOutlinedMultiple } from "src/components/SelectorOutlinedMultiple.component";
 import { YearDropdown } from "src/components/YearDropdown";
+import { colors } from "src/theme";
 
 const styles = {
   root: {
@@ -122,7 +123,15 @@ const SummaryActual = (props: any) => {
                         const self: any = this as any;
                         return `${Math.floor(self.value)}`;
                       }
-                    }
+                    },
+                    plotLines: [
+                      {
+                        value: 0,
+                        color: colors.secondaryFontColor,
+                        dashStyle: "solid",
+                        width: 1
+                      }
+                    ]
                   },
                   tooltip: {
                     formatter() {
