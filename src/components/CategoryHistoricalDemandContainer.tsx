@@ -1,6 +1,7 @@
 import { Grid, Typography, withStyles } from "@material-ui/core";
 import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
+import { colors } from "src/theme";
 
 const styles = {
   root: {
@@ -68,7 +69,15 @@ export const CategoryHistoricalDemandContainer = withStyles(styles)(
                     const self: any = this as any;
                     return `${Math.floor(self.value)}%`;
                   }
-                }
+                },
+                plotLines: [
+                  {
+                    value: 0,
+                    color: colors.secondaryFontColor,
+                    dashStyle: "solid",
+                    width: 1
+                  }
+                ]
               },
               legend: {
                 enabled: false
