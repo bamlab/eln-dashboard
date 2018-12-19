@@ -109,6 +109,12 @@ const CreateNewForecastComponent = (props: any) => {
                           return `${Math.floor(self.value)}`;
                         }
                       }
+                    },
+                    tooltip: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.y)}`;
+                      }
                     }
                   }}
                 />
@@ -190,6 +196,12 @@ const CreateNewForecastComponent = (props: any) => {
                         return `${Math.floor(self.value)}`;
                       }
                     }
+                  },
+                  tooltip: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.y)}`;
+                    }
                   }
                 }}
               />
@@ -218,6 +230,12 @@ const CreateNewForecastComponent = (props: any) => {
                       }
                     }
                   },
+                  tooltip: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.y)}`;
+                    }
+                  },
                   legend: { enabled: false }
                 }}
               />
@@ -244,6 +262,12 @@ const CreateNewForecastComponent = (props: any) => {
                       }
                     }
                   },
+                  tooltip: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.y)}`;
+                    }
+                  },
                   legend: { enabled: false }
                 }}
               />
@@ -267,6 +291,12 @@ const CreateNewForecastComponent = (props: any) => {
                         const self: any = this as any;
                         return `${Math.floor(self.value)}`;
                       }
+                    }
+                  },
+                  tooltip: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.y)}`;
                     }
                   },
                   legend: { enabled: false }
