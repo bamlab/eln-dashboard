@@ -8,7 +8,7 @@ import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { OrganizationSelector } from "src/components/OrganizationSelector";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
-import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
+import { CollapsableTable } from "src/tables/CollapsableTable";
 import { CommonTable } from "src/tables/table/CommonTable";
 import { scheme } from "src/tables/table/tableScheme";
 
@@ -115,7 +115,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Current cycle DI
               </Typography>
             </CardContent>
-            <CurrentCycleDCTable range="China DI Current Cycle DC" />
+            <CollapsableTable />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
