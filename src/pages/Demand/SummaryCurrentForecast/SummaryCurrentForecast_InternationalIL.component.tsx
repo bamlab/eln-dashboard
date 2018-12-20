@@ -5,7 +5,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
-import { WaterfallChart } from "src/charts/WaterfallChart";
 import { OrganizationSelector } from "src/components/OrganizationSelector";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { CommonTable } from "src/tables/table/CommonTable";
@@ -220,7 +219,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 }}
               >
                 <Typography gutterBottom={true} className={classes.font}>
-                  Trade Flow
+                  Trade Flow - IL (total)
                 </Typography>
                 <div>
                   <OrganizationSelector />
@@ -236,39 +235,6 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 [scheme.cellBlueBold, scheme.cellBlackBold]
               ]}
             />
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Cycle evolution - 2018 IL total offtake bridge by country (Oct -
-                Nov cycle)
-              </Typography>
-              <WaterfallChart range="IL Total Risk & ops 2018!A:C" />
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Cycle evolution - 2019 IL total offtake bridge by country (Oct -
-                Nov cycle)
-              </Typography>
-              <WaterfallChart range="IL Total Risk & ops 2019!A:C" />
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Cycle evolution - 2018 to 2019 IL total offtake breakdown by
-                country
-              </Typography>
-              <WaterfallChart range="IL Summary Total Bridge!A:C" />
-            </CardContent>
           </Card>
         </Grid>
       </Grid>
