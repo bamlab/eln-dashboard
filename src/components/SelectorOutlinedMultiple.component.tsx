@@ -24,6 +24,7 @@ interface IProps {
   classes: { [key: string]: string };
   defaultValues: string[];
   valueList: string[];
+  onChange?: (event: any) => void;
 }
 
 class SelectMenu extends React.Component<IProps> {
@@ -35,7 +36,11 @@ class SelectMenu extends React.Component<IProps> {
   };
 
   public handleChange = (event: any) => {
-    this.setState({ name: event.target.value });
+    this.setState({ name: event.target.value }, () => {
+      if (typeof this.props.onChange !== "undefined") {
+        this.props.onChange(event);
+      }
+    });
   };
   public renderValue = (selected: any) => selected.join(", ");
   public render() {
