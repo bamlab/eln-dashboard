@@ -224,7 +224,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Forecast Accuracy - Offtake
+                Historical Forecast Accuracy
               </Typography>
             </CardContent>
             <ColumnLineChart range="DI Historical Forecast Accuracy!A:C" />
@@ -234,7 +234,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Forecast Bias - Offtake
+                Historical Forecast Bias
               </Typography>
             </CardContent>
             <LineColumnChart range="DC Historical forecast bias!A:C" />
@@ -244,7 +244,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                DI Sell in Forecast Accuracy & bias
+                DI Sell Out Forecast Accuracy & bias
               </Typography>
             </CardContent>
             <Typography gutterBottom={true} className={classes.subTitle}>
@@ -435,7 +435,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Forecast Accuracy - Sell in
+                Historical Forecast Accuracy - Sell out
               </Typography>
             </CardContent>
             <ColumnLineChart range="DI Historical Forecast Accuracy!A:C" />
@@ -445,7 +445,7 @@ const KPISComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Historical Forecast Bias - Sell in
+                Historical Forecast Bias - Sell out
               </Typography>
             </CardContent>
             <LineColumnChart range="DC Historical forecast bias!A:C" />

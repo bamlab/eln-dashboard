@@ -8,6 +8,7 @@ import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { OrganizationSelector } from "src/components/OrganizationSelector";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
+import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
 import { CommonTable } from "src/tables/table/CommonTable";
 import { scheme } from "src/tables/table/tableScheme";
 
@@ -111,102 +112,21 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Trackable offtake
+                Current cycle DI
               </Typography>
             </CardContent>
-            <CommonTable
-              range="DI Total Trackable Offtake display"
-              styleRows={[
-                scheme.rowDefault,
-                scheme.rowBlue,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowBlue
-              ]}
-              styleCells={[
-                [scheme.cellBlueBoldNoWrap],
-                [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRightNoWrap],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellWhiteBoldNoWrap, scheme.cellWhiteGreyBold]
-              ]}
-            />
+            <CurrentCycleDCTable range="China DI Current Cycle DC" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Non-trackable offtake
+                DI Offtake from channel perspective
               </Typography>
+              (only displayed when « By Channel » is selected on the table
+              above)
             </CardContent>
-            <CommonTable
-              range="DI Total - Total Non-trackable Offtake display"
-              styleRows={[
-                scheme.rowDefault,
-                scheme.rowBlue,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowBlue
-              ]}
-              styleCells={[
-                [scheme.cellBlueBoldNoWrap],
-                [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRightNoWrap],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellWhiteBoldNoWrap, scheme.cellWhiteGreyBold]
-              ]}
-            />
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Total offtake
-              </Typography>
-            </CardContent>
-            <CommonTable
-              range="DI Total - Total Offtake display"
-              styleRows={[
-                scheme.rowDefault,
-                scheme.rowBlue,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowBlue
-              ]}
-              styleCells={[
-                [scheme.cellBlueBoldNoWrap],
-                [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRightNoWrap],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellWhiteBoldNoWrap, scheme.cellWhiteGreyBold]
-              ]}
-            />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
@@ -220,7 +140,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 }}
               >
                 <Typography gutterBottom={true} className={classes.font}>
-                  Trade Flow
+                  Trade Flow DI
                 </Typography>
                 <div>
                   <OrganizationSelector />
@@ -242,32 +162,10 @@ const SummaryCurrentForecastComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.font}>
-                Cycle evolution - 2018 DI total offtake bridge by country (Oct -
-                Nov cycle)
+                Cycle evolution - DI total offtake bridge by country (Sep - Oct
+                cycle)
               </Typography>
               <WaterfallChart range="DI Total Risk & ops 2018!A:C" />
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Cycle evolution - 2019 DI total offtake bridge by country (Oct -
-                Nov cycle)
-              </Typography>
-              <WaterfallChart range="DI Total Risk & ops 2019!A:C" />
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Cycle evolution - 2018 to 2019 DI total offtake breakdown by
-                country
-              </Typography>
-              <WaterfallChart range="DI Summary Total Bridge!A:C" />
             </CardContent>
           </Card>
         </Grid>
