@@ -264,7 +264,28 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 </div>
               </div>
             </CardContent>
-            <ColumnLineChart range="IL Total Trade Flow Chart!A:D" />
+
+            <ColumnLineChart
+              range="IL Total Trade Flow Chart!A:D"
+              customOptions={{
+                yAxis: {
+                  gridLineWidth: 0,
+                  title: null,
+                  labels: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.value)}`;
+                    }
+                  }
+                },
+                tooltip: {
+                  formatter() {
+                    const self: any = this as any;
+                    return `${Math.floor(self.y)}`;
+                  }
+                }
+              }}
+            />
             <CommonTable
               range="International IL - Trade flow table!A:N"
               styleRows={[scheme.rowBlue, scheme.rowDefault]}
