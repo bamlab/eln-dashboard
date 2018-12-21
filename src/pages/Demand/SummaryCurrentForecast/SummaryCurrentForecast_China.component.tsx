@@ -7,7 +7,6 @@ import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { ColumnLineChartTradeFlow } from "src/charts/TradedFlowChartWith2Yaxis";
 import { WaterfallChart } from "src/charts/WaterfallChart";
-import { OrganizationSelector } from "src/components/OrganizationSelector";
 import { RadioButtons } from "src/components/RadioButtons";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
@@ -158,34 +157,8 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 />
               </div>
               <ColumnLineChartTradeFlow range="China DC  Trade Flow DC" />
-              <Typography gutterBottom={true} className={classes.font}>
-                Trade Flow DC by Brand
-              </Typography>
             </CardContent>
             <TradeFlowDC range="China DC  Trade Flow DC by Brand" />
-          </Card>
-        </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between"
-                }}
-              >
-                <Typography gutterBottom={true} className={classes.font}>
-                  Trade Flow by SKU
-                </Typography>
-                <OrganizationSelector
-                  displayStage={false}
-                  displayCountry={false}
-                  defaultGroup={"DC"}
-                />
-              </div>
-            </CardContent>
-            <TradeFlowDC range="China DC  Trade Flow DC by SKU" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
