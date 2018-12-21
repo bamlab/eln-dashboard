@@ -63,7 +63,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 <Typography gutterBottom={true} className={classes.font}>
                   Current Cycle Phasing - EIB offtake Quarterly Phasing
                 </Typography>
-                <RadioButtons valueList={["By Quaterly", "By Year"]} />
+                <RadioButtons valueList={["By Quarter", "By Year"]} />
                 <SelectorOutlined
                   defaultDisplayedValue={"ANZ"}
                   valueList={["ANZ", "DE", "UK", "NL"]}

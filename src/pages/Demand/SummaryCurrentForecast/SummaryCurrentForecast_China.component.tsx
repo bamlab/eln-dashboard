@@ -58,7 +58,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 <Typography gutterBottom={true} className={classes.font}>
                   Current Cycle Phasing - DC offtake Quarterly Phasing
                 </Typography>
-                <RadioButtons valueList={["By Quaterly", "By Year"]} />
+                <RadioButtons valueList={["By Quarter", "By Year"]} />
               </div>
             </CardContent>
             <ColumnLineChart
