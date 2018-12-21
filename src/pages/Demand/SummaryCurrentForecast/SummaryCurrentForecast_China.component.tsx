@@ -8,6 +8,7 @@ import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { ColumnLineChartTradeFlow } from "src/charts/TradedFlowChartWith2Yaxis";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { OrganizationSelector } from "src/components/OrganizationSelector";
+import { RadioButtons } from "src/components/RadioButtons";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
 import { TradeFlowDC } from "src/tables/TradeFlowDC";
@@ -53,9 +54,12 @@ const SummaryCurrentForecastComponent = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Current Cycle Phasing - DC offtake Quarterly Phasing
-              </Typography>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <Typography gutterBottom={true} className={classes.font}>
+                  Current Cycle Phasing - DC offtake Quarterly Phasing
+                </Typography>
+                <RadioButtons valueList={["By Quaterly", "By Year"]} />
+              </div>
             </CardContent>
             <ColumnLineChart
               range="China DC Total Quarterly phasing"
@@ -72,14 +76,40 @@ const SummaryCurrentForecastComponent = (props: any) => {
                   }
                 },
                 xAxis: {
+                  plotLines: [
+                    {
+                      width: 1,
+                      color: "grey",
+                      value: 3.5,
+                      zIndex: 10
+                    },
+                    {
+                      width: 1,
+                      color: "grey",
+                      value: 7.5,
+                      zIndex: 10
+                    },
+                    {
+                      width: 1,
+                      color: "grey",
+                      value: 11.5,
+                      zIndex: 10
+                    },
+                    {
+                      width: 1,
+                      color: "grey",
+                      value: 15.5,
+                      zIndex: 10
+                    }
+                  ],
                   labels: {
                     autoRotation: 0,
                     useHTML: true,
                     formatter() {
                       return (
                         // @ts-ignore
-                        quarterArray[this.pos][0] &&
-                        `<div style="display:flex;flex-direction:column;align-items:center;">
+                        quarterArray[this.pos][0]
+                          ? `<div style="display:flex;flex-direction:column;align-items:center;">
                     <div>${this.value}</div>
                     <div style="height: 19px;	width: 30px;	border-radius: 3px;	background-color: #99C3E1;text-align:center;line-height:19px;margin-top:8px;color: #002677;font-weight:bold;">${
                       // @ts-ignore
@@ -90,6 +120,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                       quarterArray[this.pos][1]
                     }</div>
                     </div>`
+                          : `<div>${this.value}</div>`
                       );
                     }
                   }
