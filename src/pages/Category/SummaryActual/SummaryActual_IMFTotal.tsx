@@ -235,48 +235,49 @@ class SummaryActual extends React.Component<IProps, IState> {
                       }}
                     />
                   </Grid>
+                  <Grid item={true} xs={12}>
+                    <Typography color="primary" className={classes.subTitle}>
+                      What is the YoY change ?
+                    </Typography>
+                    <ColumnLineChart
+                      isStacked={false}
+                      range="Category Total IMF YoY Growth Rate!A:D"
+                      customOptions={{
+                        yAxis: {
+                          gridLineWidth: 0,
+                          title: null,
+                          labels: {
+                            formatter() {
+                              const self: any = this as any;
+                              return `${Math.floor(self.value)}`;
+                            }
+                          },
+                          plotLines: [
+                            {
+                              value: 0,
+                              color: colors.secondaryFontColor,
+                              dashStyle: "solid",
+                              width: 1
+                            }
+                          ]
+                        },
+                        tooltip: {
+                          formatter() {
+                            const self: any = this as any;
+                            return `${Math.floor(self.y)}`;
+                          }
+                        },
+                        chart: { height: 250 }
+                      }}
+                    />
+                  </Grid>
                 </Grid>
               </CardContent>
             </Card>
           </Grid>
           <Grid item={true} xs={12}>
             <Card>
-              <CardContent>
-                <Typography gutterBottom={true} className={classes.font}>
-                  What is the YoY change ?
-                </Typography>
-                <ColumnLineChart
-                  isStacked={false}
-                  range="Category Total IMF YoY Growth Rate!A:D"
-                  customOptions={{
-                    yAxis: {
-                      gridLineWidth: 0,
-                      title: null,
-                      labels: {
-                        formatter() {
-                          const self: any = this as any;
-                          return `${Math.floor(self.value)}`;
-                        }
-                      },
-                      plotLines: [
-                        {
-                          value: 0,
-                          color: colors.secondaryFontColor,
-                          dashStyle: "solid",
-                          width: 1
-                        }
-                      ]
-                    },
-                    tooltip: {
-                      formatter() {
-                        const self: any = this as any;
-                        return `${Math.floor(self.y)}`;
-                      }
-                    },
-                    chart: { height: 250 }
-                  }}
-                />
-              </CardContent>
+              <CardContent />
             </Card>
           </Grid>
           <Grid item={true} xs={12}>
