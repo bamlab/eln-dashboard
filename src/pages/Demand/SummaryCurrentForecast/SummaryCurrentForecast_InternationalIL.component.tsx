@@ -138,9 +138,18 @@ const SummaryCurrentForecastComponent = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Trackable offtake
-              </Typography>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <div>
+                  <Typography gutterBottom={true} className={classes.font}>
+                    Trackable offtake
+                  </Typography>
+                </div>
+                <div>
+                  <RadioButtons
+                    valueList={["By Country/Brand", "By Channel"]}
+                  />
+                </div>
+              </div>
             </CardContent>
             <CommonTable
               range="IL Total Trackable Offtake display"
