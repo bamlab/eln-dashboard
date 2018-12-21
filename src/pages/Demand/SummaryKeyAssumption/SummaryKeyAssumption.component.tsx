@@ -48,7 +48,34 @@ const SummaryKeyAssumptionComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.title}>
-                Category Forecast ('000 tons)
+                Key Input Data in the Model
+              </Typography>
+              <ColumnLineChart
+                range="Key Input Data in the Model"
+                customOptions={{
+                  legend: {
+                    enabled: false
+                  },
+                  yAxis: {
+                    gridLineWidth: 0,
+                    title: null,
+                    labels: {
+                      formatter() {
+                        const self: any = this as any;
+                        return `${Math.floor(self.value)}`;
+                      }
+                    }
+                  }
+                }}
+              />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.title}>
+                Distribution trend
               </Typography>
               <ColumnLineChart
                 range="Category forecast ('000) tons"
@@ -75,7 +102,7 @@ const SummaryKeyAssumptionComponent = (props: any) => {
           <Card>
             <CardContent>
               <Typography gutterBottom={true} className={classes.title}>
-                Historical trend of marketing spend (Mn RMB)
+                OSA trend
               </Typography>
               <ColumnLineChart
                 range="Historical Trend of offtake price"
@@ -101,7 +128,7 @@ const SummaryKeyAssumptionComponent = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <Typography gutterBottom={true} className={classes.title}>
-              <CardContent>Historical trend of offtake price (RMB)</CardContent>
+              <CardContent>Pricing trend</CardContent>
             </Typography>
             <ColumnLineChart
               range="Historical Trend of marketing spent"
