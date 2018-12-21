@@ -82,6 +82,12 @@ const SummaryCurrentForecastComponent = (props: any) => {
                       }
                     }
                   },
+                  tooltip: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.y)}`;
+                    }
+                  },
                   xAxis: {
                     plotLines: [
                       {
