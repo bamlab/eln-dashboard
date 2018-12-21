@@ -1,5 +1,12 @@
 export const organizationList = [
   {
+    Group: "ALL",
+    Country: "ALL",
+    Brand: "ALL",
+    SubBrand: "ALL",
+    Stage: "ALL"
+  },
+  {
     Group: "IL",
     Country: "NL",
     Brand: "Nutrilon",
