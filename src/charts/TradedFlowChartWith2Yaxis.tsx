@@ -62,7 +62,7 @@ const getChartOptions = (
       labels: {
         formatter() {
           const self: any = this as any;
-          return `${Math.floor(self.value)}%`;
+          return `${Math.floor(self.value)}`;
         }
       }
     },
@@ -76,13 +76,16 @@ const getChartOptions = (
           return `${Math.floor(self.value)}`;
         }
       },
-      opposite: true
+      opposite: true,
+      floor: 0,
+      max: 3,
+      min: 0
     }
   ],
   tooltip: {
     formatter() {
       const self: any = this as any;
-      return `${Math.floor(self.y)}%`;
+      return `${Math.floor(self.y)}`;
     }
   },
   series: [...tradedFlowSeries],
@@ -117,8 +120,6 @@ export const ColumnLineChartTradeFlow = WithGoogleData(
             };
           }
         );
-
-        debugger;
 
         data.reduce(dataReducer, tradedFlowSeries);
         return (
