@@ -7,6 +7,7 @@ import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { WaterfallChart } from "src/charts/WaterfallChart";
 import { OrganizationSelector } from "src/components/OrganizationSelector";
+import { RadioButtons } from "src/components/RadioButtons";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
 import { CommonTable } from "src/tables/table/CommonTable";
@@ -63,6 +64,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 <Typography gutterBottom={true} className={classes.font}>
                   Current Cycle Phasing - DI offtake Quarterly Phasing
                 </Typography>
+                <RadioButtons valueList={["By Quaterly", "By Year"]} />
                 <SelectorOutlined
                   defaultDisplayedValue={"ANZ"}
                   valueList={["ANZ", "DE", "UK", "NL"]}
@@ -81,14 +83,40 @@ const SummaryCurrentForecastComponent = (props: any) => {
                     }
                   },
                   xAxis: {
+                    plotLines: [
+                      {
+                        width: 1,
+                        color: "grey",
+                        value: 3.5,
+                        zIndex: 10
+                      },
+                      {
+                        width: 1,
+                        color: "grey",
+                        value: 7.5,
+                        zIndex: 10
+                      },
+                      {
+                        width: 1,
+                        color: "grey",
+                        value: 11.5,
+                        zIndex: 10
+                      },
+                      {
+                        width: 1,
+                        color: "grey",
+                        value: 15.5,
+                        zIndex: 10
+                      }
+                    ],
                     labels: {
                       autoRotation: 0,
                       useHTML: true,
                       formatter() {
                         return (
                           // @ts-ignore
-                          quarterArray[this.pos][0] &&
-                          `<div style="display:flex;flex-direction:column;align-items:center;">
+                          quarterArray[this.pos][0]
+                            ? `<div style="display:flex;flex-direction:column;align-items:center;">
                       <div>${this.value}</div>
                       <div style="height: 19px;	width: 30px;	border-radius: 3px;	background-color: #99C3E1;text-align:center;line-height:19px;margin-top:8px;color: #002677;font-weight:bold;">${
                         // @ts-ignore
@@ -99,6 +127,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                         quarterArray[this.pos][1]
                       }</div>
                       </div>`
+                            : `<div>${this.value}</div>`
                         );
                       }
                     }
