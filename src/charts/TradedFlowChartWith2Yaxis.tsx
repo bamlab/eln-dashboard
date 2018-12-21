@@ -118,8 +118,6 @@ export const ColumnLineChartTradeFlow = WithGoogleData(
           }
         );
 
-        debugger;
-
         data.reduce(dataReducer, tradedFlowSeries);
         return (
           <div>
