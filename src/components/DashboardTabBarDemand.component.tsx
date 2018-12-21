@@ -7,6 +7,7 @@ import { RouteComponentProps } from "react-router";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 
+import { IconButton, SvgIcon } from "@material-ui/core";
 import { renderPage } from "../navigation/Navigation";
 import { colors } from "../theme";
 import { Selector } from "./Selector.component";
@@ -59,47 +60,70 @@ class DashboardTabBarComponent extends React.Component<IPropsType> {
     return (
       <div>
         <AppBar position="static" style={{ backgroundColor: "white" }}>
-          <Toolbar>
-            <Button
-              onClick={this.goToTab("previous_forecasts")}
-              classes={{
-                root:
-                  this.state.currentFocusedTab === "previous_forecasts"
-                    ? classes.focused
-                    : classes.notFocused
-              }}
-            >
-              PREVIOUS FORECASTS
-            </Button>
-            <Button
-              onClick={this.goToTab("kpis")}
-              classes={{
-                root:
-                  this.state.currentFocusedTab === "kpis"
-                    ? classes.focused
-                    : classes.notFocused
-              }}
-            >
-              KPIS
-            </Button>
-            <Selector
-              onChange={this.onSelectChange}
-              valueList={[
-                "SUMMARY - CURRENT FORECAST",
-                "SUMMARY - DEFINITION",
-                "SUMMARY - KEY ASSUMPTIONS"
-              ]}
-              defaultDisplayedValue="SUMMARY - CURRENT FORECAST"
-              style={
-                this.state.currentFocusedTab ===
-                ("summary_current_forecast" ||
-                  "summary_definition" ||
-                  "summary_key_assumptions")
-                  ? styles.focused
-                  : styles.notFocused
-              }
-              iconColor="blue"
-            />
+          <Toolbar style={{ justifyContent: "space-between" }}>
+            <div>
+              <Button
+                onClick={this.goToTab("previous_forecasts")}
+                classes={{
+                  root:
+                    this.state.currentFocusedTab === "previous_forecasts"
+                      ? classes.focused
+                      : classes.notFocused
+                }}
+              >
+                PREVIOUS FORECASTS
+              </Button>
+              <Button
+                onClick={this.goToTab("kpis")}
+                classes={{
+                  root:
+                    this.state.currentFocusedTab === "kpis"
+                      ? classes.focused
+                      : classes.notFocused
+                }}
+              >
+                KPIS
+              </Button>
+              <Selector
+                onChange={this.onSelectChange}
+                valueList={[
+                  "SUMMARY - CURRENT FORECAST",
+                  "SUMMARY - DEFINITION",
+                  "SUMMARY - KEY ASSUMPTIONS"
+                ]}
+                defaultDisplayedValue="SUMMARY - CURRENT FORECAST"
+                style={
+                  this.state.currentFocusedTab ===
+                  ("summary_current_forecast" ||
+                    "summary_definition" ||
+                    "summary_key_assumptions")
+                    ? styles.focused
+                    : styles.notFocused
+                }
+                iconColor="blue"
+              />
+            </div>
+            <div>
+              <IconButton
+                style={{
+                  marginLeft: 16,
+                  boxShadow: "0 0 10px 0 rgba(0,0,0,0.15)",
+                  color: "white"
+                }}
+              >
+                <SvgIcon
+                  width={24}
+                  height={24}
+                  fill="none"
+                  stroke={colors.mainColor}
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                </SvgIcon>
+              </IconButton>
+            </div>
           </Toolbar>
         </AppBar>
         <Switch>
