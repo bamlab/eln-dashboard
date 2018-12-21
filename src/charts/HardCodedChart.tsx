@@ -40,6 +40,14 @@ const getChartOptions = (chartData: IData[]): Highcharts.Options => ({
       "October",
       "November",
       "December"
+    ],
+    plotLines: [
+      {
+        width: 1,
+        color: "grey",
+        value: 7.5,
+        zIndex: 10
+      }
     ]
   },
 

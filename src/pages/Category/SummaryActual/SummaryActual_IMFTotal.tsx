@@ -211,6 +211,16 @@ class SummaryActual extends React.Component<IProps, IState> {
                     <ColumnLineChart
                       range="IMF Total Historical Category Demand (rate)"
                       customOptions={{
+                        xAxis: {
+                          plotLines: [
+                            {
+                              width: 1,
+                              color: "grey",
+                              value: 7.5,
+                              zIndex: 10
+                            }
+                          ]
+                        },
                         yAxis: {
                           gridLineWidth: 0,
                           title: null,
@@ -243,6 +253,16 @@ class SummaryActual extends React.Component<IProps, IState> {
                       isStacked={false}
                       range="Category Total IMF YoY Growth Rate!A:D"
                       customOptions={{
+                        xAxis: {
+                          plotLines: [
+                            {
+                              width: 1,
+                              color: "grey",
+                              value: 7.5,
+                              zIndex: 10
+                            }
+                          ]
+                        },
                         yAxis: {
                           gridLineWidth: 0,
                           title: null,
