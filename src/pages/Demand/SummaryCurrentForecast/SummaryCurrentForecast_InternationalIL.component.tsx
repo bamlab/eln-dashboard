@@ -144,6 +144,36 @@ const SummaryCurrentForecastComponent = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Total offtake
+              </Typography>
+            </CardContent>
+            <CommonTable
+              range="IL Total - Total Offtake display"
+              styleRows={[
+                scheme.rowDefault,
+                scheme.rowBlue,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowBlue
+              ]}
+              styleCells={[
+                [scheme.cellBlueBoldNoWrap],
+                [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRightNoWrap],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellWhiteBoldNoWrap, scheme.cellWhiteGreyBold]
+              ]}
+            />
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div>
                   <Typography gutterBottom={true} className={classes.font}>
@@ -222,36 +252,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
             />
           </Card>
         </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Total offtake
-              </Typography>
-            </CardContent>
-            <CommonTable
-              range="IL Total - Total Offtake display"
-              styleRows={[
-                scheme.rowDefault,
-                scheme.rowBlue,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowBlue
-              ]}
-              styleCells={[
-                [scheme.cellBlueBoldNoWrap],
-                [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRightNoWrap],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellWhiteBoldNoWrap, scheme.cellWhiteGreyBold]
-              ]}
-            />
-          </Card>
-        </Grid>
+
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
