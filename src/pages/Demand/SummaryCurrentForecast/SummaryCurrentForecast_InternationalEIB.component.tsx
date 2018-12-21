@@ -81,6 +81,12 @@ const SummaryCurrentForecastComponent = (props: any) => {
                       }
                     }
                   },
+                  tooltip: {
+                    formatter() {
+                      const self: any = this as any;
+                      return `${Math.floor(self.y)}`;
+                    }
+                  },
                   xAxis: {
                     plotLines: [
                       {
@@ -142,7 +148,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div>
                   <Typography gutterBottom={true} className={classes.font}>
-                    Trackable offtake
+                    Total offtake
                   </Typography>
                 </div>
                 <div>
@@ -151,6 +157,36 @@ const SummaryCurrentForecastComponent = (props: any) => {
                   />
                 </div>
               </div>
+            </CardContent>
+            <CommonTable
+              range="EIB Total - Total Offtake display"
+              styleRows={[
+                scheme.rowDefault,
+                scheme.rowBlue,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowDefault,
+                scheme.rowBlue
+              ]}
+              styleCells={[
+                [scheme.cellBlueBoldNoWrap],
+                [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRightNoWrap],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
+                [scheme.cellWhiteBoldNoWrap, scheme.cellWhiteGreyBold]
+              ]}
+            />
+          </Card>
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom={true} className={classes.font}>
+                Trackable offtake
+              </Typography>
             </CardContent>
             <CommonTable
               range="EIB Total Trackable Offtake display"
@@ -217,36 +253,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
             />
           </Card>
         </Grid>
-        <Grid item={true} xs={12}>
-          <Card>
-            <CardContent>
-              <Typography gutterBottom={true} className={classes.font}>
-                Total offtake
-              </Typography>
-            </CardContent>
-            <CommonTable
-              range="EIB Total - Total Offtake display"
-              styleRows={[
-                scheme.rowDefault,
-                scheme.rowBlue,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowDefault,
-                scheme.rowBlue
-              ]}
-              styleCells={[
-                [scheme.cellBlueBoldNoWrap],
-                [scheme.cellWhiteBold, scheme.cellWhiteBoldAlignRightNoWrap],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellDefaultNoWrap, scheme.cellRedBlack],
-                [scheme.cellWhiteBoldNoWrap, scheme.cellWhiteGreyBold]
-              ]}
-            />
-          </Card>
-        </Grid>
+
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
