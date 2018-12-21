@@ -7,6 +7,7 @@ import * as React from "react";
 import { ColumnLineChart } from "src/charts/TradedFlowChart";
 import { ColumnLineChartTradeFlow } from "src/charts/TradedFlowChartWith2Yaxis";
 import { WaterfallChart } from "src/charts/WaterfallChart";
+import { CardHeader } from "src/components/CardHeader";
 import { RadioButtons } from "src/components/RadioButtons";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
 import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
@@ -141,21 +142,22 @@ const SummaryCurrentForecastComponent = (props: any) => {
         <Grid item={true} xs={12}>
           <Card>
             <CardContent>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between"
-                }}
-              >
-                <Typography gutterBottom={true} className={classes.font}>
-                  Trade Flow - DC
-                </Typography>
+              <CardHeader title="Trade Flow - DC" className={classes.font}>
+                <SelectorOutlined
+                  valueList={["All", "Nutrilon", "Aptamil"]}
+                  defaultDisplayedValue={"All"}
+                  iconColor="blue"
+                />
+                <SelectorOutlined
+                  valueList={["All", "IF", "FO", "GUM"]}
+                  defaultDisplayedValue={"All"}
+                  iconColor="blue"
+                />
                 <SelectorOutlined
                   valueList={["NC", "NP", "AC", "AP"]}
                   defaultDisplayedValue={"NC"}
                 />
-              </div>
+              </CardHeader>
               <ColumnLineChartTradeFlow range="China DC  Trade Flow DC" />
             </CardContent>
             <TradeFlowDC range="China DC  Trade Flow DC by Brand" />
