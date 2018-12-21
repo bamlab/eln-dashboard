@@ -9,7 +9,7 @@ import { WaterfallChart } from "src/charts/WaterfallChart";
 import { OrganizationSelector } from "src/components/OrganizationSelector";
 import { RadioButtons } from "src/components/RadioButtons";
 import { SelectorOutlined } from "src/components/SelectorOutlined.component";
-import { CurrentCycleDCTable } from "src/tables/CurrentCycleDCTable";
+import { CurrentCycleDITable } from "src/tables/CurrentCycleDITable";
 import { CommonTable } from "src/tables/table/CommonTable";
 import { scheme } from "src/tables/table/tableScheme";
 
@@ -150,7 +150,7 @@ const SummaryCurrentForecastComponent = (props: any) => {
                 Current cycle DI
               </Typography>
             </CardContent>
-            <CurrentCycleDCTable range="China DI Current Cycle DC" />
+            <CurrentCycleDITable range="China DI Current Cycle DC" />
           </Card>
         </Grid>
         <Grid item={true} xs={12}>
